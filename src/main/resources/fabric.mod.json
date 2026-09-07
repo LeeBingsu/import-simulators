@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "import-simulators",
+  "version": "${version}",
+  "name": "Import Simulators",
+  "description": "Adds an 'Import Simulators' button to the singleplayer world-select screen that downloads map folders from a Google Drive folder into your saves directory.",
+  "authors": ["you"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.importsim.ImportSimulatorsClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
