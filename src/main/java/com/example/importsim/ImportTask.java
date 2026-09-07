@@ -3,8 +3,7 @@ package com.example.importsim;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screen.world.SelectWorldScreen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,16 +16,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 
 /**
- * Runs the whole import on a background daemon thread. All UI touches are marshalled
- * back onto the client thread with {@link MinecraftClient#execute}.
+ * Downloads a chosen set of Drive map folders into the saves directory on a background thread.
+ * Progress is exposed via {@link #progress()} for {@link MapSelectScreen} to render.
  */
 public final class ImportTask {
 
     private static final Logger LOG = LoggerFactory.getLogger("import-simulators");
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
-    private static volatile String STATUS = null;
-    /** Sticky label for the button after a run finishes with failures; survives screen rebuilds. */
-    private static volatile String resultLabel = null;
+    private static volatile String progress = "";
 
     private ImportTask() {
     }
@@ -35,59 +32,44 @@ public final class ImportTask {
         return RUNNING.get();
     }
 
-    public static String status() {
-        return STATUS == null ? "Import Simulators" : STATUS;
+    public static String progress() {
+        return progress;
     }
 
-    public static String resultLabel() {
-        return resultLabel;
-    }
-
-    public static void launch(MinecraftClient client, Screen screen, ButtonWidget button) {
-        if (!RUNNING.compareAndSet(false, true)) {
+    /**
+     * @param returnScreen screen to show once the import finishes (usually the SelectWorldScreen)
+     * @param maps         the map folders the player ticked
+     */
+    public static void launch(MinecraftClient client, Screen returnScreen, List<GDrive.Entry> maps, Config cfg) {
+        if (maps.isEmpty() || !RUNNING.compareAndSet(false, true)) {
             return;
         }
-        resultLabel = null;
-        button.active = false;
-        setStatus(button, "Importing… starting");
-        Thread t = new Thread(() -> run(client, screen, button), "import-simulators");
+        progress = "Starting…";
+        Thread t = new Thread(() -> run(client, returnScreen, maps, cfg), "import-simulators");
         t.setDaemon(true);
         t.start();
     }
 
-    private static void run(MinecraftClient client, Screen screen, ButtonWidget button) {
+    private static void run(MinecraftClient client, Screen returnScreen, List<GDrive.Entry> maps, Config cfg) {
         int imported = 0;
         List<String> failedMaps = new ArrayList<>();
-        Config cfg = Config.load();
         String folderUrl = cfg.folderUrl();
         Path saves = FabricLoader.getInstance().getGameDir().resolve("saves");
         try {
-            String folderId = cfg.folderId();
-            if (folderId == null || folderId.isBlank()) {
-                throw new IllegalStateException("No Drive folder configured in config/import-simulators.json");
-            }
-
             GDrive drive = new GDrive(cfg.googleApiKey);
             Files.createDirectories(saves);
             Path tmpRoot = saves.resolve(".import-simulators-tmp");
             deleteRecursive(tmpRoot);
             Files.createDirectories(tmpRoot);
 
-            setStatus(button, "Listing Drive folder…");
-            List<GDrive.Entry> top = drive.listFolder(folderId);
-            List<GDrive.Entry> mapFolders = top.stream().filter(GDrive.Entry::isFolder).toList();
-            if (mapFolders.isEmpty()) {
-                throw new IllegalStateException("No map folders found in the Drive folder");
-            }
-
-            int n = mapFolders.size();
+            int n = maps.size();
             for (int i = 0; i < n; i++) {
-                GDrive.Entry mf = mapFolders.get(i);
+                GDrive.Entry mf = maps.get(i);
                 String safe = sanitize(mf.name());
-                setStatus(button, String.format(Locale.ROOT, "Importing %d/%d: %s", i + 1, n, safe));
+                progress = String.format(Locale.ROOT, "Importing %d/%d: %s", i + 1, n, safe);
                 Path stage = tmpRoot.resolve(safe);
                 try {
-                    downloadFolderRecursive(drive, mf.id(), stage, button, safe);
+                    downloadFolderRecursive(drive, mf.id(), stage, safe, i + 1, n);
 
                     Path target;
                     if (cfg.overwriteExisting) {
@@ -106,76 +88,61 @@ public final class ImportTask {
                 }
             }
             deleteRecursive(tmpRoot);
-
-            final int fi = imported;
-            final List<String> ff = List.copyOf(failedMaps);
-            LOG.info("[import-simulators] Done. imported={} failed={}", fi, ff.size());
-            client.execute(() -> {
-                RUNNING.set(false);
-                STATUS = null;
-                if (!ff.isEmpty()) {
-                    announceManual(client, button, folderUrl, saves, ff);
-                }
-                if (screen == client.currentScreen) {
-                    // Rebuilds the world list from disk and re-adds our button (which will pick
-                    // up resultLabel if the run had failures).
-                    screen.resize(client, screen.width, screen.height);
-                }
-            });
         } catch (Exception e) {
             LOG.error("[import-simulators] Import aborted", e);
-            client.execute(() -> {
-                RUNNING.set(false);
-                STATUS = null;
-                button.active = true;
-                announceManual(client, button, folderUrl, saves, failedMaps);
-            });
+            if (failedMaps.isEmpty()) {
+                failedMaps.add("(all)");
+            }
         }
+
+        final int fi = imported;
+        final List<String> ff = List.copyOf(failedMaps);
+        if (!ff.isEmpty()) {
+            announceManual(client, folderUrl, saves, ff);
+            progress = fi + " imported, " + ff.size() + " failed — Drive link copied";
+        } else {
+            progress = fi + " map(s) imported";
+        }
+        LOG.info("[import-simulators] Done. imported={} failed={}", fi, ff.size());
+
+        client.execute(() -> {
+            RUNNING.set(false);
+            if (returnScreen != null) {
+                client.setScreen(returnScreen);
+                if (returnScreen instanceof SelectWorldScreen && returnScreen == client.currentScreen) {
+                    // Re-run init() so the world list picks up the new folders.
+                    returnScreen.resize(client, returnScreen.width, returnScreen.height);
+                }
+            }
+        });
     }
 
-    /**
-     * Download failed (wholly or partly). Copy the Drive folder link to the clipboard and tell
-     * the player to grab the maps by hand.
-     */
-    private static void announceManual(MinecraftClient client, ButtonWidget button,
-                                       String folderUrl, Path saves, List<String> failedMaps) {
+    /** Copy the Drive folder link to the clipboard and log what to grab by hand. */
+    private static void announceManual(MinecraftClient client, String folderUrl, Path saves, List<String> failedMaps) {
         try {
             client.keyboard.setClipboard(folderUrl);
         } catch (Throwable ignored) {
             // clipboard is best-effort
         }
-        resultLabel = failedMaps.isEmpty()
-                ? "Import failed — Drive link copied, download by hand"
-                : failedMaps.size() + " map(s) failed — Drive link copied, download by hand";
-        button.active = true;
-        button.setMessage(Text.literal(resultLabel));
-
         LOG.warn("[import-simulators] Some maps did not import. Download them by hand:");
         LOG.warn("[import-simulators]   Drive folder : {}  (copied to clipboard)", folderUrl);
         LOG.warn("[import-simulators]   Put them in  : {}", saves.toAbsolutePath());
-        if (!failedMaps.isEmpty()) {
-            LOG.warn("[import-simulators]   Missing maps : {}", String.join(", ", failedMaps));
-        }
+        LOG.warn("[import-simulators]   Missing maps : {}", String.join(", ", failedMaps));
     }
 
     private static void downloadFolderRecursive(GDrive drive, String folderId, Path dir,
-                                                ButtonWidget button, String label) throws Exception {
+                                                String label, int idx, int total) throws Exception {
         Files.createDirectories(dir);
         for (GDrive.Entry e : drive.listFolder(folderId)) {
             String safe = sanitize(e.name());
             Path child = dir.resolve(safe);
             if (e.isFolder()) {
-                downloadFolderRecursive(drive, e.id(), child, button, label);
+                downloadFolderRecursive(drive, e.id(), child, label, idx, total);
             } else {
-                setStatus(button, "Importing " + label + " — " + safe);
+                progress = String.format(Locale.ROOT, "Importing %d/%d: %s — %s", idx, total, label, safe);
                 drive.downloadFile(e.id(), child);
             }
         }
-    }
-
-    private static void setStatus(ButtonWidget button, String s) {
-        STATUS = s;
-        MinecraftClient.getInstance().execute(() -> button.setMessage(Text.literal(s)));
     }
 
     private static String sanitize(String name) {

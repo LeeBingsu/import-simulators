@@ -1,8 +1,9 @@
 # Import Simulators
 
 Fabric client mod. Adds an **Import Simulators** button to the singleplayer
-**Select World** screen. Pressing it downloads every map folder from a Google
-Drive folder into your `saves/` directory, then refreshes the world list.
+**Select World** screen. It opens a list of every map folder in a Google Drive
+folder with a checkbox each; **Download (N)** imports only the ticked maps into
+`saves/`, then returns to the refreshed world list.
 
 - Minecraft **1.21.11** (see *Other versions* below)
 - **Client-side only.** Not needed on servers.
@@ -106,8 +107,10 @@ The shared folder still has to be public for an API key (no OAuth) to read it.
 
 ## Behaviour notes
 
-- Import runs on a background thread; the button shows progress
-  (`Importing 2/5: MyMap`) and disables while running.
+- Pick maps in the list (click a row to toggle; **All** / **None** buttons;
+  scroll wheel for long lists). **Download (N)** starts the import.
+- Import runs on a background thread; the select screen shows progress
+  (`Importing 2/5: MyMap — r.0.0.mca`) and returns to the world list when done.
 - Each map is downloaded into `saves/.import-simulators-tmp/` first, then moved
   into place only if it completed — no half-imported worlds on failure.
 - Per-map failures are logged and skipped; the rest still import.
@@ -131,9 +134,10 @@ gradlew, gradlew.bat
 src/main/resources/fabric.mod.json
 src/main/java/com/example/importsim/
     ImportSimulatorsClient.java   entrypoint, adds the button
+    MapSelectScreen.java          checkbox list of maps + Download button
     Config.java                   config file + folder-id parsing
-    GDrive.java                   Drive listing + file download (API + scrape)
-    ImportTask.java               background orchestration + progress
+    GDrive.java                   Drive listing + file download (web endpoint / API / scrape)
+    ImportTask.java               background download of the chosen maps + progress
 ```
 
 MIT.

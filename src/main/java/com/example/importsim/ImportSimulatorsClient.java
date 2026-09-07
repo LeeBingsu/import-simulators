@@ -8,7 +8,8 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
 
 /**
- * Registers an "Import Simulators" button on the singleplayer world-select screen.
+ * Adds the "Import Simulators" button to the singleplayer world-select screen.
+ * The button opens {@link MapSelectScreen}, where the player picks which maps to download.
  * No mixins: the button is added through the Fabric Screen API.
  */
 public class ImportSimulatorsClient implements ClientModInitializer {
@@ -21,20 +22,10 @@ public class ImportSimulatorsClient implements ClientModInitializer {
             if (!(screen instanceof SelectWorldScreen)) {
                 return;
             }
-
             ButtonWidget button = ButtonWidget.builder(
                     Text.literal("Import Simulators"),
-                    btn -> ImportTask.launch(client, screen, btn)
-            ).dimensions(8, 8, 200, 20).build();
-
-            if (ImportTask.isRunning()) {
-                // An import is in progress (e.g. the screen was just resized).
-                button.active = false;
-                button.setMessage(Text.literal(ImportTask.status()));
-            } else if (ImportTask.resultLabel() != null) {
-                // Last run finished with failures — keep the "download by hand" notice visible.
-                button.setMessage(Text.literal(ImportTask.resultLabel()));
-            }
+                    btn -> client.setScreen(new MapSelectScreen(screen))
+            ).dimensions(8, 8, 130, 20).build();
 
             Screens.getButtons(screen).add(button);
         });
