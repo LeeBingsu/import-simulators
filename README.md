@@ -22,7 +22,7 @@ The Gradle **wrapper JAR is not included** (binary). Do one of:
   generates the wrapper automatically. Then run the `build` Gradle task.
 - Or, with Gradle installed:
   ```bash
-  gradle wrapper --gradle-version 8.14.2   # fabric-loom needs Gradle >= 8.11
+  gradle wrapper --gradle-version 9.7.1   # fabric-loom 1.17.x needs Gradle >= 9.5
   ./gradlew build
   ```
 - Or copy `gradle/wrapper/gradle-wrapper.jar`, `gradlew`, `gradlew.bat` from
