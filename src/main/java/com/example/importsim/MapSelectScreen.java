@@ -1,5 +1,6 @@
 package com.example.importsim;
 
+import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -128,8 +129,10 @@ public class MapSelectScreen extends Screen {
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (button == 0 && maps != null && !ImportTask.isRunning()
+    public boolean mouseClicked(Click click, boolean doubled) {
+        double mouseX = click.x();
+        double mouseY = click.y();
+        if (click.button() == 0 && maps != null && !ImportTask.isRunning()
                 && mouseX >= listX() && mouseX <= listX() + listW()
                 && mouseY >= listTop && mouseY < listBottom) {
             int idx = (int) ((mouseY - listTop + scroll) / rowHeight);
@@ -142,7 +145,7 @@ public class MapSelectScreen extends Screen {
                 return true;
             }
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+        return super.mouseClicked(click, doubled);
     }
 
     @Override

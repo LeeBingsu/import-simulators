@@ -111,7 +111,7 @@ public final class ImportTask {
                 client.setScreen(returnScreen);
                 if (returnScreen instanceof SelectWorldScreen && returnScreen == client.currentScreen) {
                     // Re-run init() so the world list picks up the new folders.
-                    returnScreen.resize(client, returnScreen.width, returnScreen.height);
+                    returnScreen.resize(returnScreen.width, returnScreen.height);
                 }
             }
         });
