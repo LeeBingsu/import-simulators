@@ -166,7 +166,28 @@ public class MapSelectScreen extends Screen {
 
         if (ImportTask.isRunning()) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(ImportTask.progress()),
-                    this.width / 2, this.height / 2, 0xFFFFFF);
+                    this.width / 2, this.height / 2 - 24, 0xFFFFFF);
+
+            long total = ImportTask.totalBytes();
+            long done = ImportTask.downloadedBytes();
+            int barW = 240;
+            int barH = 14;
+            int bx = this.width / 2 - barW / 2;
+            int by = this.height / 2 - 4;
+            int fillW = total > 0 ? (int) Math.round(barW * Math.min(1.0, done / (double) total)) : 0;
+
+            ctx.fill(bx - 1, by - 1, bx + barW + 1, by + barH + 1, 0xFF000000);
+            ctx.fill(bx, by, bx + barW, by + barH, 0xFF404040);
+            if (fillW > 0) {
+                ctx.fill(bx, by, bx + fillW, by + barH, 0xFF44AA44);
+            }
+
+            String sizeText = total > 0
+                    ? ImportTask.humanSize(done) + " / " + ImportTask.humanSize(total)
+                            + "  (" + Math.min(100, done * 100L / total) + "%)"
+                    : ImportTask.humanSize(done) + " downloaded";
+            ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(sizeText),
+                    this.width / 2, by + barH + 6, 0xAAAAAA);
             return;
         }
         if (loadError != null) {
