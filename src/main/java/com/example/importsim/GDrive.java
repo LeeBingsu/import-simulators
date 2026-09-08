@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
@@ -17,10 +18,11 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.LongConsumer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -60,7 +62,7 @@ public class GDrive {
         this.apiKey = apiKey == null ? "" : apiKey.trim();
     }
 
-    public record Entry(String id, String name, String mimeType) {
+    public record Entry(String id, String name, String mimeType, long size) {
         public boolean isFolder() {
             return FOLDER_MIME.equals(mimeType);
         }
@@ -91,7 +93,7 @@ public class GDrive {
             String url = "https://clients6.google.com/drive/v2beta/files?"
                     + "openDrive=false&reason=102&syncType=0&errorRecovery=false"
                     + "&q=" + q
-                    + "&fields=" + enc("nextPageToken,items(id,title,mimeType)")
+                    + "&fields=" + enc("nextPageToken,items(id,title,mimeType,fileSize)")
                     + "&appDataFilter=NO_APP_DATA&spaces=drive&maxResults=1000"
                     + "&supportsTeamDrives=true&includeItemsFromAllDrives=true"
                     + (pageToken.isEmpty() ? "" : "&pageToken=" + enc(pageToken))
@@ -115,7 +117,9 @@ public class GDrive {
                 out.add(new Entry(
                         o.get("id").getAsString(),
                         o.has("title") ? o.get("title").getAsString() : o.get("id").getAsString(),
-                        o.has("mimeType") ? o.get("mimeType").getAsString() : ""));
+                        o.has("mimeType") ? o.get("mimeType").getAsString() : "",
+                        o.has("fileSize") && !o.get("fileSize").isJsonNull()
+                                ? parseLongSafe(o.get("fileSize").getAsString()) : 0L));
             }
             pageToken = root.has("nextPageToken") && !root.get("nextPageToken").isJsonNull()
                     ? root.get("nextPageToken").getAsString() : "";
@@ -131,7 +135,7 @@ public class GDrive {
             String q = enc("'" + folderId + "' in parents and trashed = false");
             StringBuilder url = new StringBuilder("https://www.googleapis.com/drive/v3/files?q=").append(q)
                     .append("&key=").append(enc(apiKey))
-                    .append("&fields=nextPageToken,files(id,name,mimeType)")
+                    .append("&fields=nextPageToken,files(id,name,mimeType,size)")
                     .append("&pageSize=1000&supportsAllDrives=true&includeItemsFromAllDrives=true");
             if (pageToken != null) {
                 url.append("&pageToken=").append(enc(pageToken));
@@ -144,7 +148,8 @@ public class GDrive {
             JsonArray files = root.has("files") ? root.getAsJsonArray("files") : new JsonArray();
             for (JsonElement el : files) {
                 JsonObject o = el.getAsJsonObject();
-                out.add(new Entry(o.get("id").getAsString(), o.get("name").getAsString(), o.get("mimeType").getAsString()));
+                long size = o.has("size") && !o.get("size").isJsonNull() ? parseLongSafe(o.get("size").getAsString()) : 0L;
+                out.add(new Entry(o.get("id").getAsString(), o.get("name").getAsString(), o.get("mimeType").getAsString(), size));
             }
             pageToken = root.has("nextPageToken") ? root.get("nextPageToken").getAsString() : null;
         } while (pageToken != null);
@@ -174,7 +179,7 @@ public class GDrive {
             if (it.size() < 4) {
                 continue;
             }
-            out.add(new Entry(it.get(0).getAsString(), it.get(2).getAsString(), it.get(3).getAsString()));
+            out.add(new Entry(it.get(0).getAsString(), it.get(2).getAsString(), it.get(3).getAsString(), 0L));
         }
         if (items.size() >= 50) {
             LOG.warn("[import-simulators] Scrape fallback hit the ~50-item cap for folder {}; that map will be incomplete.",
@@ -185,12 +190,12 @@ public class GDrive {
 
     // ------------------------------------------------------------------ file download
 
-    public void downloadFile(String fileId, Path dest) throws IOException, InterruptedException {
+    public void downloadFile(String fileId, Path dest, LongConsumer onBytes) throws IOException, InterruptedException {
         Files.createDirectories(dest.getParent());
 
         if (!apiKey.isEmpty()) {
             fetchToFile("https://www.googleapis.com/drive/v3/files/" + fileId
-                    + "?alt=media&supportsAllDrives=true&key=" + enc(apiKey), dest);
+                    + "?alt=media&supportsAllDrives=true&key=" + enc(apiKey), dest, onBytes);
             return;
         }
 
@@ -199,7 +204,7 @@ public class GDrive {
         String ct = resp.headers().firstValue("content-type").orElse("");
         if (resp.statusCode() == 200 && !ct.startsWith("text/html")) {
             try (InputStream in = resp.body()) {
-                Files.copy(in, dest, StandardCopyOption.REPLACE_EXISTING);
+                copy(in, dest, onBytes);
             }
             return;
         }
@@ -215,17 +220,30 @@ public class GDrive {
         String retry = action.replace("&amp;", "&") + "?id=" + fileId + "&export=download"
                 + "&confirm=" + (confirm != null ? confirm : "t")
                 + (uuid != null ? "&uuid=" + uuid : "");
-        fetchToFile(retry, dest);
+        fetchToFile(retry, dest, onBytes);
     }
 
-    private void fetchToFile(String url, Path dest) throws IOException, InterruptedException {
+    private void fetchToFile(String url, Path dest, LongConsumer onBytes) throws IOException, InterruptedException {
         HttpResponse<InputStream> resp = sendWithRetry(get(url), HttpResponse.BodyHandlers.ofInputStream());
         if (resp.statusCode() != 200) {
             String body = new String(resp.body().readAllBytes(), StandardCharsets.UTF_8);
             throw new IOException("Download HTTP " + resp.statusCode() + " for " + url + " :: " + trim(body, 300));
         }
         try (InputStream in = resp.body()) {
-            Files.copy(in, dest, StandardCopyOption.REPLACE_EXISTING);
+            copy(in, dest, onBytes);
+        }
+    }
+
+    /** Streams {@code in} to {@code dest}, reporting each chunk's byte count to {@code onBytes}. */
+    private static void copy(InputStream in, Path dest, LongConsumer onBytes) throws IOException {
+        try (OutputStream out = Files.newOutputStream(dest, StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE)) {
+            byte[] buf = new byte[8192];
+            int n;
+            while ((n = in.read(buf)) != -1) {
+                out.write(buf, 0, n);
+                onBytes.accept(n);
+            }
         }
     }
 
@@ -271,6 +289,14 @@ public class GDrive {
 
     private static String trim(String s, int n) {
         return s == null ? "" : (s.length() <= n ? s : s.substring(0, n));
+    }
+
+    private static long parseLongSafe(String s) {
+        try {
+            return Long.parseLong(s);
+        } catch (NumberFormatException e) {
+            return 0L;
+        }
     }
 
     /** Decodes the JS string escapes used inside window['_DRIVE_ivd']. */

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 /**
@@ -24,6 +25,8 @@ public final class ImportTask {
     private static final Logger LOG = LoggerFactory.getLogger("import-simulators");
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
     private static volatile String progress = "";
+    private static volatile long totalBytes = 0;
+    private static final AtomicLong downloadedBytes = new AtomicLong();
 
     private ImportTask() {
     }
@@ -36,6 +39,32 @@ public final class ImportTask {
         return progress;
     }
 
+    /** Total bytes to download across all selected maps, or 0 while still being calculated. */
+    public static long totalBytes() {
+        return totalBytes;
+    }
+
+    /** Bytes downloaded so far in the current import. */
+    public static long downloadedBytes() {
+        return downloadedBytes.get();
+    }
+
+    /** Formats a byte count as a human-readable size (e.g. "12.3 MB"). */
+    public static String humanSize(long bytes) {
+        if (bytes < 1024) {
+            return bytes + " B";
+        }
+        double kb = bytes / 1024.0;
+        if (kb < 1024) {
+            return String.format(Locale.ROOT, "%.1f KB", kb);
+        }
+        double mb = kb / 1024.0;
+        if (mb < 1024) {
+            return String.format(Locale.ROOT, "%.1f MB", mb);
+        }
+        return String.format(Locale.ROOT, "%.2f GB", mb / 1024.0);
+    }
+
     /**
      * @param returnScreen screen to show once the import finishes (usually the SelectWorldScreen)
      * @param maps         the map folders the player ticked
@@ -45,6 +74,8 @@ public final class ImportTask {
             return;
         }
         progress = "Starting…";
+        totalBytes = 0;
+        downloadedBytes.set(0);
         Thread t = new Thread(() -> run(client, returnScreen, maps, cfg), "import-simulators");
         t.setDaemon(true);
         t.start();
@@ -61,6 +92,17 @@ public final class ImportTask {
             Path tmpRoot = saves.resolve(".import-simulators-tmp");
             deleteRecursive(tmpRoot);
             Files.createDirectories(tmpRoot);
+
+            progress = "Calculating download size…";
+            long size = 0;
+            for (GDrive.Entry mf : maps) {
+                try {
+                    size += sumSizes(drive, mf.id());
+                } catch (Exception e) {
+                    LOG.warn("[import-simulators] Failed to size '{}'; total size may be inaccurate", mf.name(), e);
+                }
+            }
+            totalBytes = size;
 
             int n = maps.size();
             for (int i = 0; i < n; i++) {
@@ -140,9 +182,18 @@ public final class ImportTask {
                 downloadFolderRecursive(drive, e.id(), child, label, idx, total);
             } else {
                 progress = String.format(Locale.ROOT, "Importing %d/%d: %s — %s", idx, total, label, safe);
-                drive.downloadFile(e.id(), child);
+                drive.downloadFile(e.id(), child, downloadedBytes::addAndGet);
             }
         }
+    }
+
+    /** Recursively sums declared file sizes under a Drive folder, without downloading anything. */
+    private static long sumSizes(GDrive drive, String folderId) throws Exception {
+        long total = 0;
+        for (GDrive.Entry e : drive.listFolder(folderId)) {
+            total += e.isFolder() ? sumSizes(drive, e.id()) : Math.max(0, e.size());
+        }
+        return total;
     }
 
     private static String sanitize(String name) {
