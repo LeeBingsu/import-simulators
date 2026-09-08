@@ -4,9 +4,10 @@
   "version": "${version}",
   "name": "Import Simulators",
   "description": "Adds an 'Import Simulators' button to the singleplayer world-select screen that downloads map folders from a Google Drive folder into your saves directory.",
-  "authors": ["you"],
+  "authors": ["Hi_Its_I"],
   "contact": {},
   "license": "MIT",
+  "icon": "assets/import-simulators/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": ["com.example.importsim.ImportSimulatorsClient"]
