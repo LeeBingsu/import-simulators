@@ -1,4 +1,7 @@
 * text=auto eol=lf
+# Mirrored kit files must stay byte-identical to the originals: the mod compares
+# their size against the one Drive reports, and EOL conversion would change it.
+kits/** -text
 *.bat text eol=crlf
 gradlew text eol=lf
 *.jar binary
