@@ -11,30 +11,18 @@ import java.nio.file.Path;
 /**
  * config/import-simulators.json
  *
- * folder             - Drive folder URL or bare folder id. Defaults to the folder from the request.
- * kitsFolder         - Drive folder listing the kit files, synced into the vexbot_kits folder.
- * kitsMirror         - static host tried before Drive for kit contents; Drive caps how often a
- *                      popular public file can be downloaded, static hosting does not. Blank to
- *                      always use Drive.
- * mapsRelease        - GitHub release holding one zip per map, tried before walking the Drive
- *                      folder. Same reason as kitsMirror, and it pulls a world in one request
- *                      instead of hundreds. Blank to always use Drive.
- * googleApiKey       - optional. If set, the mod uses the official Drive API v3 (reliable, handles
- *                      folders with >50 files). If blank, the mod scrapes the public folder page,
- *                      which works with zero setup but can break when Google changes their markup.
- * overwriteExisting  - if true, an existing saves/<name> is deleted before import. If false, the
- *                      map is imported as "<name> (1)", "<name> (2)", ...
+ * catalog            - base URL of maps.json and kits.json, which say what is available to
+ *                      download and where each file lives.
+ * kitsMirror         - base URL the kit files themselves are served from.
+ * overwriteExisting  - if true, an existing saves/&lt;name&gt; is deleted before import. If false, the
+ *                      map is imported as "&lt;name&gt; (1)", "&lt;name&gt; (2)", ...
  */
 public class Config {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public String folder = "https://drive.google.com/drive/folders/1idhELV0qMMFqgJhaJCYEzFeL5wtfekVH";
-    public String kitsFolder = "https://drive.google.com/drive/folders/1qVZLb3mXPGQlEdgXmqoOonatvYz2ljZQ";
+    public String catalog = "https://raw.githubusercontent.com/LeeBingsu/import-simulators/main/catalog";
     public String kitsMirror = "https://raw.githubusercontent.com/LeeBingsu/import-simulators/main/kits";
-    public String mapsRelease =
-            "https://api.github.com/repos/LeeBingsu/import-simulators/releases/tags/maps-v1";
-    public String googleApiKey = "";
     public boolean overwriteExisting = false;
 
     public static Config load() {
@@ -50,48 +38,5 @@ public class Config {
         } catch (IOException | RuntimeException e) {
             return new Config();
         }
-    }
-
-    /** A shareable folder URL, whatever form {@code folder} was given in. */
-    public String folderUrl() {
-        return toFolderUrl(folder);
-    }
-
-    /** Extracts the folder id from a full URL or returns the trimmed string unchanged. */
-    public String folderId() {
-        return toFolderId(folder);
-    }
-
-    /** A shareable folder URL for the kits folder. */
-    public String kitsFolderUrl() {
-        return toFolderUrl(kitsFolder);
-    }
-
-    /** The Drive folder id holding the kit files. */
-    public String kitsFolderId() {
-        return toFolderId(kitsFolder);
-    }
-
-    private static String toFolderUrl(String folder) {
-        String f = folder == null ? "" : folder.trim();
-        if (f.startsWith("http")) {
-            return f;
-        }
-        return "https://drive.google.com/drive/folders/" + f;
-    }
-
-    private static String toFolderId(String folder) {
-        String f = folder == null ? "" : folder.trim();
-        int i = f.indexOf("/folders/");
-        if (i >= 0) {
-            String rest = f.substring(i + "/folders/".length());
-            int q = rest.indexOf('?');
-            int s = rest.indexOf('/');
-            int end = -1;
-            if (q >= 0) end = q;
-            if (s >= 0 && (end < 0 || s < end)) end = s;
-            return end < 0 ? rest : rest.substring(0, end);
-        }
-        return f;
     }
 }
