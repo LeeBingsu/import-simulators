@@ -118,6 +118,7 @@ public final class ImportTask {
         try {
             Files.createDirectories(kits);
             GDrive drive = new GDrive(cfg.googleApiKey);
+            KitMirror mirror = new KitMirror(cfg.kitsMirror);
 
             progress = "Checking kits…";
             List<MissingFile> missing = new ArrayList<>();
@@ -134,7 +135,10 @@ public final class ImportTask {
                 MissingFile f = missing.get(i);
                 progress = String.format(Locale.ROOT, "Adding kit %d/%d: %s", i + 1, n, f.dest().getFileName());
                 try {
-                    drive.downloadFile(f.entry().id(), f.dest(), downloadedBytes::addAndGet);
+                    // The mirror has no download cap; Drive is only for kits it does not carry yet.
+                    if (!mirror.download(f.entry().name(), f.dest(), downloadedBytes::addAndGet)) {
+                        drive.downloadFile(f.entry().id(), f.dest(), downloadedBytes::addAndGet);
+                    }
                     added++;
                 } catch (GDrive.QuotaExceededException e) {
                     failed++;
@@ -182,7 +186,7 @@ public final class ImportTask {
             Path child = dir.resolve(sanitize(e.name()));
             if (e.isFolder()) {
                 collectMissingKits(drive, e.id(), child, out);
-            } else if (!Files.exists(child)) {
+            } else if (!alreadyHave(child, e.size())) {
                 out.add(new MissingFile(e, child));
             }
         }
@@ -305,7 +309,7 @@ public final class ImportTask {
             Path child = dir.resolve(safe);
             if (e.isFolder()) {
                 downloadFolderRecursive(drive, e.id(), child, label, idx, total);
-            } else if (isComplete(child, e.size())) {
+            } else if (alreadyHave(child, e.size())) {
                 downloadedBytes.addAndGet(e.size());   // carried over from an earlier run
             } else {
                 progress = String.format(Locale.ROOT, "Importing %d/%d: %s — %s", idx, total, label, safe);
@@ -320,12 +324,15 @@ public final class ImportTask {
         }
     }
 
-    /** True when a previous run already fetched this file in full. */
-    private static boolean isComplete(Path file, long expectedSize) {
+    /** True when the file is already on disk, matching the declared size when one was reported. */
+    private static boolean alreadyHave(Path file, long declaredSize) {
         try {
-            return expectedSize > 0 && Files.size(file) == expectedSize;
+            if (!Files.exists(file)) {
+                return false;
+            }
+            return declaredSize <= 0 || Files.size(file) == declaredSize;
         } catch (IOException e) {
-            return false;   // missing or unreadable
+            return false;
         }
     }
 
