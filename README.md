@@ -9,9 +9,6 @@ folder with a checkbox each; **Download (N)** imports only the ticked maps into
 - **Client-side only.** Not needed on servers.
 - Requires **Fabric Loader** + **Fabric API**.
 
-Default Drive folder (from the request):
-`https://drive.google.com/drive/folders/1idhELV0qMMFqgJhaJCYEzFeL5wtfekVH`
-
 ---
 
 ## Build
