@@ -3,6 +3,7 @@ package com.example.importsim;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.screen.world.SelectWorldScreen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -315,12 +316,17 @@ public final class ImportTask {
     private static void finish(MinecraftClient client, Screen returnScreen) {
         client.execute(() -> {
             RUNNING.set(false);
-            if (returnScreen != null) {
+            if (returnScreen == null) {
+                return;
+            }
+            if (returnScreen instanceof SelectWorldScreen) {
+                // Leaving the world list closed every world's icon, and re-initialising that same
+                // screen hands the icons and the cached world list straight back from the widget
+                // it was showing before — blank icons, and no sign of what was just imported.
+                // A new screen has nothing to inherit, so both are rebuilt from disk.
+                client.setScreen(new SelectWorldScreen(new TitleScreen()));
+            } else {
                 client.setScreen(returnScreen);
-                if (returnScreen instanceof SelectWorldScreen && returnScreen == client.currentScreen) {
-                    // Re-run init() so the world list picks up the new folders.
-                    returnScreen.resize(returnScreen.width, returnScreen.height);
-                }
             }
         });
     }
