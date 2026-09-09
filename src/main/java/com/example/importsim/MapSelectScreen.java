@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Opened by the "Import Simulators" button. Lists every map folder in the Drive folder with a
- * checkbox; "Download (N)" imports only the ticked ones.
+ * Opened by the "Import Simulators" button. Lists every map in the catalog with a checkbox;
+ * "Download (N)" imports only the ticked ones.
  */
 public class MapSelectScreen extends Screen {
 
@@ -26,10 +26,10 @@ public class MapSelectScreen extends Screen {
     private final Screen parent;
     private Config cfg;
 
-    private volatile List<GDrive.Entry> maps;   // null while loading
+    private volatile List<Catalog.MapEntry> maps;   // null while loading
     private volatile String loadError;
-    private final Set<String> selected = new LinkedHashSet<>();   // folder ids
-    private volatile Set<String> alreadyImported = Set.of();      // folder ids already in saves/
+    private final Set<String> selected = new LinkedHashSet<>();   // map names
+    private volatile Set<String> alreadyImported = Set.of();      // map names already in saves/
 
     private int scroll;
     private final int rowHeight = 14;
@@ -67,7 +67,7 @@ public class MapSelectScreen extends Screen {
 
         addDrawableChild(ButtonWidget.builder(Text.literal("All"), b -> {
             if (maps != null) {
-                maps.forEach(e -> selected.add(e.id()));
+                maps.forEach(e -> selected.add(e.name()));
                 refreshButtons();
             }
         }).dimensions(x, y, bw, 20).build());
@@ -94,15 +94,9 @@ public class MapSelectScreen extends Screen {
     private void startLoad() {
         Thread t = new Thread(() -> {
             try {
-                List<GDrive.Entry> all = new GDrive(cfg.googleApiKey).listFolder(cfg.folderId());
-                List<GDrive.Entry> folders = new ArrayList<>();
-                for (GDrive.Entry e : all) {
-                    if (e.isFolder()) {
-                        folders.add(e);
-                    }
-                }
-                folders.sort((a, b) -> a.name().compareToIgnoreCase(b.name()));
-                this.maps = folders;
+                List<Catalog.MapEntry> all = new ArrayList<>(new Catalog(cfg.catalog).maps());
+                all.sort((a, b) -> a.name().compareToIgnoreCase(b.name()));
+                this.maps = all;
                 refreshAlreadyImported();
             } catch (Exception e) {
                 LOG.error("[import-simulators] Failed to load map list", e);
@@ -117,9 +111,9 @@ public class MapSelectScreen extends Screen {
         if (maps == null || selected.isEmpty() || ImportTask.isRunning()) {
             return;
         }
-        List<GDrive.Entry> chosen = new ArrayList<>();
-        for (GDrive.Entry e : maps) {
-            if (selected.contains(e.id())) {
+        List<Catalog.MapEntry> chosen = new ArrayList<>();
+        for (Catalog.MapEntry e : maps) {
+            if (selected.contains(e.name())) {
                 chosen.add(e);
             }
         }
@@ -136,14 +130,14 @@ public class MapSelectScreen extends Screen {
 
     /** Re-checks which maps already sit in saves/, so their rows can be marked as re-downloads. */
     private void refreshAlreadyImported() {
-        List<GDrive.Entry> list = maps;
+        List<Catalog.MapEntry> list = maps;
         if (list == null) {
             return;
         }
         Set<String> found = new HashSet<>();
-        for (GDrive.Entry e : list) {
+        for (Catalog.MapEntry e : list) {
             if (ImportTask.isAlreadyImported(e.name())) {
-                found.add(e.id());
+                found.add(e.name());
             }
         }
         alreadyImported = found;
@@ -189,9 +183,9 @@ public class MapSelectScreen extends Screen {
                 && mouseY >= listTop && mouseY < listBottom) {
             int idx = (int) ((mouseY - listTop + scroll) / rowHeight);
             if (idx >= 0 && idx < maps.size()) {
-                String id = maps.get(idx).id();
-                if (!selected.remove(id)) {
-                    selected.add(id);
+                String name = maps.get(idx).name();
+                if (!selected.remove(name)) {
+                    selected.add(name);
                 }
                 refreshButtons();
                 return true;
@@ -268,8 +262,8 @@ public class MapSelectScreen extends Screen {
             if (y + rowHeight < listTop || y > listBottom) {
                 continue;
             }
-            GDrive.Entry e = maps.get(i);
-            boolean sel = selected.contains(e.id());
+            Catalog.MapEntry e = maps.get(i);
+            boolean sel = selected.contains(e.name());
             boolean hover = mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY < y + rowHeight;
             if (hover) {
                 ctx.fill(x, y, x + w, y + rowHeight, 0x30FFFFFF);
@@ -285,7 +279,7 @@ public class MapSelectScreen extends Screen {
 
             int nameX = x + 18;
             int nameW = w - 20;
-            if (alreadyImported.contains(e.id())) {
+            if (alreadyImported.contains(e.name())) {
                 String tag = "re-download";
                 int tagW = this.textRenderer.getWidth(tag);
                 ctx.drawTextWithShadow(this.textRenderer, Text.literal(tag), x + w - tagW - 4, y + 3, 0xFFFFAA00);
