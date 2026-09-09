@@ -12,6 +12,7 @@ import java.nio.file.Path;
  * config/import-simulators.json
  *
  * folder             - Drive folder URL or bare folder id. Defaults to the folder from the request.
+ * kitsFolder         - Drive folder holding the kit files, synced into the vexbot_kits folder.
  * googleApiKey       - optional. If set, the mod uses the official Drive API v3 (reliable, handles
  *                      folders with >50 files). If blank, the mod scrapes the public folder page,
  *                      which works with zero setup but can break when Google changes their markup.
@@ -23,6 +24,7 @@ public class Config {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public String folder = "https://drive.google.com/drive/folders/1idhELV0qMMFqgJhaJCYEzFeL5wtfekVH";
+    public String kitsFolder = "https://drive.google.com/drive/folders/1qVZLb3mXPGQlEdgXmqoOonatvYz2ljZQ";
     public String googleApiKey = "";
     public boolean overwriteExisting = false;
 
@@ -43,6 +45,25 @@ public class Config {
 
     /** A shareable folder URL, whatever form {@code folder} was given in. */
     public String folderUrl() {
+        return toFolderUrl(folder);
+    }
+
+    /** Extracts the folder id from a full URL or returns the trimmed string unchanged. */
+    public String folderId() {
+        return toFolderId(folder);
+    }
+
+    /** A shareable folder URL for the kits folder. */
+    public String kitsFolderUrl() {
+        return toFolderUrl(kitsFolder);
+    }
+
+    /** The Drive folder id holding the kit files. */
+    public String kitsFolderId() {
+        return toFolderId(kitsFolder);
+    }
+
+    private static String toFolderUrl(String folder) {
         String f = folder == null ? "" : folder.trim();
         if (f.startsWith("http")) {
             return f;
@@ -50,8 +71,7 @@ public class Config {
         return "https://drive.google.com/drive/folders/" + f;
     }
 
-    /** Extracts the folder id from a full URL or returns the trimmed string unchanged. */
-    public String folderId() {
+    private static String toFolderId(String folder) {
         String f = folder == null ? "" : folder.trim();
         int i = f.indexOf("/folders/");
         if (i >= 0) {
