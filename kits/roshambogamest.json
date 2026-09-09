@@ -1,0 +1,246 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5,
+        "minecraft:sharpness": 5,
+        "minecraft:fortune": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "3": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "4": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "5": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "6": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "8": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "9": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "10": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "11": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "12": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "13": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "14": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "15": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "16": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "17": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "18": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "19": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "20": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "21": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "22": {
+    "id": "minecraft:bedrock",
+    "count": 64
+  },
+  "23": {
+    "id": "minecraft:bedrock",
+    "count": 64
+  },
+  "24": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "27": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "30": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "31": {
+    "id": "minecraft:bedrock",
+    "count": 64
+  },
+  "32": {
+    "id": "minecraft:bedrock",
+    "count": 64
+  },
+  "33": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "35": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

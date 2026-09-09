@@ -1,0 +1,222 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:bow",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:flame": 1,
+        "minecraft:infinity": 1,
+        "minecraft:power": 5
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:rail",
+    "count": 64
+  },
+  "3": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "4": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "5": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "7": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "8": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "9": {
+    "id": "minecraft:arrow",
+    "count": 64
+  },
+  "10": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "11": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "12": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "13": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "14": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "15": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "16": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "17": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "18": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "20": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "21": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "22": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "23": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "24": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "25": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "26": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "27": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:rail",
+    "count": 64
+  },
+  "30": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "31": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "32": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "33": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "34": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "35": {
+    "id": "minecraft:tnt_minecart",
+    "count": 1
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:feather_falling": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:coast"
+      },
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

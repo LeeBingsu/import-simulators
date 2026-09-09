@@ -1,0 +1,1137 @@
+{
+  "0": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_aim_3": 1
+      },
+      "minecraft:custom_name": "Stab shot"
+    }
+  },
+  "1": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "2": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sweeping_edge": 3,
+        "minecraft:sharpness": 5,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 2
+      },
+      "minecraft:damage": 749
+    }
+  },
+  "3": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:density": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:wind_burst": 1
+      },
+      "minecraft:damage": 329,
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "4": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "5": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "nuke_aim_2": 1
+      },
+      "minecraft:custom_name": "Nuke Shot"
+    }
+  },
+  "6": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:elytra",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      },
+      "minecraft:damage": 89
+    }
+  },
+  "8": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:efficiency": 5,
+        "minecraft:unbreaking": 3,
+        "minecraft:fortune": 3
+      },
+      "minecraft:damage": 449
+    }
+  },
+  "9": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      },
+      "minecraft:base_color": "purple",
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:piglin",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:half_horizontal",
+          "color": "purple"
+        }
+      ]
+    }
+  },
+  "10": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 1
+  },
+  "11": {
+    "id": "minecraft:ender_chest",
+    "count": 6
+  },
+  "12": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "13": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "14": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "nuke_aim_2": 1
+      },
+      "minecraft:custom_name": "Nuke Shot"
+    }
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "19": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "20": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "21": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "22": {
+    "id": "minecraft:red_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "nuke_aim_2": 1
+              },
+              "minecraft:custom_name": "Nuke Shot"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "23": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "nuke_aim_2": 1
+      },
+      "minecraft:custom_name": "Nuke Shot"
+    }
+  },
+  "24": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_aim_3": 1
+      },
+      "minecraft:custom_name": "Stab shot"
+    }
+  },
+  "25": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_aim_3": 1
+      },
+      "minecraft:custom_name": "Stab shot"
+    }
+  },
+  "26": {
+    "id": "minecraft:firework_rocket",
+    "count": 63,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sweeping_edge": 3,
+        "minecraft:knockback": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 2
+      },
+      "minecraft:damage": 149
+    }
+  },
+  "28": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 129,
+      "minecraft:custom_name": "Crucible",
+      "minecraft:enchantments": {
+        "minecraft:breach": 4,
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "30": {
+    "id": "minecraft:golden_apple",
+    "count": 63
+  },
+  "31": {
+    "id": "minecraft:red_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": "Stab shot"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "32": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "nuke_aim_2": 1
+      },
+      "minecraft:custom_name": "Nuke Shot"
+    }
+  },
+  "33": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_aim_3": 1
+      },
+      "minecraft:custom_name": "Stab shot"
+    }
+  },
+  "34": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:silk_touch": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:damage": 1449,
+      "minecraft:custom_name": "🔥"
+    }
+  },
+  "35": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:feather_falling": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:depth_strider": 3
+      },
+      "minecraft:damage": 93
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:swift_sneak": 3,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:damage": 69
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 258
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:respiration": 3,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:aqua_affinity": 1
+      },
+      "minecraft:damage": 79
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

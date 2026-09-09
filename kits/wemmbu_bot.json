@@ -1,0 +1,376 @@
+{
+  "0": {
+    "id": "minecraft:elytra",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:density": 5,
+        "minecraft:mending": 1,
+        "minecraft:fire_aspect": 2,
+        "minecraft:wind_burst": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "2": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:fire_aspect": 2,
+        "minecraft:unbreaking": 3,
+        "minecraft:breach": 4
+      },
+      "minecraft:custom_name": "Crucible"
+    }
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "4": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:fire_aspect": 2,
+        "minecraft:sweeping_edge": 3,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5,
+        "minecraft:knockback": 1
+      },
+      "minecraft:repair_cost": 63
+    }
+  },
+  "5": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:silk_touch": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5
+      }
+    }
+  },
+  "6": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "7": {
+    "id": "minecraft:wind_charge",
+    "count": 99,
+    "components": {
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "8": {
+    "id": "minecraft:netherite_spear",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:mending": 1,
+        "minecraft:fire_aspect": 2,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:lunge": 3
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:silk_touch": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5
+      },
+      "minecraft:custom_name": "🔥"
+    }
+  },
+  "10": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "11": {
+    "id": "minecraft:firework_rocket",
+    "count": 99,
+    "components": {
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "12": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "13": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 60,
+      "minecraft:custom_data": {
+        "OrbitalMode": "nuke"
+      },
+      "minecraft:custom_name": "Nuke shot"
+    }
+  },
+  "14": {
+    "id": "minecraft:splash_potion",
+    "count": 99,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:fire_resistance"
+      },
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 99,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strength"
+      },
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 99,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:swiftness"
+      },
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "17": {
+    "id": "minecraft:water_bucket",
+    "count": 1,
+    "components": {
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "18": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "19": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "20": {
+    "id": "minecraft:firework_rocket",
+    "count": 99,
+    "components": {
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "21": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "22": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 60,
+      "minecraft:custom_data": {
+        "OrbitalMode": "nuke"
+      },
+      "minecraft:custom_name": "Nuke shot"
+    }
+  },
+  "23": {
+    "id": "minecraft:splash_potion",
+    "count": 99,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:fire_resistance"
+      },
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "24": {
+    "id": "minecraft:splash_potion",
+    "count": 99,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strength"
+      },
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "25": {
+    "id": "minecraft:splash_potion",
+    "count": 99,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:swiftness"
+      },
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "26": {
+    "id": "minecraft:ender_pearl",
+    "count": 99,
+    "components": {
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "27": {
+    "id": "minecraft:experience_bottle",
+    "count": 99,
+    "components": {
+      "minecraft:max_stack_size": 99
+    }
+  },
+  "28": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 10
+  },
+  "29": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:piglin",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:half_horizontal",
+          "color": "purple"
+        }
+      ],
+      "minecraft:base_color": "purple"
+    }
+  },
+  "30": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "31": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 60,
+      "minecraft:custom_data": {
+        "OrbitalMode": "nuke"
+      },
+      "minecraft:custom_name": "Nuke shot"
+    }
+  },
+  "33": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "34": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "35": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:soul_speed": 3,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:depth_strider": 3,
+        "minecraft:feather_falling": 4
+      },
+      "minecraft:repair_cost": 63,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:shaper"
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:swift_sneak": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:repair_cost": 15,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:sentry"
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1
+      },
+      "minecraft:repair_cost": 7,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:host"
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:respiration": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:aqua_affinity": 1
+      },
+      "minecraft:repair_cost": 7,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:shaper"
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 10,
+    "components": {
+      "minecraft:max_stack_size": 10
+    }
+  }
+}
