@@ -12,7 +12,10 @@ import java.nio.file.Path;
  * config/import-simulators.json
  *
  * folder             - Drive folder URL or bare folder id. Defaults to the folder from the request.
- * kitsFolder         - Drive folder holding the kit files, synced into the vexbot_kits folder.
+ * kitsFolder         - Drive folder listing the kit files, synced into the vexbot_kits folder.
+ * kitsMirror         - static host tried before Drive for kit contents; Drive caps how often a
+ *                      popular public file can be downloaded, static hosting does not. Blank to
+ *                      always use Drive.
  * googleApiKey       - optional. If set, the mod uses the official Drive API v3 (reliable, handles
  *                      folders with >50 files). If blank, the mod scrapes the public folder page,
  *                      which works with zero setup but can break when Google changes their markup.
@@ -25,6 +28,7 @@ public class Config {
 
     public String folder = "https://drive.google.com/drive/folders/1idhELV0qMMFqgJhaJCYEzFeL5wtfekVH";
     public String kitsFolder = "https://drive.google.com/drive/folders/1qVZLb3mXPGQlEdgXmqoOonatvYz2ljZQ";
+    public String kitsMirror = "https://raw.githubusercontent.com/LeeBingsu/import-simulators/main/kits";
     public String googleApiKey = "";
     public boolean overwriteExisting = false;
 

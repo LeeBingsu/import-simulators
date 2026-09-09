@@ -2,7 +2,26 @@ plugins {
     id 'fabric-loom' version '1.17.20'
 }
 
-version = "${project.mod_version}+mc${project.minecraft_version}"
+// Patch number = commits on the branch, so each update ships a higher version with no manual edit.
+// Falls back to 0 when git is unavailable (e.g. building from a source archive).
+def buildNumber = "0"
+try {
+    def git = providers.exec {
+        commandLine("git", "rev-list", "--count", "HEAD")
+        workingDir(rootDir)
+        ignoreExitValue = true
+    }
+    if (git.result.get().exitValue == 0) {
+        def count = git.standardOutput.asText.get().trim()
+        if (count ==~ /\d+/) {
+            buildNumber = count
+        }
+    }
+} catch (Exception ignored) {
+    logger.lifecycle("git unavailable; using build number 0")
+}
+
+version = "${project.mod_version}.${buildNumber}+mc${project.minecraft_version}"
 group = project.maven_group
 
 base {
