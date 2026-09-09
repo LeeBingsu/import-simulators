@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screen.world.SelectWorldScreen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -113,6 +114,7 @@ public final class ImportTask {
         Path kits = FabricLoader.getInstance().getGameDir().resolve(KITS_DIR);
         int added = 0;
         int failed = 0;
+        int quotaFailed = 0;
         try {
             Files.createDirectories(kits);
             GDrive drive = new GDrive(cfg.googleApiKey);
@@ -134,15 +136,15 @@ public final class ImportTask {
                 try {
                     drive.downloadFile(f.entry().id(), f.dest(), downloadedBytes::addAndGet);
                     added++;
+                } catch (GDrive.QuotaExceededException e) {
+                    failed++;
+                    quotaFailed++;
+                    LOG.warn("[import-simulators] Skipping kit '{}': {}", f.entry().name(), e.getMessage());
+                    deleteQuietly(f.dest());
                 } catch (Exception e) {
                     failed++;
                     LOG.error("[import-simulators] Failed downloading kit '{}'", f.entry().name(), e);
-                    // Drop the partial file so the next run retries it instead of treating it as present.
-                    try {
-                        Files.deleteIfExists(f.dest());
-                    } catch (Exception ignored) {
-                        // best effort
-                    }
+                    deleteQuietly(f.dest());
                 }
             }
         } catch (Exception e) {
@@ -155,7 +157,13 @@ public final class ImportTask {
             LOG.warn("[import-simulators] Some kits did not download. Grab them by hand:");
             LOG.warn("[import-simulators]   Drive folder : {}  (copied to clipboard)", cfg.kitsFolderUrl());
             LOG.warn("[import-simulators]   Put them in  : {}", kits.toAbsolutePath());
-            progress = added + " kit(s) added, " + failed + " failed — Drive link copied";
+            if (quotaFailed == failed) {
+                // Google caps how often a popular public file can be downloaded; it frees up later,
+                // and re-running only fetches what is still missing.
+                progress = added + " added, " + failed + " hit Google's download limit — retry later";
+            } else {
+                progress = added + " kit(s) added, " + failed + " failed — Drive link copied";
+            }
         } else {
             progress = added == 0 ? "Kits already up to date" : added + " kit(s) added";
         }
@@ -182,14 +190,16 @@ public final class ImportTask {
 
     private static void run(MinecraftClient client, Screen returnScreen, List<GDrive.Entry> maps, Config cfg) {
         int imported = 0;
+        int quotaBlocked = 0;
         List<String> failedMaps = new ArrayList<>();
         String folderUrl = cfg.folderUrl();
         Path saves = savesDir();
         try {
             GDrive drive = new GDrive(cfg.googleApiKey);
             Files.createDirectories(saves);
+            // Kept between runs: a map that failed part-way resumes instead of re-fetching
+            // everything, which matters because Google caps how often a file can be downloaded.
             Path tmpRoot = saves.resolve(".import-simulators-tmp");
-            deleteRecursive(tmpRoot);
             Files.createDirectories(tmpRoot);
 
             progress = "Calculating download size…";
@@ -222,13 +232,19 @@ public final class ImportTask {
                     Files.move(stage, target);
                     imported++;
                     LOG.info("[import-simulators] Imported '{}' -> saves/{}", safe, target.getFileName());
+                } catch (GDrive.QuotaExceededException e) {
+                    failedMaps.add(safe);
+                    quotaBlocked++;
+                    LOG.warn("[import-simulators] '{}' stopped at Google's download limit; "
+                            + "what downloaded is kept and will resume next run", safe);
                 } catch (Exception e) {
                     failedMaps.add(safe);
                     LOG.error("[import-simulators] Failed importing '{}'", safe, e);
-                    deleteRecursive(stage);
                 }
             }
-            deleteRecursive(tmpRoot);
+            if (failedMaps.isEmpty()) {
+                deleteRecursive(tmpRoot);
+            }
         } catch (Exception e) {
             LOG.error("[import-simulators] Import aborted", e);
             if (failedMaps.isEmpty()) {
@@ -240,7 +256,9 @@ public final class ImportTask {
         final List<String> ff = List.copyOf(failedMaps);
         if (!ff.isEmpty()) {
             announceManual(client, folderUrl, saves, ff);
-            progress = fi + " imported, " + ff.size() + " failed — Drive link copied";
+            progress = quotaBlocked == ff.size()
+                    ? fi + " imported, " + ff.size() + " hit Google's download limit — retry later"
+                    : fi + " imported, " + ff.size() + " failed — Drive link copied";
         } else {
             progress = fi + " map(s) imported";
         }
@@ -287,10 +305,27 @@ public final class ImportTask {
             Path child = dir.resolve(safe);
             if (e.isFolder()) {
                 downloadFolderRecursive(drive, e.id(), child, label, idx, total);
+            } else if (isComplete(child, e.size())) {
+                downloadedBytes.addAndGet(e.size());   // carried over from an earlier run
             } else {
                 progress = String.format(Locale.ROOT, "Importing %d/%d: %s — %s", idx, total, label, safe);
-                drive.downloadFile(e.id(), child, downloadedBytes::addAndGet);
+                try {
+                    drive.downloadFile(e.id(), child, downloadedBytes::addAndGet);
+                } catch (Exception ex) {
+                    // Never leave a partial behind; it would look complete to the next run.
+                    deleteQuietly(child);
+                    throw ex;
+                }
             }
+        }
+    }
+
+    /** True when a previous run already fetched this file in full. */
+    private static boolean isComplete(Path file, long expectedSize) {
+        try {
+            return expectedSize > 0 && Files.size(file) == expectedSize;
+        } catch (IOException e) {
+            return false;   // missing or unreadable
         }
     }
 
@@ -321,6 +356,14 @@ public final class ImportTask {
             p = parent.resolve(name + " (" + (i++) + ")");
         }
         return p;
+    }
+
+    private static void deleteQuietly(Path p) {
+        try {
+            Files.deleteIfExists(p);
+        } catch (Exception ignored) {
+            // best effort
+        }
     }
 
     private static void deleteRecursive(Path p) {

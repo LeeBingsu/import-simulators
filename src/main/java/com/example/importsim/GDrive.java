@@ -48,6 +48,7 @@ public class GDrive {
 
     /** Public key embedded in the Drive web client; only usable with an X-Origin of drive.google.com. */
     private static final String WEB_KEY = "AIzaSyC1qbk75NzWBvSaDh6KnsjjA9pIrP4lYIE";
+    private static final String DRIVE_ORIGIN = "https://drive.google.com";
 
     private static final Pattern IVD = Pattern.compile("window\\['_DRIVE_ivd'] = '([^']+)'");
 
@@ -190,15 +191,70 @@ public class GDrive {
 
     // ------------------------------------------------------------------ file download
 
+    /** Google refused because the file's download quota is spent; retrying right now cannot help. */
+    public static class QuotaExceededException extends IOException {
+        public QuotaExceededException(String message) {
+            super(message);
+        }
+    }
+
     public void downloadFile(String fileId, Path dest, LongConsumer onBytes) throws IOException, InterruptedException {
         Files.createDirectories(dest.getParent());
-
-        if (!apiKey.isEmpty()) {
-            fetchToFile("https://www.googleapis.com/drive/v3/files/" + fileId
-                    + "?alt=media&supportsAllDrives=true&key=" + enc(apiKey), dest, onBytes);
-            return;
+        try {
+            apiDownload(fileId, dest, onBytes);
+        } catch (QuotaExceededException e) {
+            // drive.usercontent enforces the same quota even more tightly, so don't spend a request on it.
+            throw e;
+        } catch (IOException apiError) {
+            try {
+                usercontentDownload(fileId, dest, onBytes);
+            } catch (IOException fallbackError) {
+                throw apiError;
+            }
         }
+    }
 
+    /**
+     * Drive API download — the user's key when set, otherwise the Drive web app's public key, which
+     * only works alongside the web origin headers. Far less quota-limited than the usercontent
+     * download endpoint, which is why it is tried first.
+     */
+    private void apiDownload(String fileId, Path dest, LongConsumer onBytes)
+            throws IOException, InterruptedException {
+        String url = "https://www.googleapis.com/drive/v3/files/" + fileId
+                + "?alt=media&supportsAllDrives=true&key=" + enc(apiKey.isEmpty() ? WEB_KEY : apiKey);
+        HttpRequest.Builder b = HttpRequest.newBuilder(URI.create(url))
+                .header("User-Agent", UA)
+                .header("Accept", "*/*")
+                .timeout(Duration.ofMinutes(15))
+                .GET();
+        if (apiKey.isEmpty()) {
+            b.header("X-Origin", DRIVE_ORIGIN).header("Referer", DRIVE_ORIGIN + "/");
+        }
+        HttpRequest req = b.build();
+
+        for (int attempt = 1; ; attempt++) {
+            HttpResponse<InputStream> resp = http.send(req, HttpResponse.BodyHandlers.ofInputStream());
+            int sc = resp.statusCode();
+            if (sc == 200) {
+                try (InputStream in = resp.body()) {
+                    copy(in, dest, onBytes);
+                }
+                return;
+            }
+            String body = readAndClose(resp.body());
+            if (sc == 403 && body.contains("download quota")) {
+                throw new QuotaExceededException("Google's download quota for this file is used up.");
+            }
+            if (attempt >= 4 || !(sc == 429 || sc == 403 || sc / 100 == 5)) {
+                throw new IOException("Drive API download failed (HTTP " + sc + "): " + trim(body, 300));
+            }
+            Thread.sleep(1000L * attempt);
+        }
+    }
+
+    private void usercontentDownload(String fileId, Path dest, LongConsumer onBytes)
+            throws IOException, InterruptedException {
         String url = "https://drive.usercontent.google.com/download?id=" + fileId + "&export=download&confirm=t";
         HttpResponse<InputStream> resp = sendWithRetry(get(url), HttpResponse.BodyHandlers.ofInputStream());
         String ct = resp.headers().firstValue("content-type").orElse("");
@@ -209,8 +265,11 @@ public class GDrive {
             return;
         }
 
-        // Large-file virus-scan interstitial: pull the confirm form and retry once.
-        String html = new String(resp.body().readAllBytes(), StandardCharsets.UTF_8);
+        // Either the large-file virus-scan interstitial or a quota page — both arrive as HTML 200.
+        String html = readAndClose(resp.body());
+        if (html.contains("Quota exceeded")) {
+            throw new QuotaExceededException("Google's download quota for this file is used up.");
+        }
         String action = firstGroup(Pattern.compile("action=\"([^\"]+)\""), html);
         String confirm = firstGroup(Pattern.compile("name=\"confirm\"\\s+value=\"([^\"]*)\""), html);
         String uuid = firstGroup(Pattern.compile("name=\"uuid\"\\s+value=\"([^\"]*)\""), html);
@@ -221,6 +280,25 @@ public class GDrive {
                 + "&confirm=" + (confirm != null ? confirm : "t")
                 + (uuid != null ? "&uuid=" + uuid : "");
         fetchToFile(retry, dest, onBytes);
+    }
+
+    /** Discarded responses hold their connection open until the body stream is closed. */
+    private static void closeIfStream(Object body) {
+        if (body instanceof InputStream in) {
+            try {
+                in.close();
+            } catch (IOException ignored) {
+                // best effort
+            }
+        }
+    }
+
+    private static String readAndClose(InputStream in) {
+        try (InputStream body = in) {
+            return new String(body.readAllBytes(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            return "";
+        }
     }
 
     private void fetchToFile(String url, Path dest, LongConsumer onBytes) throws IOException, InterruptedException {
@@ -257,6 +335,7 @@ public class GDrive {
                 HttpResponse<T> resp = http.send(req, handler);
                 int sc = resp.statusCode();
                 if ((sc == 429 || sc == 403 || sc / 100 == 5) && attempt < 4) {
+                    closeIfStream(resp.body());
                     Thread.sleep(1000L * attempt);
                     continue;
                 }
