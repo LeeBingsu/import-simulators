@@ -1,0 +1,387 @@
+{
+  "0": {
+    "id": "minecraft:diamond_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 2,
+        "minecraft:knockback": 1
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:diamond_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "3": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 16
+  },
+  "4": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "5": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "6": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "stab_aim_3_inf": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3 (aim infinity)",
+        "italic": false
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "8": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "9": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "11": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "13": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "14": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "15": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "18": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "20": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "23": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "24": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "27": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "30": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "31": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "33": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_3": 1
+      },
+      "minecraft:custom_name": {
+        "text": "STAB POWER 3",
+        "italic": false
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "35": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:diamond_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:diamond_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:diamond_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

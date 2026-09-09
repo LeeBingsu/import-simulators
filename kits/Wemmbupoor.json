@@ -1,0 +1,184 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:sweeping_edge": 3,
+        "minecraft:fire_aspect": 2
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:density": 5,
+        "minecraft:wind_burst": 1
+      },
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "2": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:breach": 4
+      },
+      "minecraft:custom_name": "Crucible"
+    }
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "4": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:oak_planks",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:golden_carrot",
+    "count": 19
+  },
+  "7": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "8": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:silk_touch": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:shield",
+    "count": 1
+  },
+  "15": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "16": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "17": {
+    "id": "minecraft:oak_planks",
+    "count": 64
+  },
+  "18": {
+    "id": "minecraft:crafting_table",
+    "count": 1
+  },
+  "23": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "24": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "25": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "26": {
+    "id": "minecraft:oak_planks",
+    "count": 64
+  },
+  "27": {
+    "id": "minecraft:egg",
+    "count": 16
+  },
+  "32": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "33": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "34": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "35": {
+    "id": "minecraft:oak_planks",
+    "count": 64
+  },
+  "36": {
+    "id": "minecraft:iron_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:feather_falling": 4,
+        "minecraft:protection": 3,
+        "minecraft:unbreaking": 2
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:diamond_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:diamond_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 2,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:skull",
+          "color": "white"
+        }
+      ],
+      "minecraft:base_color": "blue"
+    }
+  }
+}

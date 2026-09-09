@@ -1,0 +1,38 @@
+{
+  "0": {
+    "id": "minecraft:stick",
+    "count": 1
+  },
+  "1": {
+    "id": "minecraft:rotten_flesh",
+    "count": 64
+  },
+  "9": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "18": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "36": {
+    "id": "minecraft:leather_boots",
+    "count": 1
+  },
+  "37": {
+    "id": "minecraft:leather_leggings",
+    "count": 1
+  },
+  "38": {
+    "id": "minecraft:leather_chestplate",
+    "count": 1
+  },
+  "39": {
+    "id": "minecraft:leather_helmet",
+    "count": 1
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

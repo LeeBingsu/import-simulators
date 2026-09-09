@@ -1,0 +1,264 @@
+{
+  "0": {
+    "id": "minecraft:diamond_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:diamond_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "8": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "9": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_turtle_master"
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_turtle_master"
+      }
+    }
+  },
+  "11": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_turtle_master"
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "13": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "14": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "20": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "23": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "30": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "31": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:diamond_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:diamond_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:repair_cost": 1,
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:diamond_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:repair_cost": 1,
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:small_stripes",
+          "color": "cyan"
+        },
+        {
+          "pattern": "minecraft:flower",
+          "color": "light_blue"
+        },
+        {
+          "pattern": "minecraft:triangle_top",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:flower",
+          "color": "gray"
+        },
+        {
+          "pattern": "minecraft:creeper",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:curly_border",
+          "color": "black"
+        }
+      ],
+      "minecraft:base_color": "black"
+    }
+  }
+}

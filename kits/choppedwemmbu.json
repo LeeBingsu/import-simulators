@@ -1,0 +1,155 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 2,
+        "minecraft:sweeping_edge": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:density": 5,
+        "minecraft:wind_burst": 1
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "3": {
+    "id": "minecraft:cooked_mutton",
+    "count": 20
+  },
+  "4": {
+    "id": "minecraft:golden_apple",
+    "count": 5
+  },
+  "5": {
+    "id": "minecraft:cobblestone",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "7": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "8": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "15": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "16": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:carrot",
+    "count": 64
+  },
+  "24": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "25": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "26": {
+    "id": "minecraft:flint_and_steel",
+    "count": 1
+  },
+  "29": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "31": {
+    "id": "minecraft:bread",
+    "count": 24
+  },
+  "33": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "34": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "35": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "36": {
+    "id": "minecraft:diamond_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

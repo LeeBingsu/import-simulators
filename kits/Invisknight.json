@@ -1,0 +1,316 @@
+{
+  "0": {
+    "id": "minecraft:infested_deepslate",
+    "count": 64
+  },
+  "1": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:wind_burst": 1,
+        "minecraft:density": 5
+      },
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "2": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "4": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:sweeping_edge": 3,
+        "minecraft:fire_aspect": 2
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "6": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "8": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "11": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "13": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "14": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "20": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "22": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "23": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "24": {
+    "id": "minecraft:oak_planks",
+    "count": 64
+  },
+  "25": {
+    "id": "minecraft:oak_planks",
+    "count": 64
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "30": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "31": {
+    "id": "minecraft:infested_deepslate",
+    "count": 64
+  },
+  "34": {
+    "id": "minecraft:oak_planks",
+    "count": 64
+  },
+  "35": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:diamond_boots",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:feather_falling": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:diamond_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:swift_sneak": 3
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:diamond_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:trident",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:riptide": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  }
+}

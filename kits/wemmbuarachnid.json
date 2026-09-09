@@ -1,0 +1,291 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:wind_burst": 1,
+        "minecraft:mending": 1,
+        "minecraft:density": 5
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "3": {
+    "id": "minecraft:netherite_spear",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "4": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "5": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "6": {
+    "id": "minecraft:elytra",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "8": {
+    "id": "minecraft:firework_rocket",
+    "count": 64
+  },
+  "9": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "11": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "13": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "14": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "17": {
+    "id": "minecraft:diamond_hoe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "20": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "23": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "25": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "26": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "27": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "30": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "31": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "32": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "33": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "34": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "35": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1
+      },
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:raiser"
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1
+      },
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:sentry"
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1
+      },
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:raiser"
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

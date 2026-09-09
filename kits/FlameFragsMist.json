@@ -1,0 +1,346 @@
+{
+  "0": {
+    "id": "minecraft:netherite_spear",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3,
+        "minecraft:lunge": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:sharpness": 5,
+        "minecraft:knockback": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:sweeping_edge": 3
+      },
+      "minecraft:custom_name": "The Flame",
+      "minecraft:repair_cost": 1
+    }
+  },
+  "2": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "4": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "5": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "6": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:custom_name": "Inferno"
+    }
+  },
+  "7": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "8": {
+    "id": "minecraft:cooked_beef",
+    "count": 64
+  },
+  "9": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "10": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "11": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "12": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "13": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "14": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "19": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "20": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "22": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "23": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "24": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3,
+        "minecraft:sweeping_edge": 3
+      },
+      "minecraft:custom_name": "Fragger"
+    }
+  },
+  "28": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "29": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "30": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "31": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "32": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "33": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "35": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:feather_falling": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:gold",
+        "pattern": "minecraft:silence"
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:gold",
+        "pattern": "minecraft:rib"
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:rib"
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:rib"
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:mojang",
+          "color": "yellow"
+        },
+        {
+          "pattern": "minecraft:triangle_bottom",
+          "color": "yellow"
+        },
+        {
+          "pattern": "minecraft:rhombus",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:gradient_up",
+          "color": "red"
+        },
+        {
+          "pattern": "minecraft:triangles_bottom",
+          "color": "yellow"
+        }
+      ],
+      "minecraft:base_color": "black"
+    }
+  }
+}

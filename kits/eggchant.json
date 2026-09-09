@@ -1,0 +1,224 @@
+{
+  "0": {
+    "id": "minecraft:diamond_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:fire_aspect": 2,
+        "minecraft:knockback": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:bow",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:infinity": 1,
+        "minecraft:power": 5,
+        "minecraft:punch": 2,
+        "minecraft:flame": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "3": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 5
+  },
+  "4": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "7": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "8": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "9": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "11": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "15": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "16": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "17": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "18": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "20": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "24": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "25": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "26": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "27": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "31": {
+    "id": "minecraft:arrow",
+    "count": 64
+  },
+  "33": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "34": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "35": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "36": {
+    "id": "minecraft:diamond_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:diamond_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:diamond_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

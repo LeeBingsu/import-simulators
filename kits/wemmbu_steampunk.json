@@ -1,0 +1,1120 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:looting": 3,
+        "minecraft:mending": 1,
+        "minecraft:sweeping_edge": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "2": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:density": 5,
+        "minecraft:mending": 1,
+        "minecraft:fire_aspect": 2,
+        "minecraft:unbreaking": 3,
+        "minecraft:wind_burst": 1
+      },
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 62
+  },
+  "4": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5,
+        "minecraft:silk_touch": 1
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:elytra",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "6": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "7": {
+    "id": "minecraft:netherite_spear",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:lunge": 3,
+        "minecraft:mending": 1,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "8": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "10": {
+    "id": "minecraft:pale_oak_log",
+    "count": 64
+  },
+  "11": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:silk_touch": 1
+      },
+      "minecraft:custom_name": "🔥"
+    }
+  },
+  "12": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "13": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:stripe_middle",
+          "color": "purple"
+        },
+        {
+          "pattern": "minecraft:cross",
+          "color": "white"
+        },
+        {
+          "pattern": "minecraft:triangle_bottom",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:triangle_top",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:flow",
+          "color": "white"
+        }
+      ],
+      "minecraft:base_color": "black"
+    }
+  },
+  "14": {
+    "id": "minecraft:shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "restock",
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:ender_chest",
+            "count": 64
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:breeze_rod",
+            "count": 64
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "19": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "20": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:blue_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 63,
+              "minecraft:custom_data": {
+                "stab_aim_3": 1
+              },
+              "minecraft:custom_name": {
+                "text": "STAB POWER 3 (aim)",
+                "italic": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "22": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "23": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "24": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "28": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "29": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "30": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "31": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "32": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "33": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "35": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:feather_falling": 4,
+        "minecraft:unbreaking": 3,
+        "minecraft:depth_strider": 3,
+        "minecraft:soul_speed": 3
+      },
+      "minecraft:repair_cost": 63,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:shaper"
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:swift_sneak": 3,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:repair_cost": 15,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:sentry"
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      },
+      "minecraft:repair_cost": 7,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:host"
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:respiration": 3,
+        "minecraft:aqua_affinity": 1,
+        "minecraft:mending": 1,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:repair_cost": 7,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:shaper"
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}
