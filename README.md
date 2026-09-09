@@ -137,4 +137,4 @@ src/main/java/com/example/importsim/
     ImportTask.java               background download of the chosen maps + progress
 ```
 
-MIT.
+[GPL-3.0-or-later](LICENSE).
