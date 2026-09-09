@@ -16,6 +16,9 @@ import java.nio.file.Path;
  * kitsMirror         - static host tried before Drive for kit contents; Drive caps how often a
  *                      popular public file can be downloaded, static hosting does not. Blank to
  *                      always use Drive.
+ * mapsRelease        - GitHub release holding one zip per map, tried before walking the Drive
+ *                      folder. Same reason as kitsMirror, and it pulls a world in one request
+ *                      instead of hundreds. Blank to always use Drive.
  * googleApiKey       - optional. If set, the mod uses the official Drive API v3 (reliable, handles
  *                      folders with >50 files). If blank, the mod scrapes the public folder page,
  *                      which works with zero setup but can break when Google changes their markup.
@@ -29,6 +32,8 @@ public class Config {
     public String folder = "https://drive.google.com/drive/folders/1idhELV0qMMFqgJhaJCYEzFeL5wtfekVH";
     public String kitsFolder = "https://drive.google.com/drive/folders/1qVZLb3mXPGQlEdgXmqoOonatvYz2ljZQ";
     public String kitsMirror = "https://raw.githubusercontent.com/LeeBingsu/import-simulators/main/kits";
+    public String mapsRelease =
+            "https://api.github.com/repos/LeeBingsu/import-simulators/releases/tags/maps-v1";
     public String googleApiKey = "";
     public boolean overwriteExisting = false;
 

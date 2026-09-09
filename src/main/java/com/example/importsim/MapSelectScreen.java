@@ -4,6 +4,7 @@ import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +39,8 @@ public class MapSelectScreen extends Screen {
     private ButtonWidget downloadButton;
     private ButtonWidget kitsButton;
     private boolean wasRunning;
-    private String lastStatus;   // result of the import that just finished
+    private String lastStatus;          // result of the import that just finished
+    private String lastFailureDetail;   // why it failed, when it did
 
     public MapSelectScreen(Screen parent) {
         super(Text.literal("Import Simulators"));
@@ -48,7 +50,7 @@ public class MapSelectScreen extends Screen {
     @Override
     protected void init() {
         this.cfg = Config.load();
-        this.listTop = 40;
+        this.listTop = 52;
         this.listBottom = this.height - 40;
 
         if (maps == null && loadError == null) {
@@ -158,6 +160,18 @@ public class MapSelectScreen extends Screen {
         }
     }
 
+    /** Draws the failure reason, wrapped to the screen, so the player sees the actual cause. */
+    private void drawReason(DrawContext ctx, String reason, int y) {
+        if (reason == null || reason.isEmpty()) {
+            return;
+        }
+        int max = this.width - 20;
+        for (OrderedText line : this.textRenderer.wrapLines(Text.literal(reason), max)) {
+            ctx.drawCenteredTextWithShadow(this.textRenderer, line, this.width / 2, y, 0xFFFF5555);
+            y += 10;
+        }
+    }
+
     private int listX() {
         return this.width / 2 - 160;
     }
@@ -204,7 +218,8 @@ public class MapSelectScreen extends Screen {
 
         if (!ImportTask.isRunning() && lastStatus != null) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(lastStatus),
-                    this.width / 2, 28, 0xFFFFAA00);
+                    this.width / 2, 27, 0xFFFFAA00);
+            drawReason(ctx, lastFailureDetail, 38);
         }
 
         if (ImportTask.isRunning()) {
@@ -231,6 +246,7 @@ public class MapSelectScreen extends Screen {
                     : ImportTask.humanSize(done) + " downloaded";
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(sizeText),
                     this.width / 2, by + barH + 6, 0xAAAAAA);
+            drawReason(ctx, ImportTask.failureDetail(), by + barH + 18);
             return;
         }
         if (loadError != null) {
@@ -292,6 +308,7 @@ public class MapSelectScreen extends Screen {
         if (wasRunning && !running) {
             refreshAlreadyImported();
             lastStatus = ImportTask.progress();
+            lastFailureDetail = ImportTask.failureDetail();
         }
         wasRunning = running;
         refreshButtons();

@@ -29,6 +29,7 @@ public final class ImportTask {
     private static final Logger LOG = LoggerFactory.getLogger("import-simulators");
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
     private static volatile String progress = "";
+    private static volatile String failureDetail = "";
     private static volatile long totalBytes = 0;
     private static final AtomicLong downloadedBytes = new AtomicLong();
 
@@ -41,6 +42,19 @@ public final class ImportTask {
 
     public static String progress() {
         return progress;
+    }
+
+    /** Why the last failure happened, in words a player can act on. Empty when nothing failed. */
+    public static String failureDetail() {
+        return failureDetail;
+    }
+
+    private static final String QUOTA_DETAIL =
+            "Google caps how often these files can be downloaded — it frees up in about a day";
+
+    private static String describe(String what, Exception e) {
+        String msg = e.getMessage() == null ? e.toString() : e.getMessage();
+        return what + " — " + msg;
     }
 
     /** Total bytes to download across all selected maps, or 0 while still being calculated. */
@@ -87,6 +101,7 @@ public final class ImportTask {
             return;
         }
         progress = "Starting…";
+        failureDetail = "";
         totalBytes = 0;
         downloadedBytes.set(0);
         Thread t = new Thread(() -> run(client, returnScreen, maps, cfg), "import-simulators");
@@ -103,6 +118,7 @@ public final class ImportTask {
             return;
         }
         progress = "Starting…";
+        failureDetail = "";
         totalBytes = 0;
         downloadedBytes.set(0);
         Thread t = new Thread(() -> runKits(client, returnScreen, cfg), "import-simulators-kits");
@@ -143,10 +159,12 @@ public final class ImportTask {
                 } catch (GDrive.QuotaExceededException e) {
                     failed++;
                     quotaFailed++;
+                    failureDetail = QUOTA_DETAIL;
                     LOG.warn("[import-simulators] Skipping kit '{}': {}", f.entry().name(), e.getMessage());
                     deleteQuietly(f.dest());
                 } catch (Exception e) {
                     failed++;
+                    failureDetail = describe(f.entry().name(), e);
                     LOG.error("[import-simulators] Failed downloading kit '{}'", f.entry().name(), e);
                     deleteQuietly(f.dest());
                 }
@@ -154,6 +172,7 @@ public final class ImportTask {
         } catch (Exception e) {
             LOG.error("[import-simulators] Kit import aborted", e);
             failed++;
+            failureDetail = describe("Could not read the kit list", e);
         }
 
         if (failed > 0) {
@@ -200,6 +219,7 @@ public final class ImportTask {
         Path saves = savesDir();
         try {
             GDrive drive = new GDrive(cfg.googleApiKey);
+            MapRelease release = new MapRelease(cfg.mapsRelease);
             Files.createDirectories(saves);
             // Kept between runs: a map that failed part-way resumes instead of re-fetching
             // everything, which matters because Google caps how often a file can be downloaded.
@@ -209,6 +229,11 @@ public final class ImportTask {
             progress = "Calculating download size…";
             long size = 0;
             for (GDrive.Entry mf : maps) {
+                MapRelease.Asset asset = release.find(mf.name());
+                if (asset != null) {
+                    size += asset.size();
+                    continue;
+                }
                 try {
                     size += sumSizes(drive, mf.id());
                 } catch (Exception e) {
@@ -224,7 +249,17 @@ public final class ImportTask {
                 progress = String.format(Locale.ROOT, "Importing %d/%d: %s", i + 1, n, safe);
                 Path stage = tmpRoot.resolve(safe);
                 try {
-                    downloadFolderRecursive(drive, mf.id(), stage, safe, i + 1, n);
+                    MapRelease.Asset asset = release.find(mf.name());
+                    Path world;
+                    if (asset != null) {
+                        // One request for the whole world, and no per-file download cap.
+                        deleteRecursive(stage);
+                        release.downloadInto(asset, stage, downloadedBytes::addAndGet);
+                        world = unwrapSingleFolder(stage);
+                    } else {
+                        downloadFolderRecursive(drive, mf.id(), stage, safe, i + 1, n);
+                        world = stage;
+                    }
 
                     Path target;
                     if (cfg.overwriteExisting) {
@@ -233,16 +268,21 @@ public final class ImportTask {
                     } else {
                         target = uniqueDir(saves, safe);
                     }
-                    Files.move(stage, target);
+                    Files.move(world, target);
+                    if (!world.equals(stage)) {
+                        deleteRecursive(stage);
+                    }
                     imported++;
                     LOG.info("[import-simulators] Imported '{}' -> saves/{}", safe, target.getFileName());
                 } catch (GDrive.QuotaExceededException e) {
                     failedMaps.add(safe);
                     quotaBlocked++;
+                    failureDetail = QUOTA_DETAIL;
                     LOG.warn("[import-simulators] '{}' stopped at Google's download limit; "
                             + "what downloaded is kept and will resume next run", safe);
                 } catch (Exception e) {
                     failedMaps.add(safe);
+                    failureDetail = describe(safe, e);
                     LOG.error("[import-simulators] Failed importing '{}'", safe, e);
                 }
             }
@@ -251,6 +291,7 @@ public final class ImportTask {
             }
         } catch (Exception e) {
             LOG.error("[import-simulators] Import aborted", e);
+            failureDetail = describe("Import aborted", e);
             if (failedMaps.isEmpty()) {
                 failedMaps.add("(all)");
             }
@@ -322,6 +363,20 @@ public final class ImportTask {
                 }
             }
         }
+    }
+
+    /**
+     * A map zip wraps the world in its own folder, so the world to import is that inner folder
+     * rather than the extraction directory. Falls back to the directory itself for a flat zip.
+     */
+    private static Path unwrapSingleFolder(Path dir) throws IOException {
+        try (Stream<Path> entries = Files.list(dir)) {
+            List<Path> found = entries.toList();
+            if (found.size() == 1 && Files.isDirectory(found.get(0))) {
+                return found.get(0);
+            }
+        }
+        return dir;
     }
 
     /** True when the file is already on disk, matching the declared size when one was reported. */
