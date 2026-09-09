@@ -219,6 +219,7 @@ public final class ImportTask {
         Path saves = savesDir();
         try {
             GDrive drive = new GDrive(cfg.googleApiKey);
+            MapRelease release = new MapRelease(cfg.mapsRelease);
             Files.createDirectories(saves);
             // Kept between runs: a map that failed part-way resumes instead of re-fetching
             // everything, which matters because Google caps how often a file can be downloaded.
@@ -228,6 +229,11 @@ public final class ImportTask {
             progress = "Calculating download size…";
             long size = 0;
             for (GDrive.Entry mf : maps) {
+                MapRelease.Asset asset = release.find(mf.name());
+                if (asset != null) {
+                    size += asset.size();
+                    continue;
+                }
                 try {
                     size += sumSizes(drive, mf.id());
                 } catch (Exception e) {
@@ -243,7 +249,17 @@ public final class ImportTask {
                 progress = String.format(Locale.ROOT, "Importing %d/%d: %s", i + 1, n, safe);
                 Path stage = tmpRoot.resolve(safe);
                 try {
-                    downloadFolderRecursive(drive, mf.id(), stage, safe, i + 1, n);
+                    MapRelease.Asset asset = release.find(mf.name());
+                    Path world;
+                    if (asset != null) {
+                        // One request for the whole world, and no per-file download cap.
+                        deleteRecursive(stage);
+                        release.downloadInto(asset, stage, downloadedBytes::addAndGet);
+                        world = unwrapSingleFolder(stage);
+                    } else {
+                        downloadFolderRecursive(drive, mf.id(), stage, safe, i + 1, n);
+                        world = stage;
+                    }
 
                     Path target;
                     if (cfg.overwriteExisting) {
@@ -252,7 +268,10 @@ public final class ImportTask {
                     } else {
                         target = uniqueDir(saves, safe);
                     }
-                    Files.move(stage, target);
+                    Files.move(world, target);
+                    if (!world.equals(stage)) {
+                        deleteRecursive(stage);
+                    }
                     imported++;
                     LOG.info("[import-simulators] Imported '{}' -> saves/{}", safe, target.getFileName());
                 } catch (GDrive.QuotaExceededException e) {
@@ -344,6 +363,20 @@ public final class ImportTask {
                 }
             }
         }
+    }
+
+    /**
+     * A map zip wraps the world in its own folder, so the world to import is that inner folder
+     * rather than the extraction directory. Falls back to the directory itself for a flat zip.
+     */
+    private static Path unwrapSingleFolder(Path dir) throws IOException {
+        try (Stream<Path> entries = Files.list(dir)) {
+            List<Path> found = entries.toList();
+            if (found.size() == 1 && Files.isDirectory(found.get(0))) {
+                return found.get(0);
+            }
+        }
+        return dir;
     }
 
     /** True when the file is already on disk, matching the declared size when one was reported. */
