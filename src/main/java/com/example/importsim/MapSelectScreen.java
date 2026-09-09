@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,6 +28,7 @@ public class MapSelectScreen extends Screen {
     private volatile List<GDrive.Entry> maps;   // null while loading
     private volatile String loadError;
     private final Set<String> selected = new LinkedHashSet<>();   // folder ids
+    private volatile Set<String> alreadyImported = Set.of();      // folder ids already in saves/
 
     private int scroll;
     private final int rowHeight = 14;
@@ -34,6 +36,9 @@ public class MapSelectScreen extends Screen {
     private int listBottom;
 
     private ButtonWidget downloadButton;
+    private ButtonWidget kitsButton;
+    private boolean wasRunning;
+    private String lastStatus;   // result of the import that just finished
 
     public MapSelectScreen(Screen parent) {
         super(Text.literal("Import Simulators"));
@@ -48,34 +53,40 @@ public class MapSelectScreen extends Screen {
 
         if (maps == null && loadError == null) {
             startLoad();
+        } else {
+            refreshAlreadyImported();
         }
 
-        int bw = 90;
-        int gap = 6;
-        int totalW = bw * 4 + gap * 3;
+        int bw = 74;
+        int gap = 5;
+        int totalW = bw * 5 + gap * 4;
         int x = this.width / 2 - totalW / 2;
         int y = this.height - 30;
 
         addDrawableChild(ButtonWidget.builder(Text.literal("All"), b -> {
             if (maps != null) {
                 maps.forEach(e -> selected.add(e.id()));
-                refreshDownloadButton();
+                refreshButtons();
             }
         }).dimensions(x, y, bw, 20).build());
 
         addDrawableChild(ButtonWidget.builder(Text.literal("None"), b -> {
             selected.clear();
-            refreshDownloadButton();
+            refreshButtons();
         }).dimensions(x + (bw + gap), y, bw, 20).build());
 
         downloadButton = ButtonWidget.builder(Text.literal("Download"), b -> startDownload())
                 .dimensions(x + 2 * (bw + gap), y, bw, 20).build();
         addDrawableChild(downloadButton);
 
-        addDrawableChild(ButtonWidget.builder(Text.literal("Cancel"), b -> this.client.setScreen(parent))
-                .dimensions(x + 3 * (bw + gap), y, bw, 20).build());
+        kitsButton = ButtonWidget.builder(Text.literal("Import Kits"), b -> startKitsImport())
+                .dimensions(x + 3 * (bw + gap), y, bw, 20).build();
+        addDrawableChild(kitsButton);
 
-        refreshDownloadButton();
+        addDrawableChild(ButtonWidget.builder(Text.literal("Cancel"), b -> this.client.setScreen(parent))
+                .dimensions(x + 4 * (bw + gap), y, bw, 20).build());
+
+        refreshButtons();
     }
 
     private void startLoad() {
@@ -90,6 +101,7 @@ public class MapSelectScreen extends Screen {
                 }
                 folders.sort((a, b) -> a.name().compareToIgnoreCase(b.name()));
                 this.maps = folders;
+                refreshAlreadyImported();
             } catch (Exception e) {
                 LOG.error("[import-simulators] Failed to load map list", e);
                 this.loadError = e.getMessage() == null ? e.toString() : e.getMessage();
@@ -112,12 +124,38 @@ public class MapSelectScreen extends Screen {
         ImportTask.launch(this.client, parent, chosen, cfg);
     }
 
-    private void refreshDownloadButton() {
+    private void startKitsImport() {
+        if (ImportTask.isRunning()) {
+            return;
+        }
+        // Come back here afterwards so the player can carry on picking maps.
+        ImportTask.launchKits(this.client, this, cfg);
+    }
+
+    /** Re-checks which maps already sit in saves/, so their rows can be marked as re-downloads. */
+    private void refreshAlreadyImported() {
+        List<GDrive.Entry> list = maps;
+        if (list == null) {
+            return;
+        }
+        Set<String> found = new HashSet<>();
+        for (GDrive.Entry e : list) {
+            if (ImportTask.isAlreadyImported(e.name())) {
+                found.add(e.id());
+            }
+        }
+        alreadyImported = found;
+    }
+
+    private void refreshButtons() {
         if (downloadButton == null) {
             return;
         }
         downloadButton.setMessage(Text.literal("Download (" + selected.size() + ")"));
         downloadButton.active = !selected.isEmpty() && maps != null && !ImportTask.isRunning();
+        if (kitsButton != null) {
+            kitsButton.active = !ImportTask.isRunning();
+        }
     }
 
     private int listX() {
@@ -141,7 +179,7 @@ public class MapSelectScreen extends Screen {
                 if (!selected.remove(id)) {
                     selected.add(id);
                 }
-                refreshDownloadButton();
+                refreshButtons();
                 return true;
             }
         }
@@ -163,6 +201,11 @@ public class MapSelectScreen extends Screen {
     public void render(DrawContext ctx, int mouseX, int mouseY, float delta) {
         super.render(ctx, mouseX, mouseY, delta);
         ctx.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 15, 0xFFFFFF);
+
+        if (!ImportTask.isRunning() && lastStatus != null) {
+            ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(lastStatus),
+                    this.width / 2, 28, 0xFFFFAA00);
+        }
 
         if (ImportTask.isRunning()) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(ImportTask.progress()),
@@ -223,7 +266,17 @@ public class MapSelectScreen extends Screen {
             if (sel) {
                 ctx.fill(bx + 2, by + 2, bx + bs - 2, by + bs - 2, 0xFF44DD44);
             }
-            ctx.drawTextWithShadow(this.textRenderer, Text.literal(e.name()), x + 18, y + 3,
+
+            int nameX = x + 18;
+            int nameW = w - 20;
+            if (alreadyImported.contains(e.id())) {
+                String tag = "re-download";
+                int tagW = this.textRenderer.getWidth(tag);
+                ctx.drawTextWithShadow(this.textRenderer, Text.literal(tag), x + w - tagW - 4, y + 3, 0xFFFFAA00);
+                nameW -= tagW + 8;
+            }
+            ctx.drawTextWithShadow(this.textRenderer,
+                    Text.literal(this.textRenderer.trimToWidth(e.name(), nameW)), nameX, y + 3,
                     sel ? 0xFFFFFFFF : 0xFFBBBBBB);
         }
         ctx.disableScissor();
@@ -235,7 +288,13 @@ public class MapSelectScreen extends Screen {
 
     @Override
     public void tick() {
-        refreshDownloadButton();
+        boolean running = ImportTask.isRunning();
+        if (wasRunning && !running) {
+            refreshAlreadyImported();
+            lastStatus = ImportTask.progress();
+        }
+        wasRunning = running;
+        refreshButtons();
     }
 
     @Override

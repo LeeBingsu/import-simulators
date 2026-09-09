@@ -22,6 +22,9 @@ import java.util.stream.Stream;
  */
 public final class ImportTask {
 
+    /** Kit files live here, next to saves/ in the game directory. */
+    public static final String KITS_DIR = "vexbot_kits";
+
     private static final Logger LOG = LoggerFactory.getLogger("import-simulators");
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
     private static volatile String progress = "";
@@ -65,6 +68,15 @@ public final class ImportTask {
         return String.format(Locale.ROOT, "%.2f GB", mb / 1024.0);
     }
 
+    /** True when the map already has a folder in saves, so importing it would re-download it. */
+    public static boolean isAlreadyImported(String mapName) {
+        return Files.isDirectory(savesDir().resolve(sanitize(mapName)));
+    }
+
+    private static Path savesDir() {
+        return FabricLoader.getInstance().getGameDir().resolve("saves");
+    }
+
     /**
      * @param returnScreen screen to show once the import finishes (usually the SelectWorldScreen)
      * @param maps         the map folders the player ticked
@@ -81,11 +93,98 @@ public final class ImportTask {
         t.start();
     }
 
+    /**
+     * Syncs the Drive kits folder into the vexbot_kits folder in the game directory, creating it
+     * when missing and downloading only the files the player does not already have.
+     */
+    public static void launchKits(MinecraftClient client, Screen returnScreen, Config cfg) {
+        if (!RUNNING.compareAndSet(false, true)) {
+            return;
+        }
+        progress = "Starting…";
+        totalBytes = 0;
+        downloadedBytes.set(0);
+        Thread t = new Thread(() -> runKits(client, returnScreen, cfg), "import-simulators-kits");
+        t.setDaemon(true);
+        t.start();
+    }
+
+    private static void runKits(MinecraftClient client, Screen returnScreen, Config cfg) {
+        Path kits = FabricLoader.getInstance().getGameDir().resolve(KITS_DIR);
+        int added = 0;
+        int failed = 0;
+        try {
+            Files.createDirectories(kits);
+            GDrive drive = new GDrive(cfg.googleApiKey);
+
+            progress = "Checking kits…";
+            List<MissingFile> missing = new ArrayList<>();
+            collectMissingKits(drive, cfg.kitsFolderId(), kits, missing);
+
+            long size = 0;
+            for (MissingFile f : missing) {
+                size += Math.max(0, f.entry().size());
+            }
+            totalBytes = size;
+
+            int n = missing.size();
+            for (int i = 0; i < n; i++) {
+                MissingFile f = missing.get(i);
+                progress = String.format(Locale.ROOT, "Adding kit %d/%d: %s", i + 1, n, f.dest().getFileName());
+                try {
+                    drive.downloadFile(f.entry().id(), f.dest(), downloadedBytes::addAndGet);
+                    added++;
+                } catch (Exception e) {
+                    failed++;
+                    LOG.error("[import-simulators] Failed downloading kit '{}'", f.entry().name(), e);
+                    // Drop the partial file so the next run retries it instead of treating it as present.
+                    try {
+                        Files.deleteIfExists(f.dest());
+                    } catch (Exception ignored) {
+                        // best effort
+                    }
+                }
+            }
+        } catch (Exception e) {
+            LOG.error("[import-simulators] Kit import aborted", e);
+            failed++;
+        }
+
+        if (failed > 0) {
+            copyToClipboard(client, cfg.kitsFolderUrl());
+            LOG.warn("[import-simulators] Some kits did not download. Grab them by hand:");
+            LOG.warn("[import-simulators]   Drive folder : {}  (copied to clipboard)", cfg.kitsFolderUrl());
+            LOG.warn("[import-simulators]   Put them in  : {}", kits.toAbsolutePath());
+            progress = added + " kit(s) added, " + failed + " failed — Drive link copied";
+        } else {
+            progress = added == 0 ? "Kits already up to date" : added + " kit(s) added";
+        }
+        LOG.info("[import-simulators] Kits done. added={} failed={}", added, failed);
+
+        finish(client, returnScreen);
+    }
+
+    /** A Drive file the player is missing locally, paired with where it should land. */
+    private record MissingFile(GDrive.Entry entry, Path dest) {
+    }
+
+    private static void collectMissingKits(GDrive drive, String folderId, Path dir, List<MissingFile> out)
+            throws Exception {
+        for (GDrive.Entry e : drive.listFolder(folderId)) {
+            Path child = dir.resolve(sanitize(e.name()));
+            if (e.isFolder()) {
+                collectMissingKits(drive, e.id(), child, out);
+            } else if (!Files.exists(child)) {
+                out.add(new MissingFile(e, child));
+            }
+        }
+    }
+
     private static void run(MinecraftClient client, Screen returnScreen, List<GDrive.Entry> maps, Config cfg) {
         int imported = 0;
         List<String> failedMaps = new ArrayList<>();
         String folderUrl = cfg.folderUrl();
-        Path saves = FabricLoader.getInstance().getGameDir().resolve("saves");
+        Path saves = savesDir();
         try {
             GDrive drive = new GDrive(cfg.googleApiKey);
             Files.createDirectories(saves);
@@ -147,6 +246,10 @@ public final class ImportTask {
         }
         LOG.info("[import-simulators] Done. imported={} failed={}", fi, ff.size());
 
+        finish(client, returnScreen);
+    }
+
+    private static void finish(MinecraftClient client, Screen returnScreen) {
         client.execute(() -> {
             RUNNING.set(false);
             if (returnScreen != null) {
@@ -159,13 +262,17 @@ public final class ImportTask {
         });
     }
 
-    /** Copy the Drive folder link to the clipboard and log what to grab by hand. */
-    private static void announceManual(MinecraftClient client, String folderUrl, Path saves, List<String> failedMaps) {
+    private static void copyToClipboard(MinecraftClient client, String url) {
         try {
-            client.keyboard.setClipboard(folderUrl);
+            client.keyboard.setClipboard(url);
         } catch (Throwable ignored) {
             // clipboard is best-effort
         }
+    }
+
+    /** Copy the Drive folder link to the clipboard and log what to grab by hand. */
+    private static void announceManual(MinecraftClient client, String folderUrl, Path saves, List<String> failedMaps) {
+        copyToClipboard(client, folderUrl);
         LOG.warn("[import-simulators] Some maps did not import. Download them by hand:");
         LOG.warn("[import-simulators]   Drive folder : {}  (copied to clipboard)", folderUrl);
         LOG.warn("[import-simulators]   Put them in  : {}", saves.toAbsolutePath());
@@ -196,7 +303,7 @@ public final class ImportTask {
         return total;
     }
 
-    private static String sanitize(String name) {
+    static String sanitize(String name) {
         String s = name.replaceAll("[\\\\/:*?\"<>|\\x00-\\x1F]", "_").trim();
         if (s.isEmpty()) {
             return "map";
