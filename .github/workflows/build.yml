@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The mod version's patch number is the commit count, which a shallow clone reports as 1.
+          fetch-depth: 0
 
       - name: Set up JDK 21
         uses: actions/setup-java@v4
