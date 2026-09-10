@@ -17,7 +17,7 @@ import java.time.Duration;
 import java.util.Locale;
 import java.util.function.LongConsumer;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
+import java.util.zip.ZipFile;
 
 /** Downloads a map archive and unpacks it. Handles the .zip and .rar a map may be published as. */
 public class MapArchive {
@@ -43,66 +43,70 @@ public class MapArchive {
 
         Path root = dir.toAbsolutePath().normalize();
         Files.createDirectories(root);
-        if (url.toLowerCase(Locale.ROOT).endsWith(".rar")) {
-            unpackRar(resp.body(), root, onBytes);
-        } else {
-            unpackZip(resp.body(), root, onBytes);
+
+        // Both formats are read from a file rather than the socket. Rar needs it because the
+        // reader seeks. Zip needs it because ZipInputStream, reading forwards only, rejects a
+        // stored entry carrying a data descriptor ("only DEFLATED entries can have EXT
+        // descriptor") — which is how some tools write the empty region files in a world.
+        boolean rar = url.toLowerCase(Locale.ROOT).endsWith(".rar");
+        Path temp = Files.createTempFile("import-simulators-", rar ? ".rar" : ".zip");
+        try {
+            try (InputStream in = new CountingStream(resp.body(), onBytes)) {
+                Files.copy(in, temp, StandardCopyOption.REPLACE_EXISTING);
+            }
+            if (rar) {
+                unpackRar(temp, root);
+            } else {
+                unpackZip(temp, root);
+            }
+        } finally {
+            Files.deleteIfExists(temp);
         }
     }
 
-    private void unpackZip(InputStream body, Path root, LongConsumer onBytes) throws IOException {
-        try (InputStream in = body;
-             ZipInputStream zip = new ZipInputStream(new CountingStream(in, onBytes))) {
-            ZipEntry entry;
-            while ((entry = zip.getNextEntry()) != null) {
+    private void unpackZip(Path archive, Path root) throws IOException {
+        try (ZipFile zip = new ZipFile(archive.toFile())) {
+            var entries = zip.entries();
+            while (entries.hasMoreElements()) {
+                ZipEntry entry = entries.nextElement();
                 String name = entry.getName();
                 if (name.isEmpty()) {
                     continue;
                 }
                 Path out = resolve(root, name);
-                if (name.endsWith("/") || name.endsWith("\\")) {
+                if (entry.isDirectory() || name.endsWith("\\")) {
                     Files.createDirectories(out);
                     continue;
                 }
                 Files.createDirectories(out.getParent());
-                Files.copy(zip, out, StandardCopyOption.REPLACE_EXISTING);
+                try (InputStream in = zip.getInputStream(entry)) {
+                    Files.copy(in, out, StandardCopyOption.REPLACE_EXISTING);
+                }
             }
         }
     }
 
-    /**
-     * Rar, unlike zip, cannot be read as it streams — the reader seeks — so the archive lands in a
-     * temp file first. Progress still tracks the download, which is the slow half.
-     */
-    private void unpackRar(InputStream body, Path root, LongConsumer onBytes) throws IOException {
-        Path temp = Files.createTempFile("import-simulators-", ".rar");
-        try {
-            try (InputStream in = new CountingStream(body, onBytes)) {
-                Files.copy(in, temp, StandardCopyOption.REPLACE_EXISTING);
+    private void unpackRar(Path temp, Path root) throws IOException {
+        try (Archive archive = new Archive(temp.toFile())) {
+            if (archive.isEncrypted()) {
+                throw new IOException("The archive is password protected");
             }
-            try (Archive archive = new Archive(temp.toFile())) {
-                if (archive.isEncrypted()) {
-                    throw new IOException("The archive is password protected");
+            FileHeader header;
+            while ((header = archive.nextFileHeader()) != null) {
+                Path out = resolve(root, header.getFileName());
+                if (header.isDirectory()) {
+                    Files.createDirectories(out);
+                    continue;
                 }
-                FileHeader header;
-                while ((header = archive.nextFileHeader()) != null) {
-                    Path out = resolve(root, header.getFileName());
-                    if (header.isDirectory()) {
-                        Files.createDirectories(out);
-                        continue;
-                    }
-                    Files.createDirectories(out.getParent());
-                    try (OutputStream os = Files.newOutputStream(out)) {
-                        archive.extractFile(header, os);
-                    }
+                Files.createDirectories(out.getParent());
+                try (OutputStream os = Files.newOutputStream(out)) {
+                    archive.extractFile(header, os);
                 }
-            } catch (IOException e) {
-                throw e;
-            } catch (Exception e) {
-                throw new IOException("Could not read the .rar archive: " + e.getMessage(), e);
             }
-        } finally {
-            Files.deleteIfExists(temp);
+        } catch (IOException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new IOException("Could not read the .rar archive: " + e.getMessage(), e);
         }
     }
 
