@@ -1,5 +1,10 @@
 [
  {
+  "name": "All In One Simulator_Unstable SMP Tournament",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/All.In.One.Simulator_Unstable.SMP.Tournament.zip",
+  "size": 76529560
+ },
+ {
   "name": "Bat vs Itzrealeme",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Bat.vs.Itzrealeme.zip",
   "size": 26463509
@@ -13,6 +18,16 @@
   "name": "Definitive FlameFrags vs Wemmbu Simulator",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Definitive.FlameFrags.vs.Wemmbu.Simulator.zip",
   "size": 65754124
+ },
+ {
+  "name": "Farex PULL",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Farex.PULL.zip",
+  "size": 123245642
+ },
+ {
+  "name": "Hunger Games",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Hunger.Games.zip",
+  "size": 38826525
  },
  {
   "name": "Invis assassin simulator",
@@ -65,6 +80,11 @@
   "size": 436804476
  },
  {
+  "name": "Manhunt",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Manhunt.zip",
+  "size": 16116070
+ },
+ {
   "name": "Miniute Vs Null",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Miniute.Vs.Null.zip",
   "size": 4124367
@@ -73,6 +93,11 @@
   "name": "Mist Simulator",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Mist.Simulator.zip",
   "size": 31276986
+ },
+ {
+  "name": "Mugm Bliss Fight Sim",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Mugm.Bliss.Fight.Sim.zip",
+  "size": 99181450
  },
  {
   "name": "Null Fight Simulator",
@@ -105,6 +130,11 @@
   "size": 7829497
  },
  {
+  "name": "Spoke Null fights",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Spoke.Null.fights.zip",
+  "size": 92144192
+ },
+ {
   "name": "Spoke VS Leow0ok",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Spoke.VS.Leow0ok.zip",
   "size": 36244868
@@ -118,6 +148,11 @@
   "name": "The Director simulator",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/The.Director.simulator.zip",
   "size": 401882250
+ },
+ {
+  "name": "Theo vs oroboros V1.0",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Theo.vs.oroboros.V1.0.zip",
+  "size": 21668787
  },
  {
   "name": "Theo vs Shoebilly simulator",
@@ -158,6 +193,11 @@
   "name": "Wemmbu vs Arachn1d",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.Arachn1d.zip",
   "size": 7380413
+ },
+ {
+  "name": "Wemmbu vs Boosfer Crew Simulator v1",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.Boosfer.Crew.Simulator.v1.zip",
+  "size": 40968005
  },
  {
   "name": "WemmbuVSFlame",

@@ -1,0 +1,51 @@
+name: catalog
+
+on:
+  # Kits are files in the repo, so adding one is a push.
+  push:
+    branches: [main]
+    paths:
+      - "kits/**"
+      - ".github/scripts/build_catalog.py"
+      - ".github/workflows/catalog.yml"
+  # Publishing or editing a release.
+  release:
+    types: [published, edited, released, created, deleted]
+  # Uploading an asset to an *existing* release fires no webhook, so also sweep
+  # hourly. The job commits nothing when the catalog already matches.
+  schedule:
+    - cron: "17 * * * *"
+  # ...and a button, for when waiting for the sweep is annoying.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalog
+  cancel-in-progress: false
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Rebuild the catalog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/build_catalog.py
+
+      - name: Commit if it changed
+        run: |
+          if git diff --quiet -- catalog/; then
+            echo "catalog already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog/
+          git commit -m "Update catalog from the release assets and kits/"
+          git push
