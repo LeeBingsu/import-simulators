@@ -98,6 +98,8 @@ public class MapSelectScreen extends Screen {
                 all.sort((a, b) -> a.name().compareToIgnoreCase(b.name()));
                 this.maps = all;
                 refreshAlreadyImported();
+                // The player is looking at the list now, so the badge has done its job.
+                NewSimulators.markSeen(all.stream().map(Catalog.MapEntry::name).toList());
             } catch (Exception e) {
                 LOG.error("[import-simulators] Failed to load map list", e);
                 this.loadError = e.getMessage() == null ? e.toString() : e.getMessage();
