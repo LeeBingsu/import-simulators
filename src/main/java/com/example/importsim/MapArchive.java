@@ -1,7 +1,11 @@
 package com.example.importsim;
 
+import com.github.junrar.Archive;
+import com.github.junrar.rarfile.FileHeader;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -10,11 +14,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.Duration;
+import java.util.Locale;
 import java.util.function.LongConsumer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-/** Downloads a map's zip and unpacks it, streaming so a multi-hundred-megabyte world stays cheap. */
+/** Downloads a map archive and unpacks it. Handles the .zip and .rar a map may be published as. */
 public class MapArchive {
 
     private final HttpClient http = HttpClient.newBuilder()
@@ -38,21 +43,24 @@ public class MapArchive {
 
         Path root = dir.toAbsolutePath().normalize();
         Files.createDirectories(root);
-        try (InputStream in = resp.body();
+        if (url.toLowerCase(Locale.ROOT).endsWith(".rar")) {
+            unpackRar(resp.body(), root, onBytes);
+        } else {
+            unpackZip(resp.body(), root, onBytes);
+        }
+    }
+
+    private void unpackZip(InputStream body, Path root, LongConsumer onBytes) throws IOException {
+        try (InputStream in = body;
              ZipInputStream zip = new ZipInputStream(new CountingStream(in, onBytes))) {
             ZipEntry entry;
             while ((entry = zip.getNextEntry()) != null) {
-                // Windows PowerShell writes "\" separators, which ZipEntry does not treat as path
-                // separators, so every nested file would land as one long flat name without this.
-                String name = entry.getName().replace('\\', '/');
+                String name = entry.getName();
                 if (name.isEmpty()) {
                     continue;
                 }
-                Path out = root.resolve(name).normalize();
-                if (!out.startsWith(root)) {
-                    throw new IOException("Zip entry escapes the target directory: " + entry.getName());
-                }
-                if (name.endsWith("/")) {
+                Path out = resolve(root, name);
+                if (name.endsWith("/") || name.endsWith("\\")) {
                     Files.createDirectories(out);
                     continue;
                 }
@@ -60,6 +68,54 @@ public class MapArchive {
                 Files.copy(zip, out, StandardCopyOption.REPLACE_EXISTING);
             }
         }
+    }
+
+    /**
+     * Rar, unlike zip, cannot be read as it streams — the reader seeks — so the archive lands in a
+     * temp file first. Progress still tracks the download, which is the slow half.
+     */
+    private void unpackRar(InputStream body, Path root, LongConsumer onBytes) throws IOException {
+        Path temp = Files.createTempFile("import-simulators-", ".rar");
+        try {
+            try (InputStream in = new CountingStream(body, onBytes)) {
+                Files.copy(in, temp, StandardCopyOption.REPLACE_EXISTING);
+            }
+            try (Archive archive = new Archive(temp.toFile())) {
+                if (archive.isEncrypted()) {
+                    throw new IOException("The archive is password protected");
+                }
+                FileHeader header;
+                while ((header = archive.nextFileHeader()) != null) {
+                    Path out = resolve(root, header.getFileName());
+                    if (header.isDirectory()) {
+                        Files.createDirectories(out);
+                        continue;
+                    }
+                    Files.createDirectories(out.getParent());
+                    try (OutputStream os = Files.newOutputStream(out)) {
+                        archive.extractFile(header, os);
+                    }
+                }
+            } catch (IOException e) {
+                throw e;
+            } catch (Exception e) {
+                throw new IOException("Could not read the .rar archive: " + e.getMessage(), e);
+            }
+        } finally {
+            Files.deleteIfExists(temp);
+        }
+    }
+
+    /** Entry paths are untrusted: normalise the separator and keep them inside the target folder. */
+    private static Path resolve(Path root, String entryName) throws IOException {
+        // Archives written on Windows use "\" separators, which neither ZipEntry nor FileHeader
+        // treats as a path separator, so every nested file would land as one long flat name.
+        String name = entryName.replace('\\', '/');
+        Path out = root.resolve(name).normalize();
+        if (!out.startsWith(root)) {
+            throw new IOException("Archive entry escapes the target directory: " + entryName);
+        }
+        return out;
     }
 
     /** Reports raw bytes off the wire, so progress tracks the download rather than the unpacking. */

@@ -37,6 +37,9 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // Bundled into the mod jar: maps may be published as .rar, which the JDK cannot read.
+    implementation include("com.github.junrar:junrar:${project.junrar_version}")
 }
 
 processResources {
