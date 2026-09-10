@@ -1,0 +1,66 @@
+{
+  "0": {
+    "id": "minecraft:pink_tulip",
+    "count": 1
+  },
+  "36": {
+    "id": "minecraft:leather_boots",
+    "count": 1,
+    "components": {
+      "minecraft:dyed_color": 15961002,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:silence"
+      },
+      "minecraft:repair_cost": 1,
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:leather_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:dyed_color": 15961002,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:silence"
+      },
+      "minecraft:repair_cost": 1,
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:leather_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:dyed_color": 15961002,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:silence"
+      },
+      "minecraft:repair_cost": 1,
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:leather_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:dyed_color": 15961002,
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:silence"
+      },
+      "minecraft:repair_cost": 1,
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  }
+}
