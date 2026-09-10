@@ -1,0 +1,29 @@
+{
+  "id": "minecraft:shield",
+  "count": 1,
+  "components": {
+    "minecraft:enchantments": {
+      "minecraft:unbreaking": 3,
+      "minecraft:mending": 1
+    },
+    "minecraft:banner_patterns": [
+      {
+        "pattern": "minecraft:curly_border",
+        "color": "orange"
+      },
+      {
+        "pattern": "minecraft:small_stripes",
+        "color": "orange"
+      },
+      {
+        "pattern": "minecraft:square_top_left",
+        "color": "orange"
+      },
+      {
+        "pattern": "minecraft:square_bottom_right",
+        "color": "orange"
+      }
+    ],
+    "minecraft:base_color": "white"
+  }
+}

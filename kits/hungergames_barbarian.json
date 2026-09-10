@@ -1,0 +1,67 @@
+{
+  "0": {
+    "id": "minecraft:golden_sword",
+    "count": 1
+  },
+  "1": {
+    "id": "minecraft:iron_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 4
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:golden_apple",
+    "count": 2
+  },
+  "3": {
+    "id": "minecraft:cobweb",
+    "count": 2
+  },
+  "8": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "36": {
+    "id": "minecraft:iron_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 2
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:iron_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 2
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:golden_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 1
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:chainmail_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 3
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:cooked_beef",
+    "count": 5
+  }
+}

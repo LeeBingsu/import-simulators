@@ -1,0 +1,21 @@
+{
+  "id": "minecraft:shield",
+  "count": 1,
+  "components": {
+    "minecraft:enchantments": {
+      "minecraft:unbreaking": 3,
+      "minecraft:mending": 1
+    },
+    "minecraft:banner_patterns": [
+      {
+        "pattern": "minecraft:flower",
+        "color": "yellow"
+      },
+      {
+        "pattern": "minecraft:gradient",
+        "color": "gray"
+      }
+    ],
+    "minecraft:base_color": "black"
+  }
+}

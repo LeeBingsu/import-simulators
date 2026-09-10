@@ -1,0 +1,45 @@
+{
+  "id": "minecraft:shield",
+  "count": 1,
+  "components": {
+    "minecraft:banner_patterns": [
+      {
+        "pattern": "minecraft:piglin",
+        "color": "black"
+      },
+      {
+        "pattern": "minecraft:half_horizontal",
+        "color": "purple"
+      },
+      {
+        "pattern": "minecraft:half_horizontal",
+        "color": "purple"
+      },
+      {
+        "pattern": "minecraft:half_horizontal",
+        "color": "purple"
+      },
+      {
+        "pattern": "minecraft:half_horizontal",
+        "color": "purple"
+      },
+      {
+        "pattern": "minecraft:half_horizontal",
+        "color": "purple"
+      },
+      {
+        "pattern": "minecraft:half_horizontal",
+        "color": "purple"
+      },
+      {
+        "pattern": "minecraft:half_horizontal",
+        "color": "purple"
+      }
+    ],
+    "minecraft:enchantments": {
+      "minecraft:mending": 1,
+      "minecraft:unbreaking": 3
+    },
+    "minecraft:base_color": "purple"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "minecraft:shield",
+  "count": 1,
+  "components": {
+    "minecraft:banner_patterns": [
+      {
+        "pattern": "minecraft:half_horizontal_bottom",
+        "color": "orange"
+      },
+      {
+        "pattern": "minecraft:mojang",
+        "color": "orange"
+      },
+      {
+        "pattern": "minecraft:rhombus",
+        "color": "black"
+      },
+      {
+        "pattern": "minecraft:curly_border",
+        "color": "black"
+      },
+      {
+        "pattern": "minecraft:gradient_up",
+        "color": "red"
+      },
+      {
+        "pattern": "minecraft:triangles_bottom",
+        "color": "yellow"
+      }
+    ],
+    "minecraft:enchantments": {
+      "minecraft:unbreaking": 3,
+      "minecraft:mending": 1
+    },
+    "minecraft:base_color": "black"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "0": {
+    "id": "minecraft:copper_sword",
+    "count": 1
+  },
+  "1": {
+    "id": "minecraft:wooden_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 1
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:bow",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:punch": 2,
+        "minecraft:power": 3
+      }
+    }
+  },
+  "6": {
+    "id": "minecraft:arrow",
+    "count": 25
+  },
+  "36": {
+    "id": "minecraft:leather_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 2
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:leather_leggings",
+    "count": 1
+  },
+  "38": {
+    "id": "minecraft:leather_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 2
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:leather_helmet",
+    "count": 1
+  },
+  "40": {
+    "id": "minecraft:bread",
+    "count": 16
+  }
+}
