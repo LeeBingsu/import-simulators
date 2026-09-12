@@ -25,6 +25,16 @@
   "size": 123245642
  },
  {
+  "name": "Flame vs Clown",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Flame.vs.Clown.zip",
+  "size": 200274128
+ },
+ {
+  "name": "Highwater sim Rework",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Highwater.sim.Rework.zip",
+  "size": 53994850
+ },
+ {
   "name": "Hunger Games",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Hunger.Games.zip",
   "size": 38826525
@@ -198,6 +208,11 @@
   "name": "Wemmbu vs Boosfer Crew Simulator v1",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.Boosfer.Crew.Simulator.v1.zip",
   "size": 40968005
+ },
+ {
+  "name": "Wemmbu vs Chungies",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.Chungies.zip",
+  "size": 32210120
  },
  {
   "name": "WemmbuVSFlame",
