@@ -48,6 +48,10 @@
   "size": 175989
  },
  {
+  "name": "Eggchan.json",
+  "size": 2788
+ },
+ {
   "name": "Epaxialfxt.json",
   "size": 1252
  },
@@ -110,6 +114,10 @@
  {
   "name": "Invisknight.json",
   "size": 6488
+ },
+ {
+  "name": "IvisBlueGUY.json",
+  "size": 5701
  },
  {
   "name": "JadenMansea.json",
@@ -324,6 +332,10 @@
   "size": 6320
  },
  {
+  "name": "TNT_minecart.json",
+  "size": 6114
+ },
+ {
   "name": "Th3Blurpinsteint.json",
   "size": 1230
  },
@@ -369,7 +381,7 @@
  },
  {
   "name": "Wemmbu.json",
-  "size": 7094
+  "size": 16196
  },
  {
   "name": "WemmbuMane.json",
@@ -454,6 +466,10 @@
  {
   "name": "choppedwemmbu.json",
   "size": 2926
+ },
+ {
+  "name": "chungy.json",
+  "size": 1488
  },
  {
   "name": "clownmafia.json",
@@ -670,6 +686,18 @@
  {
   "name": "spokeHQ.json",
   "size": 6997
+ },
+ {
+  "name": "tnt_min.json",
+  "size": 5805
+ },
+ {
+  "name": "tnt_minecartt.json",
+  "size": 5992
+ },
+ {
+  "name": "tntmin.json",
+  "size": 5973
  },
  {
   "name": "underwolrdu.json",

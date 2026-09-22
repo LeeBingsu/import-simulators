@@ -10,6 +10,11 @@
   "size": 26463509
  },
  {
+  "name": "blueinvisguy",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/blueinvisguy.zip",
+  "size": 25106949
+ },
+ {
   "name": "Combat Master Training Simulator",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Combat.Master.Training.Simulator.zip",
   "size": 72953948
@@ -218,6 +223,16 @@
   "name": "Wemmbu vs Chungies",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.Chungies.zip",
   "size": 32210120
+ },
+ {
+  "name": "Wemmbu vs Null Wraiths",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.Null.Wraiths.rar",
+  "size": 16317962
+ },
+ {
+  "name": "Wemmbu vs underground civ",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.underground.civ.zip",
+  "size": 20896000
  },
  {
   "name": "WemmbuVSFlame",
