@@ -145,6 +145,16 @@
   "size": 294374708
  },
  {
+  "name": "Slushly VS Nufuli",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Slushly.VS.Nufuli.zip",
+  "size": 48132299
+ },
+ {
+  "name": "Slushly VS Stormz",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Slushly.VS.Stormz.zip",
+  "size": 24728223
+ },
+ {
   "name": "smuggler path law fight",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/smuggler.path.law.fight.zip",
   "size": 7829497
@@ -203,6 +213,11 @@
   "name": "Unstable SMP Tournament",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Unstable.SMP.Tournament.zip",
   "size": 15523657
+ },
+ {
+  "name": "UnstableSMP VS WispSMP",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/UnstableSMP.VS.WispSMP.zip",
+  "size": 10127342
  },
  {
   "name": "warden vs wemmbu",
