@@ -1,5 +1,13 @@
 [
  {
+  "name": "Arachn1dArachn1d.json",
+  "size": 7425
+ },
+ {
+  "name": "Arachn1d_Chungies.json",
+  "size": 4974
+ },
+ {
   "name": "Baablut.json",
   "size": 1616
  },
@@ -10,6 +18,22 @@
  {
   "name": "Boosfert.json",
   "size": 1588
+ },
+ {
+  "name": "CMLawDiamond.json",
+  "size": 8428
+ },
+ {
+  "name": "CMLawDiamond_2.json",
+  "size": 8428
+ },
+ {
+  "name": "CMLawNeth.json",
+  "size": 8433
+ },
+ {
+  "name": "CMLawNeth_2.json",
+  "size": 8433
  },
  {
   "name": "ClownPiercet.json",
@@ -49,15 +73,115 @@
  },
  {
   "name": "Eggchan.json",
-  "size": 2788
+  "size": 7632
  },
  {
   "name": "Epaxialfxt.json",
   "size": 1252
  },
  {
+  "name": "EvouraiCrossbow.json",
+  "size": 15407
+ },
+ {
+  "name": "EvouraiEM.json",
+  "size": 14651
+ },
+ {
+  "name": "EvouraiSM.json",
+  "size": 13687
+ },
+ {
   "name": "Fantstt.json",
   "size": 1365
+ },
+ {
+  "name": "Flame1stRematch.json",
+  "size": 13760
+ },
+ {
+  "name": "Flame1stRematch_2.json",
+  "size": 13760
+ },
+ {
+  "name": "Flame1stRematch_3.json",
+  "size": 13760
+ },
+ {
+  "name": "Flame1stRematch_4.json",
+  "size": 13760
+ },
+ {
+  "name": "Flame1stRematch_5.json",
+  "size": 13760
+ },
+ {
+  "name": "Flame1stRematch_6.json",
+  "size": 13760
+ },
+ {
+  "name": "FlameAJTournament.json",
+  "size": 8399
+ },
+ {
+  "name": "FlameAJTournament_2.json",
+  "size": 8399
+ },
+ {
+  "name": "FlameAJTournament_3.json",
+  "size": 8399
+ },
+ {
+  "name": "FlameAJTournament_4.json",
+  "size": 8399
+ },
+ {
+  "name": "FlameAJTournament_5.json",
+  "size": 8399
+ },
+ {
+  "name": "FlameAJTournament_6.json",
+  "size": 8399
+ },
+ {
+  "name": "FlameBlackMarketGOW.json",
+  "size": 19927
+ },
+ {
+  "name": "FlameCart.json",
+  "size": 19819
+ },
+ {
+  "name": "FlameCart_2.json",
+  "size": 19788
+ },
+ {
+  "name": "FlameDiaSpear.json",
+  "size": 15588
+ },
+ {
+  "name": "FlameForestFight.json",
+  "size": 12587
+ },
+ {
+  "name": "FlameForestFight_2.json",
+  "size": 12587
+ },
+ {
+  "name": "FlameForestFight_3.json",
+  "size": 12587
+ },
+ {
+  "name": "FlameForestFight_4.json",
+  "size": 12587
+ },
+ {
+  "name": "FlameForestFight_5.json",
+  "size": 12587
+ },
+ {
+  "name": "FlameForestFight_6.json",
+  "size": 12587
  },
  {
   "name": "FlameFrags.icon.json",
@@ -65,6 +189,10 @@
  },
  {
   "name": "FlameFrags.json",
+  "size": 7479
+ },
+ {
+  "name": "FlameFragsArachn1d.json",
   "size": 7479
  },
  {
@@ -80,6 +208,110 @@
   "size": 7385
  },
  {
+  "name": "FlameMace.json",
+  "size": 15711
+ },
+ {
+  "name": "FlameMace_2.json",
+  "size": 15587
+ },
+ {
+  "name": "FlameMafiaMesa.json",
+  "size": 33015
+ },
+ {
+  "name": "FlameMafiaMesa_2.json",
+  "size": 33015
+ },
+ {
+  "name": "FlameMafiaMesa_3.json",
+  "size": 33015
+ },
+ {
+  "name": "FlameMafiaMesa_4.json",
+  "size": 33015
+ },
+ {
+  "name": "FlameMafiaMesa_5.json",
+  "size": 33015
+ },
+ {
+  "name": "FlameMafiaMesa_6.json",
+  "size": 33015
+ },
+ {
+  "name": "FlamePost2v1000.json",
+  "size": 12511
+ },
+ {
+  "name": "FlamePost2v1000_2.json",
+  "size": 12511
+ },
+ {
+  "name": "FlamePost2v1000_3.json",
+  "size": 12511
+ },
+ {
+  "name": "FlamePost2v1000_4.json",
+  "size": 12511
+ },
+ {
+  "name": "FlamePost2v1000_5.json",
+  "size": 12511
+ },
+ {
+  "name": "FlamePost2v1000_6.json",
+  "size": 12511
+ },
+ {
+  "name": "FlameSpear.json",
+  "size": 15669
+ },
+ {
+  "name": "FlameSpearCart.json",
+  "size": 18043
+ },
+ {
+  "name": "FlameSword.json",
+  "size": 15510
+ },
+ {
+  "name": "FlameSwordInvis.json",
+  "size": 14254
+ },
+ {
+  "name": "FlameVsWemmbuMafia.json",
+  "size": 14322
+ },
+ {
+  "name": "FlameVsWemmbuMafia_2.json",
+  "size": 14322
+ },
+ {
+  "name": "FlameVsWemmbuMafia_3.json",
+  "size": 14322
+ },
+ {
+  "name": "FlameVsWemmbuMafia_4.json",
+  "size": 14322
+ },
+ {
+  "name": "FlameVsWemmbuMafia_5.json",
+  "size": 14322
+ },
+ {
+  "name": "FlameVsWemmbuMafia_6.json",
+  "size": 14322
+ },
+ {
+  "name": "Flamefrags_CinderCrest.icon.json",
+  "size": 759
+ },
+ {
+  "name": "Flamefrags_CinderCrest.json",
+  "size": 7468
+ },
+ {
   "name": "FlamevsWemmbu.json",
   "size": 39165
  },
@@ -90,6 +322,14 @@
  {
   "name": "FlowtivesMist.json",
   "size": 6978
+ },
+ {
+  "name": "GoWBot.json",
+  "size": 18086
+ },
+ {
+  "name": "GoWBot_2.json",
+  "size": 18086
  },
  {
   "name": "Goldtrim.json",
@@ -116,8 +356,16 @@
   "size": 6488
  },
  {
+  "name": "ItzRealMeBot.json",
+  "size": 14162
+ },
+ {
   "name": "IvisBlueGUY.json",
   "size": 5701
+ },
+ {
+  "name": "JadenEggCivBot.json",
+  "size": 6606
  },
  {
   "name": "JadenMansea.json",
@@ -129,6 +377,10 @@
  },
  {
   "name": "Jaden_MAN.json",
+  "size": 7024
+ },
+ {
+  "name": "Jaden_MANArachn1d.json",
   "size": 7024
  },
  {
@@ -160,6 +412,10 @@
   "size": 6829
  },
  {
+  "name": "LawCommander.json",
+  "size": 15282
+ },
+ {
   "name": "LettuceKt.json",
   "size": 2193
  },
@@ -170,6 +426,14 @@
  {
   "name": "Mace.json",
   "size": 7088
+ },
+ {
+  "name": "ManePearBot.json",
+  "size": 15191
+ },
+ {
+  "name": "ManePearBot_2.json",
+  "size": 15191
  },
  {
   "name": "ManePearmace.json",
@@ -440,6 +704,10 @@
   "size": 6470
  },
  {
+  "name": "arachn1d_.json",
+  "size": 2
+ },
+ {
   "name": "arachnid.json",
   "size": 7477
  },
@@ -454,6 +722,10 @@
  {
   "name": "arachnidplayer.json",
   "size": 13941
+ },
+ {
+  "name": "baablu.json",
+  "size": 3160
  },
  {
   "name": "boosferu.json",
@@ -484,12 +756,36 @@
   "size": 7652
  },
  {
+  "name": "danuk.json",
+  "size": 7481
+ },
+ {
+  "name": "danuke.json",
+  "size": 10838
+ },
+ {
+  "name": "deputy_ace.json",
+  "size": 4745
+ },
+ {
+  "name": "dialaw.json",
+  "size": 3324
+ },
+ {
+  "name": "dialaww.json",
+  "size": 1662
+ },
+ {
   "name": "diamondtrim.json",
   "size": 6833
  },
  {
   "name": "diamontrimmace.json",
   "size": 6990
+ },
+ {
+  "name": "egg.json",
+  "size": 8645
  },
  {
   "name": "eggchan.json",
@@ -510,6 +806,10 @@
  {
   "name": "ferremafia.json",
   "size": 6915
+ },
+ {
+  "name": "flame2.json",
+  "size": 6969
  },
  {
   "name": "flamebot.json",
@@ -568,6 +868,10 @@
   "size": 9572
  },
  {
+  "name": "invisbluetrim.json",
+  "size": 7547
+ },
+ {
   "name": "invisknightbot.json",
   "size": 6937
  },
@@ -584,8 +888,24 @@
   "size": 6607
  },
  {
+  "name": "invismace.json",
+  "size": 7049
+ },
+ {
+  "name": "iron.json",
+  "size": 720
+ },
+ {
   "name": "irontrimmafia.json",
   "size": 6701
+ },
+ {
+  "name": "itzmace.json",
+  "size": 14955
+ },
+ {
+  "name": "itzmace_2.json",
+  "size": 14955
  },
  {
   "name": "jadenHQ.json",
@@ -608,6 +928,10 @@
   "size": 7293
  },
  {
+  "name": "jamatop.json",
+  "size": 10685
+ },
+ {
   "name": "jumperHQ.json",
   "size": 6846
  },
@@ -628,16 +952,52 @@
   "size": 6018
  },
  {
+  "name": "leow0k.json",
+  "size": 4762
+ },
+ {
   "name": "lettuceHQ.json",
   "size": 5778
+ },
+ {
+  "name": "lettucek.json",
+  "size": 6446
  },
  {
   "name": "lezyBliss.json",
   "size": 175999
  },
  {
+  "name": "loppez.json",
+  "size": 5373
+ },
+ {
+  "name": "mafia.json",
+  "size": 7697
+ },
+ {
+  "name": "mafia_notrim.json",
+  "size": 7697
+ },
+ {
+  "name": "mafiacop.json",
+  "size": 8156
+ },
+ {
+  "name": "mafiadia.json",
+  "size": 6972
+ },
+ {
+  "name": "mafiairon.json",
+  "size": 7862
+ },
+ {
+  "name": "minute_bot.json",
+  "size": 15501
+ },
+ {
   "name": "minutetech.json",
-  "size": 6477
+  "size": 15427
  },
  {
   "name": "nemBliss.json",
@@ -654,6 +1014,18 @@
  {
   "name": "novaBliss.json",
   "size": 177527
+ },
+ {
+  "name": "nuke.json",
+  "size": 736
+ },
+ {
+  "name": "null_chungie.json",
+  "size": 9472
+ },
+ {
+  "name": "null_lead.json",
+  "size": 7967
  },
  {
   "name": "princezam.json",

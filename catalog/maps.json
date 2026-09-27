@@ -135,6 +135,11 @@
   "size": 69211928
  },
  {
+  "name": "Optimized farlands fight",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Optimized.farlands.fight.zip",
+  "size": 58276170
+ },
+ {
   "name": "Purgatory Finale Fight Simulator-v1.2",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Purgatory.Finale.Fight.Simulator-v1.2.zip",
   "size": 54492660
@@ -243,6 +248,11 @@
   "name": "Wemmbu vs Chungies",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.vs.Chungies.zip",
   "size": 32210120
+ },
+ {
+  "name": "Wemmbu Vs Flowtives",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Wemmbu.Vs.Flowtives.zip",
+  "size": 9447148
  },
  {
   "name": "Wemmbu vs Null Wraiths",
