@@ -1,0 +1,339 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 2,
+        "minecraft:sweeping_edge": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Gambit",
+      "minecraft:enchantments": {
+        "minecraft:wind_burst": 1,
+        "minecraft:density": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Crucible",
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:breach": 4,
+        "minecraft:fire_aspect": 2
+      }
+    }
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "4": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 26,
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:cobblestone",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:cooked_beef",
+    "count": 64
+  },
+  "7": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "8": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:silk_touch": 1,
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:golden_apple",
+    "count": 16
+  },
+  "10": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 24
+    }
+  },
+  "11": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:curly_border",
+          "color": "white"
+        },
+        {
+          "pattern": "minecraft:flower",
+          "color": "yellow"
+        }
+      ],
+      "minecraft:base_color": "white",
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "13": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "14": {
+    "id": "minecraft:torch",
+    "count": 21
+  },
+  "15": {
+    "id": "minecraft:oak_boat",
+    "count": 1
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:pale_oak_wood",
+    "count": 2
+  },
+  "18": {
+    "id": "minecraft:spruce_sapling",
+    "count": 1
+  },
+  "19": {
+    "id": "minecraft:arrow",
+    "count": 64
+  },
+  "20": {
+    "id": "minecraft:arrow",
+    "count": 28
+  },
+  "21": {
+    "id": "minecraft:ice",
+    "count": 64
+  },
+  "22": {
+    "id": "minecraft:jungle_sapling",
+    "count": 1
+  },
+  "23": {
+    "id": "minecraft:pink_petals",
+    "count": 25
+  },
+  "24": {
+    "id": "minecraft:ender_pearl",
+    "count": 1
+  },
+  "25": {
+    "id": "minecraft:purple_concrete",
+    "count": 2
+  },
+  "26": {
+    "id": "minecraft:cobblestone",
+    "count": 64
+  },
+  "27": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 2,
+        "minecraft:sweeping_edge": 3
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:ice",
+    "count": 31
+  },
+  "30": {
+    "id": "minecraft:coarse_dirt",
+    "count": 1
+  },
+  "31": {
+    "id": "minecraft:elytra",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 288,
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:wheat_seeds",
+    "count": 1
+  },
+  "33": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:bow",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:power": 5,
+        "minecraft:punch": 2
+      }
+    }
+  },
+  "35": {
+    "id": "minecraft:cobblestone",
+    "count": 21
+  },
+  "36": {
+    "id": "minecraft:diamond_boots",
+    "count": 1,
+    "components": {
+      "minecraft:repair_cost": 31,
+      "minecraft:enchantments": {
+        "minecraft:feather_falling": 4,
+        "minecraft:depth_strider": 3,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 273
+    }
+  },
+  "37": {
+    "id": "minecraft:diamond_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:repair_cost": 15,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:swift_sneak": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 215
+    }
+  },
+  "38": {
+    "id": "minecraft:diamond_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:repair_cost": 7,
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1
+      },
+      "minecraft:damage": 200
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:repair_cost": 31,
+      "minecraft:enchantments": {
+        "minecraft:aqua_affinity": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:respiration": 3
+      },
+      "minecraft:damage": 140
+    }
+  },
+  "40": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:curly_border",
+          "color": "white"
+        },
+        {
+          "pattern": "minecraft:flower",
+          "color": "yellow"
+        }
+      ],
+      "minecraft:base_color": "white",
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
+      }
+    }
+  }
+}

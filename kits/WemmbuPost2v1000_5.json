@@ -1,0 +1,673 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 38,
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:looting": 3,
+        "minecraft:sweeping_edge": 3,
+        "minecraft:sharpness": 5,
+        "minecraft:knockback": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 150,
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:breach": 4,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:custom_name": "Crucible"
+    }
+  },
+  "2": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 450,
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:density": 5,
+        "minecraft:wind_burst": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "3": {
+    "id": "minecraft:golden_apple",
+    "count": 62
+  },
+  "4": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 203,
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:elytra",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 388,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "6": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "7": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "8": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 304,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:silk_touch": 1,
+        "minecraft:efficiency": 5,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:white_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:netherite_pickaxe",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 20,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:silk_touch": 1,
+                "minecraft:efficiency": 5,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 296,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:netherite_leggings",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 538,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:swift_sneak": 3,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:netherite_boots",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 466,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:feather_falling": 4,
+                "minecraft:depth_strider": 3,
+                "minecraft:soul_speed": 3,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:netherite_helmet",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 122,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:aqua_affinity": 1,
+                "minecraft:respiration": 3,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 414,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:netherite_leggings",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 444,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:swift_sneak": 3,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 574,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:netherite_axe",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:silk_touch": 1,
+                "minecraft:sharpness": 5,
+                "minecraft:efficiency": 5,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 574,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 532,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:netherite_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 177,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:netherite_helmet",
+            "count": 1,
+            "components": {
+              "minecraft:damage": 366,
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:protection": 4,
+                "minecraft:aqua_affinity": 1,
+                "minecraft:respiration": 3,
+                "minecraft:unbreaking": 3
+              }
+            }
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:spruce_log",
+            "count": 54
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "10": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "stab_aim_3": 1
+      },
+      "minecraft:custom_name": "stab shot"
+    }
+  },
+  "11": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "nuke_aim_3": 1
+      },
+      "minecraft:custom_name": "nuke shot"
+    }
+  },
+  "12": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 67,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:piglin",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:half_horizontal",
+          "color": "purple"
+        }
+      ],
+      "minecraft:base_color": "purple"
+    }
+  },
+  "13": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "14": {
+    "id": "minecraft:firework_rocket",
+    "count": 59,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "15": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:ender_chest",
+    "count": 3
+  },
+  "23": {
+    "id": "minecraft:wind_charge",
+    "count": 63
+  },
+  "24": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "25": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 38,
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:looting": 3,
+        "minecraft:sweeping_edge": 3,
+        "minecraft:sharpness": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:golden_carrot",
+    "count": 63
+  },
+  "30": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "31": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "33": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "34": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "35": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 120,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:protection": 4,
+        "minecraft:feather_falling": 4,
+        "minecraft:depth_strider": 3,
+        "minecraft:soul_speed": 3,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 499,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:protection": 4,
+        "minecraft:swift_sneak": 3,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 547,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 325,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:protection": 4,
+        "minecraft:aqua_affinity": 1,
+        "minecraft:respiration": 3,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:netherite",
+        "pattern": "minecraft:dune"
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}
