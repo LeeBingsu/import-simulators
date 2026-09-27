@@ -1,0 +1,488 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:mending": 1,
+        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5,
+        "minecraft:sweeping_edge": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 26,
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:sharpness": 5
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "3": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:wind_burst": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:density": 5
+      },
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "4": {
+    "id": "minecraft:elytra",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:piglin",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:half_horizontal",
+          "color": "purple"
+        }
+      ],
+      "minecraft:base_color": "purple"
+    }
+  },
+  "7": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "8": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "9": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Nuke Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "e90e9250-e798-4256-9a49-7ee76275ce09"
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Nuke Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "3e6af6a7-b22d-4606-8843-0b7658593a10"
+      }
+    }
+  },
+  "11": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Nuke Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "65d0a5d8-483b-450b-893f-aa066e376fc3"
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "13": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "14": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "15": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "86baa96b-59aa-4d1e-a254-602e1de03924"
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "5b65906f-eafc-4956-b71c-b5e7d42b5bcf"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "18": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "8e3e7575-74b0-4df2-9511-29f8b25ffdbb"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "d63899c0-b4ae-40ac-a9f6-49cd8f3f7e94"
+      }
+    }
+  },
+  "20": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "22": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "23": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "24": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "6374b950-bcd2-4170-8d35-80d9db5b448e"
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "c0b24133-a50e-4706-8b0c-8ba24fae8b28"
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "27": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "ff8126c4-2f1f-4fdb-9558-a22a7df42ef5"
+      }
+    }
+  },
+  "28": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "1bc5bf99-80ea-42d6-afd6-c6a6f33e2637"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:firework_rocket",
+    "count": 64,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "30": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:fire_aspect": 2,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:breach": 4
+      },
+      "minecraft:custom_name": "Crucible"
+    }
+  },
+  "31": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "33": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 63,
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:lore": [
+        {
+          "text": "Vertical TNT bombardment",
+          "color": "gray"
+        },
+        {
+          "text": "Cast to strike at facing block",
+          "color": "dark_gray"
+        },
+        ""
+      ],
+      "minecraft:custom_data": {
+        "ShotType": "stab",
+        "Uid": "f80bfbe7-f0a0-40cd-bb0f-28541332033a"
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "35": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:depth_strider": 3,
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:soul_speed": 3,
+        "minecraft:feather_falling": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:raiser"
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:swift_sneak": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:sentry"
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:raiser"
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:respiration": 3,
+        "minecraft:aqua_affinity": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:amethyst",
+        "pattern": "minecraft:snout"
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  }
+}

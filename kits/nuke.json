@@ -1,0 +1,34 @@
+{
+  "0": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Nuke Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "5fa62987-2d50-4356-835b-cdd83cf52557"
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:piglin",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:half_horizontal",
+          "color": "purple"
+        }
+      ],
+      "minecraft:base_color": "purple"
+    }
+  }
+}

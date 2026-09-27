@@ -1,0 +1,502 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3,
+        "minecraft:looting": 3,
+        "minecraft:fire_aspect": 2,
+        "minecraft:sweeping_edge": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "2": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 5,
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "3": {
+    "id": "minecraft:obsidian",
+    "count": 64
+  },
+  "4": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 64
+  },
+  "5": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:silk_touch": 1,
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 3847130,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "8": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16701501,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "10": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "11": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16383998,
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility",
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "12": {
+    "id": "minecraft:milk_bucket",
+    "count": 1
+  },
+  "13": {
+    "id": "minecraft:poppy",
+    "count": 64
+  },
+  "14": {
+    "id": "minecraft:writable_book",
+    "count": 1,
+    "components": {
+      "minecraft:writable_book_content": {
+        "pages": [
+          {
+            "raw": "i am jamatop, the strongest player of all\n\ni use exploits \n\ni hate spoke\n\nyou found a easter egg made by rage"
+          }
+        ]
+      }
+    }
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16383998,
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility",
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 3847130,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16701501,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "19": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "20": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16383998,
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility",
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "21": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 3847130,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 3847130,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "23": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 3847130,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "24": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16383998,
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility",
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 3847130,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16701501,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "28": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "29": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16383998,
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility",
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "30": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16701501,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "31": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16701501,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16701501,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "33": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16383998,
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility",
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 3847130,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "35": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16701501,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 18000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:emerald",
+        "pattern": "minecraft:flow"
+      },
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:emerald",
+        "pattern": "minecraft:flow"
+      },
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 3,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:emerald",
+        "pattern": "minecraft:flow"
+      },
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 2,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:emerald",
+        "pattern": "minecraft:flow"
+      },
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 2,
+        "minecraft:mending": 1
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1,
+    "components": {
+      "minecraft:max_stack_size": 99
+    }
+  }
+}

@@ -4,172 +4,212 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:looting": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
         "minecraft:fire_aspect": 2,
         "minecraft:sweeping_edge": 3,
-        "minecraft:sharpness": 5,
-        "minecraft:mending": 1,
-        "minecraft:unbreaking": 3
-      },
-      "minecraft:custom_name": "Knightfall"
-    }
-  },
-  "1": {
-    "id": "minecraft:netherite_axe",
-    "count": 1,
-    "components": {
-      "minecraft:enchantments": {
-        "minecraft:silk_touch": 1,
-        "minecraft:mending": 1,
-        "minecraft:efficiency": 5,
-        "minecraft:sharpness": 5,
-        "minecraft:unbreaking": 3
-      },
-      "minecraft:custom_name": "Knightfall"
-    }
-  },
-  "2": {
-    "id": "minecraft:firework_rocket",
-    "count": 64,
-    "components": {
-      "minecraft:fireworks": {
-        "flight_duration": 3
+        "minecraft:looting": 3,
+        "minecraft:knockback": 1
       }
     }
   },
-  "3": {
+  "1": {
+    "id": "minecraft:cooked_beef",
+    "count": 64
+  },
+  "2": {
     "id": "minecraft:mace",
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:density": 5,
+        "minecraft:unbreaking": 3,
         "minecraft:mending": 1,
-        "minecraft:wind_burst": 3,
-        "minecraft:unbreaking": 3
-      },
-      "minecraft:repair_cost": 1,
-      "minecraft:custom_name": "Knightfall"
+        "minecraft:density": 5,
+        "minecraft:wind_burst": 1
+      }
     }
   },
-  "4": {
-    "id": "minecraft:elytra",
+  "3": {
+    "id": "minecraft:netherite_spear",
     "count": 1,
     "components": {
       "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
         "minecraft:mending": 1,
-        "minecraft:unbreaking": 3
+        "minecraft:lunge": 3,
+        "minecraft:looting": 3,
+        "minecraft:sharpness": 5
       }
     }
+  },
+  "4": {
+    "id": "minecraft:cobweb",
+    "count": 64
   },
   "5": {
     "id": "minecraft:wind_charge",
     "count": 64
   },
   "6": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "7": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:silk_touch": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:efficiency": 5
+      }
+    }
+  },
+  "8": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "9": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "10": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "11": {
     "id": "minecraft:shield",
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:mending": 1,
-        "minecraft:unbreaking": 3
-      },
-      "minecraft:repair_cost": 3,
-      "minecraft:banner_patterns": [
-        {
-          "pattern": "minecraft:curly_border",
-          "color": "black"
-        },
-        {
-          "pattern": "minecraft:stripe_bottom",
-          "color": "black"
-        },
-        {
-          "pattern": "minecraft:triangles_bottom",
-          "color": "red"
-        },
-        {
-          "pattern": "minecraft:stripe_center",
-          "color": "black"
-        },
-        {
-          "pattern": "minecraft:triangle_top",
-          "color": "red"
-        }
-      ],
-      "minecraft:base_color": "red"
-    }
-  },
-  "7": {
-    "id": "minecraft:golden_apple",
-    "count": 64
-  },
-  "8": {
-    "id": "minecraft:ender_pearl",
-    "count": 16
-  },
-  "9": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:long_swiftness"
-      }
-    }
-  },
-  "10": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:long_swiftness"
-      }
-    }
-  },
-  "11": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1
       }
     }
   },
   "12": {
-    "id": "minecraft:splash_potion",
+    "id": "minecraft:netherite_pickaxe",
     "count": 1,
     "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:silk_touch": 1,
+        "minecraft:efficiency": 5
       }
     }
   },
   "13": {
-    "id": "minecraft:totem_of_undying",
+    "id": "minecraft:water_bucket",
     "count": 1
   },
   "14": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
-      }
-    }
+    "id": "minecraft:water_bucket",
+    "count": 1
   },
   "15": {
     "id": "minecraft:splash_potion",
     "count": 1,
     "components": {
       "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
+        "potion": "minecraft:long_strength"
       }
     }
   },
   "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_swiftness"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "19": {
     "id": "minecraft:ender_pearl",
     "count": 16
   },
-  "17": {
+  "20": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "21": {
+    "id": "minecraft:trident",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
+        "minecraft:riptide": 3
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "23": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_swiftness"
+      }
+    }
+  },
+  "24": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_swiftness"
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "28": {
     "id": "minecraft:shulker_box",
     "count": 1,
     "components": {
@@ -181,7 +221,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_strength"
+                "potion": "minecraft:long_fire_resistance"
               }
             }
           }
@@ -193,7 +233,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_strength"
+                "potion": "minecraft:long_swiftness"
               }
             }
           }
@@ -217,7 +257,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_strength"
+                "potion": "minecraft:long_fire_resistance"
               }
             }
           }
@@ -229,7 +269,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:strong_strength"
+                "potion": "minecraft:long_swiftness"
               }
             }
           }
@@ -241,7 +281,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:strong_strength"
+                "potion": "minecraft:long_strength"
               }
             }
           }
@@ -249,27 +289,22 @@
         {
           "slot": 6,
           "item": {
-            "id": "minecraft:firework_rocket",
-            "count": 64,
-            "components": {
-              "minecraft:fireworks": {
-                "flight_duration": 3
-              }
-            }
+            "id": "minecraft:cobweb",
+            "count": 64
           }
         },
         {
           "slot": 7,
           "item": {
-            "id": "minecraft:wind_charge",
-            "count": 64
+            "id": "minecraft:totem_of_undying",
+            "count": 1
           }
         },
         {
           "slot": 8,
           "item": {
-            "id": "minecraft:ender_pearl",
-            "count": 16
+            "id": "minecraft:totem_of_undying",
+            "count": 1
           }
         },
         {
@@ -291,7 +326,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_fire_resistance"
+                "potion": "minecraft:long_swiftness"
               }
             }
           }
@@ -303,7 +338,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_fire_resistance"
+                "potion": "minecraft:long_strength"
               }
             }
           }
@@ -327,7 +362,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:strong_strength"
+                "potion": "minecraft:long_swiftness"
               }
             }
           }
@@ -339,7 +374,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:strong_strength"
+                "potion": "minecraft:long_strength"
               }
             }
           }
@@ -347,27 +382,22 @@
         {
           "slot": 15,
           "item": {
-            "id": "minecraft:firework_rocket",
-            "count": 64,
-            "components": {
-              "minecraft:fireworks": {
-                "flight_duration": 3
-              }
-            }
+            "id": "minecraft:golden_apple",
+            "count": 64
           }
         },
         {
           "slot": 16,
           "item": {
-            "id": "minecraft:wind_charge",
-            "count": 64
+            "id": "minecraft:totem_of_undying",
+            "count": 1
           }
         },
         {
           "slot": 17,
           "item": {
-            "id": "minecraft:ender_pearl",
-            "count": 16
+            "id": "minecraft:totem_of_undying",
+            "count": 1
           }
         },
         {
@@ -377,7 +407,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_swiftness"
+                "potion": "minecraft:long_fire_resistance"
               }
             }
           }
@@ -401,7 +431,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_swiftness"
+                "potion": "minecraft:long_strength"
               }
             }
           }
@@ -413,7 +443,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:long_swiftness"
+                "potion": "minecraft:long_fire_resistance"
               }
             }
           }
@@ -425,7 +455,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:strong_strength"
+                "potion": "minecraft:long_swiftness"
               }
             }
           }
@@ -437,7 +467,7 @@
             "count": 1,
             "components": {
               "minecraft:potion_contents": {
-                "potion": "minecraft:strong_strength"
+                "potion": "minecraft:long_strength"
               }
             }
           }
@@ -445,123 +475,44 @@
         {
           "slot": 24,
           "item": {
-            "id": "minecraft:firework_rocket",
-            "count": 64,
-            "components": {
-              "minecraft:fireworks": {
-                "flight_duration": 3
-              }
-            }
+            "id": "minecraft:water_bucket",
+            "count": 1
           }
         },
         {
           "slot": 25,
           "item": {
-            "id": "minecraft:wind_charge",
-            "count": 64
+            "id": "minecraft:totem_of_undying",
+            "count": 1
           }
         },
         {
           "slot": 26,
           "item": {
-            "id": "minecraft:ender_pearl",
-            "count": 16
+            "id": "minecraft:totem_of_undying",
+            "count": 1
           }
         }
       ]
     }
   },
-  "18": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:long_fire_resistance"
-      }
-    }
+  "29": {
+    "id": "minecraft:cobweb",
+    "count": 64
   },
-  "19": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:long_fire_resistance"
-      }
-    }
-  },
-  "20": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
-      }
-    }
-  },
-  "21": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
-      }
-    }
-  },
-  "22": {
+  "30": {
     "id": "minecraft:totem_of_undying",
     "count": 1
   },
-  "23": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
-      }
-    }
+  "31": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
   },
-  "24": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
-      }
-    }
+  "32": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
   },
-  "25": {
-    "id": "minecraft:ender_pearl",
-    "count": 16
-  },
-  "26": {
-    "id": "minecraft:netherite_pickaxe",
-    "count": 1,
-    "components": {
-      "minecraft:enchantments": {
-        "minecraft:silk_touch": 1,
-        "minecraft:mending": 1,
-        "minecraft:efficiency": 5,
-        "minecraft:unbreaking": 3
-      },
-      "minecraft:custom_name": "ST"
-    }
-  },
-  "27": {
-    "id": "minecraft:netherite_sword",
-    "count": 1,
-    "components": {
-      "minecraft:enchantments": {
-        "minecraft:looting": 3,
-        "minecraft:fire_aspect": 2,
-        "minecraft:sharpness": 5,
-        "minecraft:knockback": 1,
-        "minecraft:mending": 1,
-        "minecraft:unbreaking": 3
-      },
-      "minecraft:custom_name": "Initiality."
-    }
-  },
-  "28": {
+  "33": {
     "id": "minecraft:splash_potion",
     "count": 1,
     "components": {
@@ -570,58 +521,39 @@
       }
     }
   },
-  "29": {
-    "id": "minecraft:firework_rocket",
-    "count": 64,
-    "components": {
-      "minecraft:fireworks": {
-        "flight_duration": 3
-      }
-    }
-  },
-  "30": {
+  "34": {
     "id": "minecraft:splash_potion",
     "count": 1,
     "components": {
       "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
+        "potion": "minecraft:long_swiftness"
       }
     }
   },
-  "31": {
-    "id": "minecraft:totem_of_undying",
-    "count": 1
-  },
-  "32": {
-    "id": "minecraft:golden_apple",
-    "count": 64
-  },
-  "33": {
-    "id": "minecraft:enchanted_golden_apple",
-    "count": 16
-  },
-  "34": {
-    "id": "minecraft:ender_pearl",
-    "count": 16
-  },
   "35": {
-    "id": "minecraft:breeze_rod",
-    "count": 64
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
   },
   "36": {
     "id": "minecraft:netherite_boots",
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:depth_strider": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:soul_speed": 3,
         "minecraft:mending": 1,
         "minecraft:feather_falling": 4,
         "minecraft:protection": 4,
-        "minecraft:unbreaking": 3
+        "minecraft:depth_strider": 3
       },
       "minecraft:trim": {
-        "material": "minecraft:netherite",
-        "pattern": "minecraft:silence"
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:wayfinder"
       }
     }
   },
@@ -630,14 +562,14 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
         "minecraft:swift_sneak": 3,
-        "minecraft:protection": 4,
-        "minecraft:unbreaking": 3
+        "minecraft:mending": 1,
+        "minecraft:protection": 4
       },
       "minecraft:trim": {
-        "material": "minecraft:netherite",
-        "pattern": "minecraft:silence"
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:shaper"
       }
     }
   },
@@ -646,13 +578,13 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
         "minecraft:mending": 1,
-        "minecraft:protection": 4,
-        "minecraft:unbreaking": 3
+        "minecraft:protection": 4
       },
       "minecraft:trim": {
-        "material": "minecraft:netherite",
-        "pattern": "minecraft:silence"
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:snout"
       }
     }
   },
@@ -661,15 +593,15 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
+        "minecraft:unbreaking": 3,
         "minecraft:mending": 1,
-        "minecraft:aqua_affinity": 1,
-        "minecraft:protection": 4,
         "minecraft:respiration": 3,
-        "minecraft:unbreaking": 3
+        "minecraft:aqua_affinity": 1,
+        "minecraft:protection": 4
       },
       "minecraft:trim": {
-        "material": "minecraft:netherite",
-        "pattern": "minecraft:silence"
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:flow"
       }
     }
   },

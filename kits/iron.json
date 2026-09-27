@@ -1,0 +1,44 @@
+{
+  "0": {
+    "id": "minecraft:iron_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 3
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:iron_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:sharpness": 3
+      }
+    }
+  },
+  "2": {
+    "id": "minecraft:cooked_beef",
+    "count": 64
+  },
+  "36": {
+    "id": "minecraft:iron_boots",
+    "count": 1
+  },
+  "37": {
+    "id": "minecraft:iron_leggings",
+    "count": 1
+  },
+  "38": {
+    "id": "minecraft:iron_chestplate",
+    "count": 1
+  },
+  "39": {
+    "id": "minecraft:iron_helmet",
+    "count": 1
+  },
+  "40": {
+    "id": "minecraft:shield",
+    "count": 1
+  }
+}
