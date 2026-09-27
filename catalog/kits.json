@@ -520,6 +520,10 @@
   "size": 2153
  },
  {
+  "name": "PiratesBot.json",
+  "size": 6580
+ },
+ {
   "name": "PowerfulNetheritet.json",
   "size": 6013
  },
@@ -554,6 +558,18 @@
  {
   "name": "SargeLAWt.json",
   "size": 4034
+ },
+ {
+  "name": "SargeLawBot.json",
+  "size": 17532
+ },
+ {
+  "name": "SargeLawBot_2.json",
+  "size": 17532
+ },
+ {
+  "name": "SharpnessHH.json",
+  "size": 14483
  },
  {
   "name": "ShoeBillyBotKit.json",
@@ -592,6 +608,34 @@
   "size": 11576
  },
  {
+  "name": "Supzec.json",
+  "size": 13523
+ },
+ {
+  "name": "SwightBanditCart.json",
+  "size": 21173
+ },
+ {
+  "name": "SwightBanditCart_2.json",
+  "size": 21173
+ },
+ {
+  "name": "SwightBanditSMP.json",
+  "size": 13840
+ },
+ {
+  "name": "SwightBanditSMP_2.json",
+  "size": 13840
+ },
+ {
+  "name": "SwightBotDiamond.json",
+  "size": 14492
+ },
+ {
+  "name": "SwightDiamondKit.json",
+  "size": 14885
+ },
+ {
   "name": "Swightt.json",
   "size": 6320
  },
@@ -602,6 +646,10 @@
  {
   "name": "Th3Blurpinsteint.json",
   "size": 1230
+ },
+ {
+  "name": "ThatMidnightHH.json",
+  "size": 6971
  },
  {
   "name": "TheG0DofWart.json",
@@ -628,8 +676,16 @@
   "size": 13892
  },
  {
+  "name": "TheoBot.json",
+  "size": 17771
+ },
+ {
   "name": "TheoBotKit.json",
   "size": 7724
+ },
+ {
+  "name": "TheoBot_2.json",
+  "size": 17771
  },
  {
   "name": "TheoKit.json",
@@ -645,15 +701,171 @@
  },
  {
   "name": "Wemmbu.json",
-  "size": 16196
+  "size": 7094
+ },
+ {
+  "name": "Wemmbu1stRematch.json",
+  "size": 9338
+ },
+ {
+  "name": "Wemmbu1stRematch_2.json",
+  "size": 9338
+ },
+ {
+  "name": "Wemmbu1stRematch_3.json",
+  "size": 9338
+ },
+ {
+  "name": "Wemmbu1stRematch_4.json",
+  "size": 9338
+ },
+ {
+  "name": "Wemmbu1stRematch_5.json",
+  "size": 9338
+ },
+ {
+  "name": "Wemmbu1stRematch_6.json",
+  "size": 9338
+ },
+ {
+  "name": "WemmbuAJTournament.json",
+  "size": 7276
+ },
+ {
+  "name": "WemmbuAJTournament_2.json",
+  "size": 7276
+ },
+ {
+  "name": "WemmbuAJTournament_3.json",
+  "size": 7276
+ },
+ {
+  "name": "WemmbuAJTournament_4.json",
+  "size": 7276
+ },
+ {
+  "name": "WemmbuAJTournament_5.json",
+  "size": 7276
+ },
+ {
+  "name": "WemmbuAJTournament_6.json",
+  "size": 7276
+ },
+ {
+  "name": "WemmbuArachn1d.json",
+  "size": 6980
+ },
+ {
+  "name": "WemmbuEggEmpire.json",
+  "size": 7076
+ },
+ {
+  "name": "WemmbuForestFight.json",
+  "size": 25509
+ },
+ {
+  "name": "WemmbuForestFight_2.json",
+  "size": 25509
+ },
+ {
+  "name": "WemmbuForestFight_3.json",
+  "size": 25509
+ },
+ {
+  "name": "WemmbuForestFight_4.json",
+  "size": 25509
+ },
+ {
+  "name": "WemmbuForestFight_5.json",
+  "size": 25509
+ },
+ {
+  "name": "WemmbuForestFight_6.json",
+  "size": 25509
  },
  {
   "name": "WemmbuMane.json",
   "size": 7007
  },
  {
+  "name": "WemmbuMesaMafia.json",
+  "size": 24733
+ },
+ {
+  "name": "WemmbuMesaMafia_2.json",
+  "size": 24733
+ },
+ {
+  "name": "WemmbuMesaMafia_3.json",
+  "size": 24733
+ },
+ {
+  "name": "WemmbuMesaMafia_4.json",
+  "size": 24733
+ },
+ {
+  "name": "WemmbuMesaMafia_5.json",
+  "size": 24733
+ },
+ {
+  "name": "WemmbuMesaMafia_6.json",
+  "size": 24733
+ },
+ {
   "name": "WemmbuMist.json",
   "size": 7251
+ },
+ {
+  "name": "WemmbuPost2v1000.json",
+  "size": 16477
+ },
+ {
+  "name": "WemmbuPost2v1000_2.json",
+  "size": 16477
+ },
+ {
+  "name": "WemmbuPost2v1000_3.json",
+  "size": 16477
+ },
+ {
+  "name": "WemmbuPost2v1000_4.json",
+  "size": 16477
+ },
+ {
+  "name": "WemmbuPost2v1000_5.json",
+  "size": 16477
+ },
+ {
+  "name": "WemmbuPost2v1000_6.json",
+  "size": 16477
+ },
+ {
+  "name": "WemmbuVsFlameMafia.json",
+  "size": 13853
+ },
+ {
+  "name": "WemmbuVsFlameMafia_2.json",
+  "size": 13853
+ },
+ {
+  "name": "WemmbuVsFlameMafia_3.json",
+  "size": 13853
+ },
+ {
+  "name": "WemmbuVsFlameMafia_4.json",
+  "size": 13853
+ },
+ {
+  "name": "WemmbuVsFlameMafia_5.json",
+  "size": 13853
+ },
+ {
+  "name": "WemmbuVsFlameMafia_6.json",
+  "size": 13853
+ },
+ {
+  "name": "Wemmbu_2.json",
+  "size": 7592
  },
  {
   "name": "Wemmbupoor.json",
@@ -1020,6 +1232,10 @@
   "size": 736
  },
  {
+  "name": "null.json",
+  "size": 8733
+ },
+ {
   "name": "null_chungie.json",
   "size": 9472
  },
@@ -1028,8 +1244,20 @@
   "size": 7967
  },
  {
+  "name": "null_sup.json",
+  "size": 13535
+ },
+ {
   "name": "princezam.json",
   "size": 7504
+ },
+ {
+  "name": "prisoner.json",
+  "size": 1103
+ },
+ {
+  "name": "purpled.json",
+  "size": 4610
  },
  {
   "name": "rangers.json",
@@ -1038,6 +1266,10 @@
  {
   "name": "roshambogamest.json",
   "size": 4592
+ },
+ {
+  "name": "sarge_law.json",
+  "size": 4125
  },
  {
   "name": "sargelawHQ.json",
@@ -1056,8 +1288,24 @@
   "size": 7210
  },
  {
+  "name": "spoke.json",
+  "size": 13449
+ },
+ {
   "name": "spokeHQ.json",
   "size": 6997
+ },
+ {
+  "name": "spoke_end.json",
+  "size": 15585
+ },
+ {
+  "name": "spoke_farlands.json",
+  "size": 39487
+ },
+ {
+  "name": "spoke_purgatory.json",
+  "size": 11575
  },
  {
   "name": "tnt_min.json",
@@ -1092,6 +1340,22 @@
   "size": 8229
  },
  {
+  "name": "wemmbu_dia.json",
+  "size": 7384
+ },
+ {
+  "name": "wemmbu_end.json",
+  "size": 7048
+ },
+ {
+  "name": "wemmbu_farlands.json",
+  "size": 7076
+ },
+ {
+  "name": "wemmbu_purpletrim.json",
+  "size": 7632
+ },
+ {
   "name": "wemmbu_steampunk.json",
   "size": 26908
  },
@@ -1124,6 +1388,14 @@
   "size": 8623
  },
  {
+  "name": "yungySwight.json",
+  "size": 14846
+ },
+ {
+  "name": "yungySwightStudentBot.json",
+  "size": 14846
+ },
+ {
   "name": "yungybot.json",
   "size": 14096
  },
@@ -1138,6 +1410,10 @@
  {
   "name": "yungyxt.json",
   "size": 7833
+ },
+ {
+  "name": "zam.json",
+  "size": 7674
  },
  {
   "name": "zamHQ.json",
