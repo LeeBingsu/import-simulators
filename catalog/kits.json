@@ -1328,6 +1328,10 @@
   "size": 6008
  },
  {
+  "name": "venthatguy.json",
+  "size": 2
+ },
+ {
   "name": "wardenchungus.json",
   "size": 5384
  },
@@ -1338,6 +1342,10 @@
  {
   "name": "wemmbu2.json",
   "size": 60316
+ },
+ {
+  "name": "wemmbu_2v1000.json",
+  "size": 7845
  },
  {
   "name": "wemmbu_bot.json",
@@ -1353,7 +1361,11 @@
  },
  {
   "name": "wemmbu_farlands.json",
-  "size": 7076
+  "size": 7566
+ },
+ {
+  "name": "wemmbu_jaden.json",
+  "size": 24286
  },
  {
   "name": "wemmbu_purpletrim.json",
