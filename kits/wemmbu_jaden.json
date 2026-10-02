@@ -5,13 +5,13 @@
     "components": {
       "minecraft:damage": 812,
       "minecraft:enchantments": {
-        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 2,
         "minecraft:looting": 3,
-        "minecraft:sharpness": 5,
-        "minecraft:mending": 1,
-        "minecraft:knockback": 1,
         "minecraft:sweeping_edge": 3,
-        "minecraft:fire_aspect": 2
+        "minecraft:knockback": 1,
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3
       }
     }
   },
@@ -21,34 +21,38 @@
     "components": {
       "minecraft:damage": 406,
       "minecraft:enchantments": {
-        "minecraft:efficiency": 5,
-        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
         "minecraft:silk_touch": 1,
+        "minecraft:efficiency": 5,
         "minecraft:sharpness": 5,
-        "minecraft:mending": 1
+        "minecraft:unbreaking": 3
       }
     }
   },
   "2": {
-    "id": "minecraft:ender_pearl",
-    "count": 16
-  },
-  "3": {
-    "id": "minecraft:golden_apple",
-    "count": 63
-  },
-  "4": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
+    "id": "minecraft:firework_rocket",
+    "count": 64,
     "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "stab_aim_3": 1
-      },
-      "minecraft:custom_name": "stab shot"
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
     }
   },
-  "5": {
+  "3": {
+    "id": "minecraft:mace",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 300,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:density": 5,
+        "minecraft:wind_burst": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:custom_name": "Gambit"
+    }
+  },
+  "4": {
     "id": "minecraft:elytra",
     "count": 1,
     "components": {
@@ -59,41 +63,11 @@
       }
     }
   },
+  "5": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
   "6": {
-    "id": "minecraft:mace",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 300,
-      "minecraft:enchantments": {
-        "minecraft:wind_burst": 1,
-        "minecraft:unbreaking": 3,
-        "minecraft:mending": 1,
-        "minecraft:density": 5
-      },
-      "minecraft:custom_name": "Gambit"
-    }
-  },
-  "7": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "nuke_aim_3": 1
-      },
-      "minecraft:custom_name": "nuke shot"
-    }
-  },
-  "8": {
-    "id": "minecraft:firework_rocket",
-    "count": 64,
-    "components": {
-      "minecraft:fireworks": {
-        "flight_duration": 3
-      }
-    }
-  },
-  "9": {
     "id": "minecraft:shield",
     "count": 1,
     "components": {
@@ -114,11 +88,78 @@
       "minecraft:base_color": "purple"
     }
   },
+  "7": {
+    "id": "minecraft:golden_apple",
+    "count": 63
+  },
+  "8": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "9": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
   "10": {
-    "id": "minecraft:enchanted_golden_apple",
-    "count": 1
+    "id": "minecraft:experience_bottle",
+    "count": 64
   },
   "11": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "12": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "13": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Nuke Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "07015ffd-6e0c-4b32-9492-afe56505c20b"
+      }
+    }
+  },
+  "14": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_strength"
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_fire_resistance"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "18": {
     "id": "minecraft:purple_shulker_box",
     "count": 1,
     "components": {
@@ -406,111 +447,11 @@
       "minecraft:custom_name": ":)"
     }
   },
-  "12": {
-    "id": "minecraft:totem_of_undying",
-    "count": 1
-  },
-  "13": {
-    "id": "minecraft:totem_of_undying",
-    "count": 1
-  },
-  "14": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "stab_aim_3": 1
-      },
-      "minecraft:custom_name": "stab shot"
-    }
-  },
-  "15": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:long_strength"
-      }
-    }
-  },
-  "16": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:long_fire_resistance"
-      }
-    }
-  },
-  "17": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:long_swiftness"
-      }
-    }
-  },
-  "18": {
-    "id": "minecraft:experience_bottle",
-    "count": 64
-  },
   "19": {
     "id": "minecraft:experience_bottle",
     "count": 64
   },
   "20": {
-    "id": "minecraft:ender_pearl",
-    "count": 16
-  },
-  "21": {
-    "id": "minecraft:experience_bottle",
-    "count": 64
-  },
-  "22": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "stab_aim_3": 1
-      },
-      "minecraft:custom_name": "stab shot"
-    }
-  },
-  "23": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "stab_aim_3": 1
-      },
-      "minecraft:custom_name": "stab shot"
-    }
-  },
-  "24": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "stab_aim_3": 1
-      },
-      "minecraft:custom_name": "stab shot"
-    }
-  },
-  "25": {
-    "id": "minecraft:firework_rocket",
-    "count": 56,
-    "components": {
-      "minecraft:fireworks": {
-        "flight_duration": 3
-      }
-    }
-  },
-  "26": {
     "id": "minecraft:firework_rocket",
     "count": 64,
     "components": {
@@ -518,6 +459,60 @@
         "flight_duration": 3
       }
     }
+  },
+  "21": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Nuke Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "1a91b6e3-02d1-4e73-8d62-55f0a6ce0177"
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Nuke Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "f27bc3f6-3aaf-434b-96a2-f503e4f78c70"
+      }
+    }
+  },
+  "23": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "24": {
+    "id": "minecraft:fishing_rod",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "Stab Shot",
+      "minecraft:damage": 63,
+      "minecraft:custom_data": {
+        "item_uuid": "dc3f8fc0-f66f-43a0-b61a-7303cd308195"
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:netherite_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 1218,
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:silk_touch": 1,
+        "minecraft:efficiency": 5,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
   },
   "27": {
     "id": "minecraft:red_shulker_box",
@@ -907,95 +902,76 @@
     }
   },
   "28": {
+    "id": "minecraft:experience_bottle",
+    "count": 64
+  },
+  "29": {
+    "id": "minecraft:firework_rocket",
+    "count": 56,
+    "components": {
+      "minecraft:fireworks": {
+        "flight_duration": 3
+      }
+    }
+  },
+  "30": {
     "id": "minecraft:mace",
     "count": 1,
     "components": {
       "minecraft:damage": 150,
       "minecraft:enchantments": {
-        "minecraft:fire_aspect": 2,
+        "minecraft:unbreaking": 3,
         "minecraft:breach": 4,
-        "minecraft:unbreaking": 3
+        "minecraft:fire_aspect": 2
       },
       "minecraft:custom_name": "Crucible"
     }
-  },
-  "29": {
-    "id": "minecraft:ender_pearl",
-    "count": 16
-  },
-  "30": {
-    "id": "minecraft:breeze_rod",
-    "count": 64
   },
   "31": {
     "id": "minecraft:fishing_rod",
     "count": 1,
     "components": {
+      "minecraft:custom_name": "Nuke Shot",
       "minecraft:damage": 63,
       "minecraft:custom_data": {
-        "stab_aim_3": 1
-      },
-      "minecraft:custom_name": "stab shot"
+        "item_uuid": "22380868-b520-47db-920f-11d3a9726797"
+      }
     }
   },
   "32": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "stab_aim_3": 1
-      },
-      "minecraft:custom_name": "stab shot"
-    }
+    "id": "minecraft:wind_charge",
+    "count": 64
   },
   "33": {
     "id": "minecraft:fishing_rod",
     "count": 1,
     "components": {
+      "minecraft:custom_name": "Stab Shot",
       "minecraft:damage": 63,
       "minecraft:custom_data": {
-        "nuke_aim_3": 1
-      },
-      "minecraft:custom_name": "nuke shot"
+        "item_uuid": "388fb4d6-f6eb-4814-8f93-5a728cfeb950"
+      }
     }
   },
   "34": {
-    "id": "minecraft:fishing_rod",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 63,
-      "minecraft:custom_data": {
-        "nuke_aim_3": 1
-      },
-      "minecraft:custom_name": "nuke shot"
-    }
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 1
   },
   "35": {
-    "id": "minecraft:netherite_pickaxe",
-    "count": 1,
-    "components": {
-      "minecraft:damage": 1218,
-      "minecraft:enchantments": {
-        "minecraft:efficiency": 5,
-        "minecraft:unbreaking": 3,
-        "minecraft:silk_touch": 1,
-        "minecraft:mending": 1
-      }
-    }
+    "id": "minecraft:ender_pearl",
+    "count": 16
   },
   "36": {
     "id": "minecraft:netherite_boots",
     "count": 1,
     "components": {
-      "minecraft:damage": 48,
       "minecraft:enchantments": {
-        "minecraft:soul_speed": 3,
+        "minecraft:depth_strider": 3,
+        "minecraft:mending": 1,
         "minecraft:protection": 4,
         "minecraft:unbreaking": 3,
         "minecraft:feather_falling": 4,
-        "minecraft:mending": 1,
-        "minecraft:depth_strider": 3
+        "minecraft:soul_speed": 3
       }
     }
   },
@@ -1003,12 +979,11 @@
     "id": "minecraft:netherite_leggings",
     "count": 1,
     "components": {
-      "minecraft:damage": 55,
       "minecraft:enchantments": {
+        "minecraft:mending": 1,
         "minecraft:swift_sneak": 3,
         "minecraft:protection": 4,
-        "minecraft:unbreaking": 3,
-        "minecraft:mending": 1
+        "minecraft:unbreaking": 3
       }
     }
   },
@@ -1016,10 +991,9 @@
     "id": "minecraft:netherite_chestplate",
     "count": 1,
     "components": {
-      "minecraft:damage": 236,
       "minecraft:enchantments": {
-        "minecraft:protection": 4,
         "minecraft:mending": 1,
+        "minecraft:protection": 4,
         "minecraft:unbreaking": 3
       }
     }
@@ -1028,13 +1002,12 @@
     "id": "minecraft:netherite_helmet",
     "count": 1,
     "components": {
-      "minecraft:damage": 40,
       "minecraft:enchantments": {
-        "minecraft:protection": 4,
-        "minecraft:unbreaking": 3,
         "minecraft:mending": 1,
         "minecraft:respiration": 3,
-        "minecraft:aqua_affinity": 1
+        "minecraft:aqua_affinity": 1,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
       }
     }
   },
