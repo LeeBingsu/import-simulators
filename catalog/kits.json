@@ -377,7 +377,7 @@
  },
  {
   "name": "Jaden_MAN.json",
-  "size": 7024
+  "size": 10740
  },
  {
   "name": "Jaden_MANArachn1d.json",
@@ -981,7 +981,7 @@
  },
  {
   "name": "dialaw.json",
-  "size": 3324
+  "size": 3389
  },
  {
   "name": "dialaww.json",
@@ -1022,6 +1022,10 @@
  {
   "name": "flame2.json",
   "size": 6969
+ },
+ {
+  "name": "flame_2v1000.json",
+  "size": 8275
  },
  {
   "name": "flamebot.json",
