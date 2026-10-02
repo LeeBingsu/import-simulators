@@ -4,10 +4,10 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
+        "minecraft:mending": 1,
         "minecraft:fire_aspect": 2,
-        "minecraft:unbreaking": 3,
         "minecraft:sharpness": 5,
-        "minecraft:mending": 1
+        "minecraft:unbreaking": 3
       }
     }
   },
@@ -20,10 +20,10 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:unbreaking": 3,
-        "minecraft:sharpness": 5,
+        "minecraft:mending": 1,
         "minecraft:efficiency": 5,
-        "minecraft:mending": 1
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3
       }
     }
   },
@@ -32,10 +32,10 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:unbreaking": 3,
         "minecraft:mending": 1,
+        "minecraft:density": 5,
         "minecraft:wind_burst": 1,
-        "minecraft:density": 5
+        "minecraft:unbreaking": 3
       }
     }
   },
@@ -44,6 +44,27 @@
     "count": 16
   },
   "5": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:skull",
+          "color": "white"
+        }
+      ],
+      "minecraft:base_color": "blue"
+    }
+  },
+  "7": {
     "id": "minecraft:splash_potion",
     "count": 1,
     "components": {
@@ -51,19 +72,6 @@
         "potion": "minecraft:strong_strength"
       }
     }
-  },
-  "6": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_swiftness"
-      }
-    }
-  },
-  "7": {
-    "id": "minecraft:wind_charge",
-    "count": 64
   },
   "8": {
     "id": "minecraft:cobweb",
@@ -128,22 +136,205 @@
     }
   },
   "16": {
-    "id": "minecraft:splash_potion",
+    "id": "minecraft:yellow_shulker_box",
     "count": 1,
     "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_swiftness"
-      }
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        }
+      ]
     }
   },
   "17": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_swiftness"
-      }
-    }
+    "id": "minecraft:totem_of_undying",
+    "count": 1
   },
   "18": {
     "id": "minecraft:experience_bottle",
@@ -208,13 +399,8 @@
     "count": 1
   },
   "26": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_swiftness"
-      }
-    }
+    "id": "minecraft:totem_of_undying",
+    "count": 1
   },
   "27": {
     "id": "minecraft:experience_bottle",
@@ -252,13 +438,8 @@
     }
   },
   "32": {
-    "id": "minecraft:splash_potion",
-    "count": 1,
-    "components": {
-      "minecraft:potion_contents": {
-        "potion": "minecraft:strong_strength"
-      }
-    }
+    "id": "minecraft:wind_charge",
+    "count": 64
   },
   "33": {
     "id": "minecraft:splash_potion",
@@ -270,10 +451,6 @@
     }
   },
   "34": {
-    "id": "minecraft:wind_charge",
-    "count": 64
-  },
-  "35": {
     "id": "minecraft:splash_potion",
     "count": 1,
     "components": {
@@ -282,15 +459,19 @@
       }
     }
   },
+  "35": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
   "36": {
     "id": "minecraft:netherite_boots",
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:feather_falling": 4,
-        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
         "minecraft:protection": 4,
-        "minecraft:mending": 1
+        "minecraft:unbreaking": 3,
+        "minecraft:feather_falling": 4
       }
     }
   },
@@ -299,10 +480,10 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:unbreaking": 3,
+        "minecraft:mending": 1,
         "minecraft:swift_sneak": 3,
         "minecraft:protection": 4,
-        "minecraft:mending": 1
+        "minecraft:unbreaking": 3
       }
     }
   },
@@ -311,8 +492,8 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:protection": 4,
         "minecraft:mending": 1,
+        "minecraft:protection": 4,
         "minecraft:unbreaking": 3
       }
     }
@@ -322,8 +503,8 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:protection": 4,
         "minecraft:mending": 1,
+        "minecraft:protection": 4,
         "minecraft:unbreaking": 3
       }
     }
@@ -333,9 +514,9 @@
     "count": 1,
     "components": {
       "minecraft:enchantments": {
-        "minecraft:unbreaking": 3,
         "minecraft:mending": 1,
-        "minecraft:riptide": 3
+        "minecraft:riptide": 3,
+        "minecraft:unbreaking": 3
       }
     }
   }
