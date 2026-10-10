@@ -14,13 +14,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.Duration;
-import java.util.Locale;
+import java.util.Arrays;
 import java.util.function.LongConsumer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 /** Downloads a map archive and unpacks it. Handles the .zip and .rar a map may be published as. */
 public class MapArchive {
+
+    /** junrar reads RAR4 only; RAR5 (WinRAR's default since 5.0) is recognised to say so. */
+    private static final byte[] RAR4 = {'R', 'a', 'r', '!', 0x1A, 0x07, 0x00};
+    private static final byte[] RAR5 = {'R', 'a', 'r', '!', 0x1A, 0x07, 0x01, 0x00};
 
     private final HttpClient http = HttpClient.newBuilder()
             .followRedirects(HttpClient.Redirect.NORMAL)
@@ -48,13 +52,18 @@ public class MapArchive {
         // reader seeks. Zip needs it because ZipInputStream, reading forwards only, rejects a
         // stored entry carrying a data descriptor ("only DEFLATED entries can have EXT
         // descriptor") — which is how some tools write the empty region files in a world.
-        boolean rar = url.toLowerCase(Locale.ROOT).endsWith(".rar");
-        Path temp = Files.createTempFile("import-simulators-", rar ? ".rar" : ".zip");
+        Path temp = Files.createTempFile("import-simulators-", ".archive");
         try {
             try (InputStream in = new CountingStream(resp.body(), onBytes)) {
                 Files.copy(in, temp, StandardCopyOption.REPLACE_EXISTING);
             }
-            if (rar) {
+            // Go by the file's own signature, not the URL: a renamed file still unpacks.
+            byte[] magic = readMagic(temp);
+            if (startsWith(magic, RAR5)) {
+                throw new IOException("The archive is RAR5, which cannot be unpacked here;"
+                        + " it needs to be re-published as a .zip");
+            }
+            if (startsWith(magic, RAR4)) {
                 unpackRar(temp, root);
             } else {
                 unpackZip(temp, root);
@@ -62,6 +71,17 @@ public class MapArchive {
         } finally {
             Files.deleteIfExists(temp);
         }
+    }
+
+    private static byte[] readMagic(Path file) throws IOException {
+        try (InputStream in = Files.newInputStream(file)) {
+            return in.readNBytes(8);
+        }
+    }
+
+    private static boolean startsWith(byte[] data, byte[] prefix) {
+        return data.length >= prefix.length
+                && Arrays.equals(data, 0, prefix.length, prefix, 0, prefix.length);
     }
 
     private void unpackZip(Path archive, Path root) throws IOException {

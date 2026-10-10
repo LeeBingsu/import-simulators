@@ -3,7 +3,7 @@
   "id": "import-simulators",
   "version": "${version}",
   "name": "Import Simulators",
-  "description": "Adds an 'Import Simulators' button to the singleplayer world-select screen that downloads map folders from a Google Drive folder into your saves directory.",
+  "description": "Adds an 'Import Simulators' button to the singleplayer world-select screen that downloads simulator maps from GitHub releases into your saves directory.",
   "authors": ["Hi_Its_I"],
   "contact": {},
   "license": "LGPL-3.0-or-later",

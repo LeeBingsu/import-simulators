@@ -5,6 +5,8 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.screen.world.SelectWorldScreen;
+import net.minecraft.client.toast.SystemToast;
+import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -275,7 +277,11 @@ public final class ImportTask {
     private static void finish(MinecraftClient client, Screen returnScreen) {
         client.execute(() -> {
             RUNNING.set(false);
-            if (returnScreen == null) {
+            SystemToast.add(client.getToastManager(), SystemToast.Type.PERIODIC_NOTIFICATION,
+                    Text.literal("Import Simulators"), Text.literal(progress));
+            // Only move on from the progress screen. A player who left it may be in a world by
+            // now, and opening the world list over a running game would let them start another.
+            if (returnScreen == null || !(client.currentScreen instanceof MapSelectScreen)) {
                 return;
             }
             if (returnScreen instanceof SelectWorldScreen) {

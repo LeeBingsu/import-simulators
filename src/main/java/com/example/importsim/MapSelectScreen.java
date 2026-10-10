@@ -210,7 +210,7 @@ public class MapSelectScreen extends Screen {
     @Override
     public void render(DrawContext ctx, int mouseX, int mouseY, float delta) {
         super.render(ctx, mouseX, mouseY, delta);
-        ctx.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 15, 0xFFFFFF);
+        ctx.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 15, 0xFFFFFFFF);
 
         if (!ImportTask.isRunning() && lastStatus != null) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(lastStatus),
@@ -220,7 +220,7 @@ public class MapSelectScreen extends Screen {
 
         if (ImportTask.isRunning()) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(ImportTask.progress()),
-                    this.width / 2, this.height / 2 - 24, 0xFFFFFF);
+                    this.width / 2, this.height / 2 - 24, 0xFFFFFFFF);
 
             long total = ImportTask.totalBytes();
             long done = ImportTask.downloadedBytes();
@@ -241,18 +241,18 @@ public class MapSelectScreen extends Screen {
                             + "  (" + Math.min(100, done * 100L / total) + "%)"
                     : ImportTask.humanSize(done) + " downloaded";
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(sizeText),
-                    this.width / 2, by + barH + 6, 0xAAAAAA);
+                    this.width / 2, by + barH + 6, 0xFFAAAAAA);
             drawReason(ctx, ImportTask.failureDetail(), by + barH + 18);
             return;
         }
         if (loadError != null) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal("Failed to load list: " + loadError),
-                    this.width / 2, this.height / 2, 0xFF5555);
+                    this.width / 2, this.height / 2, 0xFFFF5555);
             return;
         }
         if (maps == null) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal("Loading map list…"),
-                    this.width / 2, this.height / 2, 0xAAAAAA);
+                    this.width / 2, this.height / 2, 0xFFAAAAAA);
             return;
         }
 
@@ -295,7 +295,7 @@ public class MapSelectScreen extends Screen {
 
         ctx.drawCenteredTextWithShadow(this.textRenderer,
                 Text.literal(selected.size() + " / " + maps.size() + " selected  —  scroll to see more"),
-                this.width / 2, listBottom + 4, 0xAAAAAA);
+                this.width / 2, listBottom + 4, 0xFFAAAAAA);
     }
 
     @Override

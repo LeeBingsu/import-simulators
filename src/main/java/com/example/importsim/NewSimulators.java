@@ -29,6 +29,7 @@ public final class NewSimulators {
     private static final AtomicBoolean CHECKED = new AtomicBoolean(false);
 
     private static volatile Set<String> unseen = Set.of();
+    private static volatile boolean viewed = false;
 
     private NewSimulators() {
     }
@@ -63,7 +64,10 @@ public final class NewSimulators {
                 }
                 Set<String> fresh = new LinkedHashSet<>(catalog);
                 fresh.removeAll(seen);
-                unseen = fresh;
+                // The list may have been opened while this check was still running.
+                if (!viewed) {
+                    unseen = fresh;
+                }
             } catch (Exception e) {
                 LOG.warn("[import-simulators] Could not check for new simulators", e);
             }
@@ -74,6 +78,7 @@ public final class NewSimulators {
 
     /** The player is looking at the list, so nothing in it counts as new any more. */
     public static void markSeen(Collection<String> names) {
+        viewed = true;
         unseen = Set.of();
         writeSeen(new LinkedHashSet<>(names));
     }
