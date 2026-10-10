@@ -6,8 +6,10 @@ import com.github.junrar.rarfile.FileHeader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.ConnectException;
 import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpConnectTimeoutException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
@@ -26,6 +28,8 @@ public class MapArchive {
     private static final byte[] RAR4 = {'R', 'a', 'r', '!', 0x1A, 0x07, 0x00};
     private static final byte[] RAR5 = {'R', 'a', 'r', '!', 0x1A, 0x07, 0x01, 0x00};
 
+    private static final int CONNECT_ATTEMPTS = 3;
+
     private final HttpClient http = HttpClient.newBuilder()
             .followRedirects(HttpClient.Redirect.NORMAL)
             .connectTimeout(Duration.ofSeconds(30))
@@ -39,7 +43,7 @@ public class MapArchive {
                 .timeout(Duration.ofMinutes(30))
                 .GET()
                 .build();
-        HttpResponse<InputStream> resp = http.send(req, HttpResponse.BodyHandlers.ofInputStream());
+        HttpResponse<InputStream> resp = sendRetryingConnect(req);
         if (resp.statusCode() != 200) {
             resp.body().close();
             throw new IOException("Map download failed (HTTP " + resp.statusCode() + ")");
@@ -70,6 +74,26 @@ public class MapArchive {
             }
         } finally {
             Files.deleteIfExists(temp);
+        }
+    }
+
+    /**
+     * A connect timeout says nothing about the file, only that the download host (GitHub's asset
+     * CDN, behind a redirect) did not answer in time, which on a slow or busy network often passes.
+     */
+    private HttpResponse<InputStream> sendRetryingConnect(HttpRequest req)
+            throws IOException, InterruptedException {
+        for (int attempt = 1; ; attempt++) {
+            try {
+                return http.send(req, HttpResponse.BodyHandlers.ofInputStream());
+            } catch (HttpConnectTimeoutException | ConnectException e) {
+                if (attempt >= CONNECT_ATTEMPTS) {
+                    throw new IOException("Could not reach GitHub's download server after "
+                            + CONNECT_ATTEMPTS + " tries (" + e.getMessage() + ")."
+                            + " Check that github.com and *.githubusercontent.com are not blocked.", e);
+                }
+                Thread.sleep(2000L * attempt);
+            }
         }
     }
 
