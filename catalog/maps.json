@@ -15,14 +15,19 @@
   "size": 25106949
  },
  {
-  "name": "Combat Master Training Simulator",
-  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Combat.Master.Training.Simulator.zip",
-  "size": 72953948
+  "name": "Bounty Hunter Civ Fight Sim v1",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Bounty.Hunter.Civ.Fight.Sim.v1.zip",
+  "size": 44679654
  },
  {
   "name": "Definitive FlameFrags vs Wemmbu Simulator",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Definitive.FlameFrags.vs.Wemmbu.Simulator.zip",
   "size": 65754124
+ },
+ {
+  "name": "dol9hin sim v1",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/dol9hin.sim.v1.zip",
+  "size": 61377830
  },
  {
   "name": "Farex PULL",
@@ -125,9 +130,14 @@
   "size": 31276986
  },
  {
-  "name": "Mugm Bliss Fight Sim",
-  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Mugm.Bliss.Fight.Sim.zip",
-  "size": 101632974
+  "name": "Mugm Bliss Fight Sim v1.1",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Mugm.Bliss.Fight.Sim.v1.1.zip",
+  "size": 99217954
+ },
+ {
+  "name": "Mugm vs Naparizel Fight Sim V1",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Mugm.vs.Naparizel.Fight.Sim.V1.zip",
+  "size": 20019774
  },
  {
   "name": "Nitenly Tortuing simulatir",
@@ -163,6 +173,16 @@
   "name": "Purgatory Vs Spokeishere Iron",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Purgatory.Vs.Spokeishere.Iron.zip",
   "size": 32025278
+ },
+ {
+  "name": "Quantum s PvP Practice v1.18",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Quantum.s.PvP.Practice.v1.18.zip",
+  "size": 12454559
+ },
+ {
+  "name": "Remastered FlameFrags Simulator v2.1",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Remastered.FlameFrags.Simulator.v2.1.zip",
+  "size": 139704970
  },
  {
   "name": "Shoebilly vs wemmbu simulator",
@@ -220,6 +240,11 @@
   "size": 32881629
  },
  {
+  "name": "Theobald s PVP Practice 1.4",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Theobald.s.PVP.Practice.1.4.zip",
+  "size": 27123659
+ },
+ {
   "name": "Underworld simulator",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Underworld.simulator.zip",
   "size": 112778820
@@ -248,6 +273,11 @@
   "name": "UnstableSMP VS WispSMP",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/UnstableSMP.VS.WispSMP.zip",
   "size": 10127342
+ },
+ {
+  "name": "Vikings Fight Simulator v1",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Vikings.Fight.Simulator.v1.zip",
+  "size": 48233343
  },
  {
   "name": "warden vs wemmbu",
