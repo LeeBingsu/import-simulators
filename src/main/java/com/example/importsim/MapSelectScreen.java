@@ -4,20 +4,24 @@ import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 /**
  * Opened by the "Import Simulators" button. Lists every map in the catalog with a checkbox;
- * "Download (N)" imports only the ticked ones.
+ * "Download (N)" imports only the ticked ones. The list can be searched by name and sorted by
+ * name or by when the map was added.
  */
 public class MapSelectScreen extends Screen {
 
@@ -26,7 +30,19 @@ public class MapSelectScreen extends Screen {
     private final Screen parent;
     private Config cfg;
 
+    private static final Comparator<Catalog.MapEntry> BY_NAME =
+            (a, b) -> a.name().compareToIgnoreCase(b.name());
+    // "added" is an ISO-8601 instant, so comparing it as text orders it by time.
+    private static final Comparator<Catalog.MapEntry> NEWEST =
+            Comparator.comparing(Catalog.MapEntry::added).reversed().thenComparing(BY_NAME);
+
+    /** Kept across openings of the screen, so the player's choice sticks for the session. */
+    private static volatile boolean newestFirst = false;
+
     private volatile List<Catalog.MapEntry> maps;   // null while loading
+    private volatile List<Catalog.MapEntry> shown = List.of();   // maps after search and sort
+    private volatile Set<String> newMaps = Set.of();             // added since the player last looked
+    private String query = "";
     private volatile String loadError;
     private final Set<String> selected = new LinkedHashSet<>();   // map names
     private volatile Set<String> alreadyImported = Set.of();      // map names already in saves/
@@ -36,6 +52,8 @@ public class MapSelectScreen extends Screen {
     private int listTop;
     private int listBottom;
 
+    private TextFieldWidget searchField;
+    private ButtonWidget sortButton;
     private ButtonWidget downloadButton;
     private ButtonWidget kitsButton;
     private boolean wasRunning;
@@ -50,7 +68,7 @@ public class MapSelectScreen extends Screen {
     @Override
     protected void init() {
         this.cfg = Config.load();
-        this.listTop = 52;
+        this.listTop = 64;
         this.listBottom = this.height - 40;
 
         if (maps == null && loadError == null) {
@@ -58,6 +76,28 @@ public class MapSelectScreen extends Screen {
         } else {
             refreshAlreadyImported();
         }
+
+        int searchW = 200;
+        int sortW = 100;
+        int sx = this.width / 2 - (searchW + 5 + sortW) / 2;
+        searchField = new TextFieldWidget(this.textRenderer, sx, 22, searchW, 18, Text.literal("Search"));
+        searchField.setPlaceholder(Text.literal("Search simulators…"));
+        searchField.setText(query);
+        searchField.setChangedListener(text -> {
+            query = text;
+            scroll = 0;
+            applyFilter();
+        });
+        addDrawableChild(searchField);
+        setInitialFocus(searchField);
+
+        sortButton = ButtonWidget.builder(sortLabel(), b -> {
+            newestFirst = !newestFirst;
+            b.setMessage(sortLabel());
+            scroll = 0;
+            applyFilter();
+        }).dimensions(sx + searchW + 5, 21, sortW, 20).build();
+        addDrawableChild(sortButton);
 
         int bw = 74;
         int gap = 5;
@@ -67,7 +107,8 @@ public class MapSelectScreen extends Screen {
 
         addDrawableChild(ButtonWidget.builder(Text.literal("All"), b -> {
             if (maps != null) {
-                maps.forEach(e -> selected.add(e.name()));
+                // Only what the search shows, so "All" after a search picks just the matches.
+                shown.forEach(e -> selected.add(e.name()));
                 refreshButtons();
             }
         }).dimensions(x, y, bw, 20).build());
@@ -95,7 +136,9 @@ public class MapSelectScreen extends Screen {
         Thread t = new Thread(() -> {
             try {
                 List<Catalog.MapEntry> all = new ArrayList<>(new Catalog(cfg.catalog).maps());
-                all.sort((a, b) -> a.name().compareToIgnoreCase(b.name()));
+                this.newMaps = new HashSet<>(NewSimulators.unseenMaps());
+                // Rows first, so the list never shows loaded-but-empty for a frame.
+                this.shown = filtered(all);
                 this.maps = all;
                 refreshAlreadyImported();
                 // The player is looking at the list now, so the badge has done its job.
@@ -107,6 +150,30 @@ public class MapSelectScreen extends Screen {
         }, "import-simulators-list");
         t.setDaemon(true);
         t.start();
+    }
+
+    private Text sortLabel() {
+        return Text.literal(newestFirst ? "Sort: Newest" : "Sort: Name");
+    }
+
+    /** Rebuilds the visible rows from the search text and the sort order. */
+    private void applyFilter() {
+        List<Catalog.MapEntry> all = maps;
+        if (all != null) {
+            shown = filtered(all);
+        }
+    }
+
+    private List<Catalog.MapEntry> filtered(List<Catalog.MapEntry> all) {
+        String q = query.trim().toLowerCase(Locale.ROOT);
+        List<Catalog.MapEntry> out = new ArrayList<>();
+        for (Catalog.MapEntry e : all) {
+            if (q.isEmpty() || e.name().toLowerCase(Locale.ROOT).contains(q)) {
+                out.add(e);
+            }
+        }
+        out.sort(newestFirst ? NEWEST : BY_NAME);
+        return out;
     }
 
     private void startDownload() {
@@ -152,6 +219,8 @@ public class MapSelectScreen extends Screen {
         downloadButton.setMessage(Text.literal("Download (" + selected.size() + ")"));
         downloadButton.active = !selected.isEmpty() && maps != null && !ImportTask.isRunning();
         if (kitsButton != null) {
+            int newKits = NewSimulators.kitCount();
+            kitsButton.setMessage(Text.literal(newKits > 0 ? "Kits (" + newKits + " new)" : "Import Kits"));
             kitsButton.active = !ImportTask.isRunning();
         }
     }
@@ -183,9 +252,10 @@ public class MapSelectScreen extends Screen {
         if (click.button() == 0 && maps != null && !ImportTask.isRunning()
                 && mouseX >= listX() && mouseX <= listX() + listW()
                 && mouseY >= listTop && mouseY < listBottom) {
+            List<Catalog.MapEntry> rows = shown;
             int idx = (int) ((mouseY - listTop + scroll) / rowHeight);
-            if (idx >= 0 && idx < maps.size()) {
-                String name = maps.get(idx).name();
+            if (idx >= 0 && idx < rows.size()) {
+                String name = rows.get(idx).name();
                 if (!selected.remove(name)) {
                     selected.add(name);
                 }
@@ -199,7 +269,7 @@ public class MapSelectScreen extends Screen {
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
         if (maps != null) {
-            int content = maps.size() * rowHeight;
+            int content = shown.size() * rowHeight;
             int view = listBottom - listTop;
             int max = Math.max(0, content - view);
             scroll = (int) Math.max(0, Math.min(max, scroll - verticalAmount * rowHeight * 2));
@@ -210,12 +280,12 @@ public class MapSelectScreen extends Screen {
     @Override
     public void render(DrawContext ctx, int mouseX, int mouseY, float delta) {
         super.render(ctx, mouseX, mouseY, delta);
-        ctx.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 15, 0xFFFFFFFF);
+        ctx.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 8, 0xFFFFFFFF);
 
         if (!ImportTask.isRunning() && lastStatus != null) {
             ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal(lastStatus),
-                    this.width / 2, 27, 0xFFFFAA00);
-            drawReason(ctx, lastFailureDetail, 38);
+                    this.width / 2, 43, 0xFFFFAA00);
+            drawReason(ctx, lastFailureDetail, 53);
         }
 
         if (ImportTask.isRunning()) {
@@ -256,15 +326,20 @@ public class MapSelectScreen extends Screen {
             return;
         }
 
+        List<Catalog.MapEntry> rows = shown;
+        if (rows.isEmpty()) {
+            ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal("No simulators match \"" + query + "\""),
+                    this.width / 2, listTop + 10, 0xFFAAAAAA);
+        }
         int x = listX();
         int w = listW();
         ctx.enableScissor(x, listTop, x + w, listBottom);
         int y = listTop - scroll;
-        for (int i = 0; i < maps.size(); i++, y += rowHeight) {
+        for (int i = 0; i < rows.size(); i++, y += rowHeight) {
             if (y + rowHeight < listTop || y > listBottom) {
                 continue;
             }
-            Catalog.MapEntry e = maps.get(i);
+            Catalog.MapEntry e = rows.get(i);
             boolean sel = selected.contains(e.name());
             boolean hover = mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY < y + rowHeight;
             if (hover) {
@@ -281,12 +356,14 @@ public class MapSelectScreen extends Screen {
 
             int nameX = x + 18;
             int nameW = w - 20;
+            int tagRight = x + w - 4;
             if (alreadyImported.contains(e.name())) {
-                String tag = "re-download";
-                int tagW = this.textRenderer.getWidth(tag);
-                ctx.drawTextWithShadow(this.textRenderer, Text.literal(tag), x + w - tagW - 4, y + 3, 0xFFFFAA00);
-                nameW -= tagW + 8;
+                tagRight = drawTag(ctx, "re-download", tagRight, y + 3, 0xFFFFAA00);
             }
+            if (newMaps.contains(e.name())) {
+                tagRight = drawTag(ctx, "NEW", tagRight, y + 3, 0xFF55FF55);
+            }
+            nameW -= (x + w - 4) - tagRight;
             ctx.drawTextWithShadow(this.textRenderer,
                     Text.literal(this.textRenderer.trimToWidth(e.name(), nameW)), nameX, y + 3,
                     sel ? 0xFFFFFFFF : 0xFFBBBBBB);
@@ -294,8 +371,15 @@ public class MapSelectScreen extends Screen {
         ctx.disableScissor();
 
         ctx.drawCenteredTextWithShadow(this.textRenderer,
-                Text.literal(selected.size() + " / " + maps.size() + " selected  —  scroll to see more"),
+                Text.literal(selected.size() + " selected  —  " + rows.size() + " / " + maps.size() + " shown"),
                 this.width / 2, listBottom + 4, 0xFFAAAAAA);
+    }
+
+    /** Draws a tag ending at {@code right}; returns where the next tag to its left should end. */
+    private int drawTag(DrawContext ctx, String tag, int right, int y, int color) {
+        int tagW = this.textRenderer.getWidth(tag);
+        ctx.drawTextWithShadow(this.textRenderer, Text.literal(tag), right - tagW, y, color);
+        return right - tagW - 6;
     }
 
     @Override
