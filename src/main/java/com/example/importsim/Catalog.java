@@ -22,8 +22,11 @@ import java.util.List;
  */
 public class Catalog {
 
-    /** A map, and the release zip holding it. */
-    public record MapEntry(String name, String url, long size) {
+    /**
+     * A map, and the release zip holding it. {@code added} is its upload time as an ISO-8601
+     * instant, so it sorts as text; empty when the catalog predates the field.
+     */
+    public record MapEntry(String name, String url, long size, String added) {
     }
 
     /** A kit file, sized so an already-downloaded copy can be recognised. */
@@ -48,7 +51,8 @@ public class Catalog {
             JsonObject o = el.getAsJsonObject();
             out.add(new MapEntry(o.get("name").getAsString(),
                     o.get("url").getAsString(),
-                    o.has("size") ? o.get("size").getAsLong() : 0));
+                    o.has("size") ? o.get("size").getAsLong() : 0,
+                    o.has("added") ? o.get("added").getAsString() : ""));
         }
         return out;
     }

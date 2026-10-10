@@ -213,10 +213,14 @@ public final class ImportTask {
             KitMirror mirror = new KitMirror(cfg.kitsMirror);
 
             progress = "Checking kits…";
+            List<Catalog.KitEntry> all = new Catalog(cfg.catalog).kits();
             List<Catalog.KitEntry> missing = new ArrayList<>();
-            for (Catalog.KitEntry kit : new Catalog(cfg.catalog).kits()) {
+            List<String> have = new ArrayList<>();
+            for (Catalog.KitEntry kit : all) {
                 if (!alreadyHave(kits.resolve(sanitize(kit.name())), kit.size())) {
                     missing.add(kit);
+                } else {
+                    have.add(kit.name());
                 }
             }
 
@@ -236,6 +240,7 @@ public final class ImportTask {
                         throw new IOException("not available at " + cfg.kitsMirror);
                     }
                     added++;
+                    have.add(kit.name());
                 } catch (Exception e) {
                     failed++;
                     failureDetail = describe(kit.name(), e);
@@ -243,6 +248,8 @@ public final class ImportTask {
                     deleteQuietly(dest);
                 }
             }
+            // Kits that failed stay new, so the badge keeps pointing at them.
+            NewSimulators.markKitsSeen(have);
         } catch (Exception e) {
             LOG.error("[import-simulators] Kit import aborted", e);
             failed++;

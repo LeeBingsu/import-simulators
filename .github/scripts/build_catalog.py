@@ -98,6 +98,8 @@ def build_maps() -> bool:
             "name": known.get(url) or display_name(asset["name"]),
             "url": url,
             "size": asset["size"],
+            # Upload time, so the mod can list the newest simulators first.
+            "added": asset["created_at"],
         })
     maps.sort(key=lambda m: m["name"].lower())
     changed = write(path, maps)
