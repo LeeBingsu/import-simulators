@@ -1,0 +1,410 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:consumable": {
+        "consume_seconds": 2.1483482E7,
+        "animation": "none"
+      },
+      "minecraft:lore": [
+        {
+          "text": "Every hit Apply Speed 3 to wielder if wielder have totem",
+          "color": "aqua",
+          "italic": false
+        },
+        "",
+        {
+          "text": "WARNING:",
+          "italic": false
+        },
+        {
+          "text": "If not totem in OFFHAND grains wielder slowness when held..",
+          "italic": false
+        },
+        "",
+        {
+          "text": "Right-Click:",
+          "color": "blue",
+          "italic": false
+        },
+        {
+          "text": "Blink Ability",
+          "color": "blue",
+          "italic": false
+        }
+      ],
+      "minecraft:custom_data": {
+        "use_item": {
+          "mainhand": {
+            "show_cooldown": {},
+            "cooldown": {
+              "till": 2139892,
+              "period": 0,
+              "length": 150
+            },
+            "command": "tp ^ ^1 ^6"
+          }
+        }
+      },
+      "minecraft:custom_model_data": {
+        "floats": [
+          6.0
+        ]
+      },
+      "minecraft:custom_name": {
+        "text": "Speed ",
+        "extra": [
+          {
+            "text": "Sword",
+            "color": "aqua",
+            "italic": false
+          },
+          {
+            "text": " ",
+            "color": "dark_blue",
+            "italic": false
+          },
+          {
+            "text": "🗡",
+            "color": "blue",
+            "italic": false
+          }
+        ],
+        "color": "dark_aqua",
+        "italic": false
+      },
+      "minecraft:food": {
+        "nutrition": 0,
+        "saturation": 0.0,
+        "can_always_eat": true
+      },
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:unbreaking": 3,
+        "minecraft:fire_aspect": 1
+      }
+    }
+  },
+  "1": {
+    "id": "minecraft:golden_apple",
+    "count": 64
+  },
+  "2": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "3": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "4": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "8": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:vanishing_curse": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:efficiency": 5,
+        "minecraft:fortune": 3
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:diamond_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:silk_touch": 1
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "11": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "12": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "13": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:turtle_master"
+      }
+    }
+  },
+  "14": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:turtle_master"
+      }
+    }
+  },
+  "15": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 4
+  },
+  "16": {
+    "id": "minecraft:crossbow",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:piercing": 1
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:water_bucket",
+    "count": 1
+  },
+  "18": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "19": {
+    "id": "minecraft:golden_carrot",
+    "count": 64
+  },
+  "20": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "21": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "23": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "24": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:tipped_arrow",
+    "count": 64,
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_effects": [
+          {
+            "id": "minecraft:mining_fatigue",
+            "duration": 1000,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "28": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "29": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "30": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "31": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "33": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "35": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:feather_falling": 4,
+        "minecraft:protection": 4,
+        "minecraft:depth_strider": 3,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:vanishing_curse": 1,
+        "minecraft:soul_speed": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:gold",
+        "pattern": "minecraft:coast"
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:swift_sneak": 3,
+        "minecraft:vanishing_curse": 1,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4
+      },
+      "minecraft:trim": {
+        "material": "minecraft:copper",
+        "pattern": "minecraft:coast"
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:diamond_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:respiration": 3,
+        "minecraft:unbreaking": 3,
+        "minecraft:protection": 4,
+        "minecraft:aqua_affinity": 1
+      }
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "ender": {}
+}

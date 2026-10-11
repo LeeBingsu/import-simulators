@@ -1,0 +1,357 @@
+{
+  "0": {
+    "id": "minecraft:red_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:diamond_leggings",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:unbreaking": 3,
+                "minecraft:protection": 4
+              }
+            }
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:diamond_boots",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:unbreaking": 3,
+                "minecraft:protection": 4
+              }
+            }
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:diamond_chestplate",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:unbreaking": 3,
+                "minecraft:protection": 4
+              }
+            }
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:diamond_helmet",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:mending": 1,
+                "minecraft:unbreaking": 3,
+                "minecraft:protection": 4
+              }
+            }
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:cobweb",
+            "count": 64
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:experience_bottle",
+            "count": 64
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_strength"
+              }
+            }
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        }
+      ]
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:gold",
+        "pattern": "minecraft:sentry"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "ender": {}
+}

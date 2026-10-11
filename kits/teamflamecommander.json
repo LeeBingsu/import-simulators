@@ -1,0 +1,422 @@
+{
+  "0": {
+    "id": "minecraft:netherite_sword",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:vanishing_curse": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:redstone",
+        "pattern": "tooltrims:frost"
+      },
+      "minecraft:custom_data": {
+        "tooltrims:item": "fresh_trim"
+      },
+      "minecraft:damage": 2
+    }
+  },
+  "1": {
+    "id": "minecraft:golden_apple",
+    "count": 58
+  },
+  "2": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "3": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "4": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "5": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "6": {
+    "id": "minecraft:shield",
+    "count": 1,
+    "components": {
+      "minecraft:banner_patterns": [
+        {
+          "pattern": "minecraft:gradient",
+          "color": "orange"
+        },
+        {
+          "pattern": "minecraft:cross",
+          "color": "yellow"
+        },
+        {
+          "pattern": "minecraft:half_horizontal_bottom",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:rhombus",
+          "color": "yellow"
+        },
+        {
+          "pattern": "minecraft:curly_border",
+          "color": "black"
+        },
+        {
+          "pattern": "minecraft:flower",
+          "color": "orange"
+        },
+        {
+          "pattern": "minecraft:skull",
+          "color": "red"
+        },
+        {
+          "pattern": "minecraft:creeper",
+          "color": "red"
+        },
+        {
+          "pattern": "minecraft:triangle_top",
+          "color": "black"
+        }
+      ],
+      "minecraft:base_color": "black",
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "7": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "8": {
+    "id": "minecraft:netherite_axe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:vanishing_curse": 1,
+        "minecraft:sharpness": 5,
+        "minecraft:fortune": 3,
+        "minecraft:efficiency": 5,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:redstone",
+        "pattern": "tooltrims:frost"
+      },
+      "minecraft:custom_data": {
+        "tooltrims:item": "fresh_trim"
+      }
+    }
+  },
+  "9": {
+    "id": "minecraft:diamond_pickaxe",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:efficiency": 5,
+        "minecraft:silk_touch": 1,
+        "minecraft:mending": 1,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:trim": {
+        "material": "minecraft:redstone",
+        "pattern": "tooltrims:frost"
+      },
+      "minecraft:custom_data": {
+        "tooltrims:item": "fresh_trim"
+      }
+    }
+  },
+  "10": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "11": {
+    "id": "minecraft:breeze_rod",
+    "count": 64
+  },
+  "12": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "13": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "14": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "15": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "16": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "17": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "18": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "19": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_invisibility"
+      }
+    }
+  },
+  "20": {
+    "id": "minecraft:ender_pearl",
+    "count": 15
+  },
+  "21": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "22": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "23": {
+    "id": "minecraft:wind_charge",
+    "count": 56
+  },
+  "24": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "25": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "26": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "27": {
+    "id": "minecraft:golden_carrot",
+    "count": 64
+  },
+  "28": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "29": {
+    "id": "minecraft:ender_pearl",
+    "count": 16
+  },
+  "30": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "31": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:long_swiftness"
+      }
+    }
+  },
+  "32": {
+    "id": "minecraft:wind_charge",
+    "count": 64
+  },
+  "33": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "34": {
+    "id": "minecraft:cobweb",
+    "count": 64
+  },
+  "35": {
+    "id": "minecraft:splash_potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:strong_strength"
+      }
+    }
+  },
+  "36": {
+    "id": "minecraft:diamond_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:depth_strider": 3,
+        "minecraft:mending": 1,
+        "minecraft:soul_speed": 3,
+        "minecraft:feather_falling": 4,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:damage": 21
+    }
+  },
+  "37": {
+    "id": "minecraft:diamond_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:mending": 1,
+        "minecraft:swift_sneak": 3,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:damage": 21
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 20,
+      "minecraft:trim": {
+        "material": "minecraft:redstone",
+        "pattern": "minecraft:eye"
+      },
+      "minecraft:custom_data": {
+        "entity_hurt_player": {
+          "chest": {
+            "show_cooldown": {},
+            "cooldown": {
+              "till": 1946211,
+              "period": 0,
+              "length": 700
+            },
+            "command": "execute at @s run effect give @a[distance\u003d0.2..5] weakness 5 1 false"
+          }
+        },
+        "player_hurt_entity": {
+          "chest": {
+            "show_cooldown": {},
+            "cooldown": {
+              "till": 1946238,
+              "period": 0,
+              "length": 700
+            },
+            "command": "execute at @s run effect give @a[distance\u003d0.2..5] poison 5 1 false"
+          }
+        }
+      },
+      "minecraft:enchantments": {
+        "minecraft:vanishing_curse": 1,
+        "minecraft:mending": 1,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:diamond_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:respiration": 3,
+        "minecraft:aqua_affinity": 1,
+        "minecraft:mending": 1,
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 3
+      },
+      "minecraft:damage": 25
+    }
+  },
+  "40": {
+    "id": "minecraft:totem_of_undying",
+    "count": 1
+  },
+  "ender": {}
+}

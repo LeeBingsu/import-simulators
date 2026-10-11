@@ -1,0 +1,260 @@
+{
+  "0": {
+    "id": "minecraft:blue_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:wind_charge",
+            "count": 64
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:wind_charge",
+            "count": 64
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:cobweb",
+            "count": 64
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:wind_charge",
+            "count": 64
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:enchanted_golden_apple",
+            "count": 3
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:wind_charge",
+            "count": 64
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:cobweb",
+            "count": 64
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_swiftness"
+              }
+            }
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:cobweb",
+            "count": 64
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:wind_charge",
+            "count": 64
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:wind_charge",
+            "count": 64
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:cobweb",
+            "count": 64
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:long_fire_resistance"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:gold",
+        "pattern": "minecraft:sentry"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "ender": {}
+}

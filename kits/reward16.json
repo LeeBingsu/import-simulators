@@ -1,0 +1,304 @@
+{
+  "0": {
+    "id": "minecraft:cyan_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_turtle_master"
+              }
+            }
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:weaving"
+              }
+            }
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:experience_bottle",
+            "count": 64
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:experience_bottle",
+            "count": 64
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:weaving"
+              }
+            }
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_turtle_master"
+              }
+            }
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_turtle_master"
+              }
+            }
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:weaving"
+              }
+            }
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:breeze_rod",
+            "count": 64
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:enchanted_golden_apple",
+            "count": 1
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:chorus_fruit",
+            "count": 64
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:enchanted_golden_apple",
+            "count": 1
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:breeze_rod",
+            "count": 64
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:weaving"
+              }
+            }
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_turtle_master"
+              }
+            }
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_turtle_master"
+              }
+            }
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:weaving"
+              }
+            }
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:experience_bottle",
+            "count": 64
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:experience_bottle",
+            "count": 64
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:weaving"
+              }
+            }
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:splash_potion",
+            "count": 1,
+            "components": {
+              "minecraft:potion_contents": {
+                "potion": "minecraft:strong_turtle_master"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:gold",
+        "pattern": "minecraft:sentry"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      },
+      "minecraft:damage": 20
+    }
+  },
+  "ender": {}
+}

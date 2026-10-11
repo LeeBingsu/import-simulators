@@ -1,0 +1,247 @@
+{
+  "0": {
+    "id": "minecraft:black_shulker_box",
+    "count": 1,
+    "components": {
+      "minecraft:container": [
+        {
+          "slot": 0,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 1,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 2,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 3,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 4,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 5,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 6,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 7,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 8,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 9,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 63
+          }
+        },
+        {
+          "slot": 10,
+          "item": {
+            "id": "minecraft:rail",
+            "count": 64
+          }
+        },
+        {
+          "slot": 11,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 12,
+          "item": {
+            "id": "minecraft:experience_bottle",
+            "count": 64
+          }
+        },
+        {
+          "slot": 13,
+          "item": {
+            "id": "minecraft:bow",
+            "count": 1,
+            "components": {
+              "minecraft:enchantments": {
+                "minecraft:flame": 1,
+                "minecraft:unbreaking": 3,
+                "minecraft:mending": 1
+              }
+            }
+          }
+        },
+        {
+          "slot": 14,
+          "item": {
+            "id": "minecraft:experience_bottle",
+            "count": 64
+          }
+        },
+        {
+          "slot": 15,
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 16
+          }
+        },
+        {
+          "slot": 16,
+          "item": {
+            "id": "minecraft:rail",
+            "count": 64
+          }
+        },
+        {
+          "slot": 17,
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 64
+          }
+        },
+        {
+          "slot": 18,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 19,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 20,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 21,
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 32
+          }
+        },
+        {
+          "slot": 22,
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          }
+        },
+        {
+          "slot": 23,
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 32
+          }
+        },
+        {
+          "slot": 24,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 25,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        },
+        {
+          "slot": 26,
+          "item": {
+            "id": "minecraft:tnt_minecart",
+            "count": 1
+          }
+        }
+      ]
+    }
+  },
+  "36": {
+    "id": "minecraft:netherite_boots",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "37": {
+    "id": "minecraft:netherite_leggings",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "38": {
+    "id": "minecraft:netherite_chestplate",
+    "count": 1,
+    "components": {
+      "minecraft:trim": {
+        "material": "minecraft:gold",
+        "pattern": "minecraft:sentry"
+      },
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "39": {
+    "id": "minecraft:netherite_helmet",
+    "count": 1,
+    "components": {
+      "minecraft:enchantments": {
+        "minecraft:protection": 4
+      }
+    }
+  },
+  "ender": {}
+}
