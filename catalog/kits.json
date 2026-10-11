@@ -416,6 +416,10 @@
   "size": 15282
  },
  {
+  "name": "Leadertarget2.json",
+  "size": 6934
+ },
+ {
   "name": "LettuceKt.json",
   "size": 2193
  },
@@ -588,6 +592,10 @@
   "size": 8549
  },
  {
+  "name": "SpeedSwordRelicTomb.json",
+  "size": 8626
+ },
+ {
   "name": "SpeedyAura.json",
   "size": 6069
  },
@@ -642,6 +650,10 @@
  {
   "name": "TNT_minecart.json",
   "size": 6114
+ },
+ {
+  "name": "TeamFlameKing.json",
+  "size": 22142
  },
  {
   "name": "Th3Blurpinsteint.json",
@@ -936,12 +948,20 @@
   "size": 13941
  },
  {
+  "name": "assasinbot.json",
+  "size": 6619
+ },
+ {
   "name": "baablu.json",
   "size": 3160
  },
  {
   "name": "boosferu.json",
   "size": 6140
+ },
+ {
+  "name": "cartcross6.json",
+  "size": 5630
  },
  {
   "name": "cave_civ.json",
@@ -974,6 +994,10 @@
  {
   "name": "danuke.json",
   "size": 10838
+ },
+ {
+  "name": "defaultplayer.json",
+  "size": 7235
  },
  {
   "name": "deputy_ace.json",
@@ -1148,6 +1172,10 @@
   "size": 10685
  },
  {
+  "name": "juggernautdefend.json",
+  "size": 15688
+ },
+ {
   "name": "jumperHQ.json",
   "size": 6846
  },
@@ -1166,6 +1194,22 @@
  {
   "name": "lawsoliderHQ.json",
   "size": 6018
+ },
+ {
+  "name": "leader3.json",
+  "size": 6825
+ },
+ {
+  "name": "leaderbetterred.json",
+  "size": 6260
+ },
+ {
+  "name": "leadercart.json",
+  "size": 6084
+ },
+ {
+  "name": "leaderinvasion.json",
+  "size": 6833
  },
  {
   "name": "leow0k.json",
@@ -1224,6 +1268,10 @@
   "size": 175868
  },
  {
+  "name": "nonecommand.json",
+  "size": 825
+ },
+ {
   "name": "notrimmafia.json",
   "size": 6593
  },
@@ -1268,6 +1316,106 @@
   "size": 3728
  },
  {
+  "name": "rankup1.json",
+  "size": 25154
+ },
+ {
+  "name": "rankup2.json",
+  "size": 37981
+ },
+ {
+  "name": "rankup3.json",
+  "size": 51626
+ },
+ {
+  "name": "reward1.json",
+  "size": 7222
+ },
+ {
+  "name": "reward10.json",
+  "size": 6541
+ },
+ {
+  "name": "reward11.json",
+  "size": 8749
+ },
+ {
+  "name": "reward12.json",
+  "size": 5429
+ },
+ {
+  "name": "reward13.json",
+  "size": 7465
+ },
+ {
+  "name": "reward14.json",
+  "size": 6747
+ },
+ {
+  "name": "reward15.json",
+  "size": 5842
+ },
+ {
+  "name": "reward16.json",
+  "size": 6838
+ },
+ {
+  "name": "reward17.json",
+  "size": 8536
+ },
+ {
+  "name": "reward18.json",
+  "size": 4867
+ },
+ {
+  "name": "reward19.json",
+  "size": 9233
+ },
+ {
+  "name": "reward2.json",
+  "size": 5000
+ },
+ {
+  "name": "reward20.json",
+  "size": 5785
+ },
+ {
+  "name": "reward21.json",
+  "size": 8242
+ },
+ {
+  "name": "reward22.json",
+  "size": 5585
+ },
+ {
+  "name": "reward3.json",
+  "size": 7899
+ },
+ {
+  "name": "reward4.json",
+  "size": 6763
+ },
+ {
+  "name": "reward5.json",
+  "size": 4824
+ },
+ {
+  "name": "reward6.json",
+  "size": 10391
+ },
+ {
+  "name": "reward7.json",
+  "size": 8086
+ },
+ {
+  "name": "reward8.json",
+  "size": 7292
+ },
+ {
+  "name": "reward9.json",
+  "size": 7674
+ },
+ {
   "name": "roshambogamest.json",
   "size": 4592
  },
@@ -1292,6 +1440,14 @@
   "size": 7210
  },
  {
+  "name": "spidercaptain.json",
+  "size": 8287
+ },
+ {
+  "name": "spiderkit.json",
+  "size": 7942
+ },
+ {
   "name": "spoke.json",
   "size": 13449
  },
@@ -1310,6 +1466,54 @@
  {
   "name": "spoke_purgatory.json",
   "size": 11575
+ },
+ {
+  "name": "target1.json",
+  "size": 6172
+ },
+ {
+  "name": "target7.json",
+  "size": 6823
+ },
+ {
+  "name": "targetchungie.json",
+  "size": 1396
+ },
+ {
+  "name": "teamflame.json",
+  "size": 8235
+ },
+ {
+  "name": "teamflameadvanced.json",
+  "size": 8319
+ },
+ {
+  "name": "teamflameadvancedlifesteal.json",
+  "size": 16607
+ },
+ {
+  "name": "teamflamebothitemscommander.json",
+  "size": 21806
+ },
+ {
+  "name": "teamflamecommander.json",
+  "size": 9219
+ },
+ {
+  "name": "teamflamesharpsword.json",
+  "size": 21016
+ },
+ {
+  "name": "teamfrost.json",
+  "size": 7281
+ },
+ {
+  "name": "teamfrostleader.json",
+  "size": 7753
+ },
+ {
+  "name": "teamfrostmaceleader.json",
+  "size": 7629
  },
  {
   "name": "tnt_min.json",
