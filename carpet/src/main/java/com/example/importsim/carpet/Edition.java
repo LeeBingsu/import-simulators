@@ -24,7 +24,7 @@ final class Edition {
     /** The repo folder the kit files are served from. */
     static final String KITS_SOURCE = "carpet-kits";
     /** The folder in the game directory the kits go into (the config can override it). */
-    static final String KITS_DIR = "carpet_kits";
+    static final String KITS_DIR = "vexbot_kits";
     /** Below Import Simulators' button, so both mods can be installed together. */
     static final int BUTTON_Y = 32;
 
