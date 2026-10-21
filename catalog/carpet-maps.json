@@ -1,5 +1,11 @@
 [
  {
+  "name": "Dream Manhunt Simulator Map",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/Carpet-both/Dream.Manhunt.Simulator.Map.zip",
+  "size": 18124078,
+  "added": "2026-10-21T08:08:46Z"
+ },
+ {
   "name": "Eggchan vs Wemmbu Simulator",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/carpet-map/Eggchan.vs.Wemmbu.Simulator.zip",
   "size": 14462483,
@@ -10,6 +16,12 @@
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/carpet-map/Flowtives.Flame.Vs.Shoebilly.zip",
   "size": 24151977,
   "added": "2026-10-21T07:59:11Z"
+ },
+ {
+  "name": "New Unstable 2v1000",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/Carpet-both/New.Unstable.2v1000.zip",
+  "size": 57108346,
+  "added": "2026-10-21T08:08:26Z"
  },
  {
   "name": "null fights",
