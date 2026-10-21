@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Regenerates catalog/maps.json, catalog/carpet-maps.json and catalog/kits.json.
+"""Regenerates the map and kit lists in catalog/, one pair per mod edition.
 
-Maps come from a release's assets (maps-v1 for Import Simulators, carpet-map for
-Import Carpet Maps), kits from the kits/ folder, so adding either only means
-uploading the file — this then keeps the catalog in step.
+Each edition's maps come from its own release's assets and its kits from its own
+folder in the repo (see EDITIONS), so adding either only means uploading the
+file — this then keeps the catalog in step.
 
-Run with no arguments from the repo root. Reads GITHUB_REPOSITORY / MAPS_TAG /
-CARPET_TAG / GITHUB_TOKEN from the environment when present.
+Run with no arguments from the repo root. Reads GITHUB_REPOSITORY / GITHUB_TOKEN
+from the environment when present.
 """
 
 import json
@@ -19,8 +19,15 @@ import urllib.request
 ARCHIVE_SUFFIXES = (".zip", ".rar")
 
 REPO = os.environ.get("GITHUB_REPOSITORY", "LeeBingsu/import-simulators")
-TAG = os.environ.get("MAPS_TAG", "maps-v1")
-CARPET_TAG = os.environ.get("CARPET_TAG", "carpet-map")
+# (release tag, maps file, kits folder, kits file) for each edition of the mod.
+EDITIONS = [
+    # Import Simulators (vexbot), Minecraft 1.21.11
+    ("maps-v1", "maps.json", "kits", "kits.json"),
+    # Import Carpet Maps, Minecraft 1.21.11
+    ("carpet-map", "carpet-maps.json", "carpet-kits", "carpet-kits.json"),
+    # Import Carpet Maps, Minecraft 1.21
+    ("carpet-map-1.21", "carpet-maps-1.21.json", "carpet-kits-1.21", "carpet-kits-1.21.json"),
+]
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
@@ -110,20 +117,22 @@ def build_maps(tag: str, filename: str) -> bool:
     return changed
 
 
-def build_kits() -> bool:
-    kits_dir = os.path.join(ROOT, "kits")
+def build_kits(folder: str, filename: str) -> bool:
+    kits_dir = os.path.join(ROOT, folder)
+    names = sorted(os.listdir(kits_dir)) if os.path.isdir(kits_dir) else []
     kits = [
         {"name": name, "size": os.path.getsize(os.path.join(kits_dir, name))}
-        for name in sorted(os.listdir(kits_dir))
+        for name in names
         if name.endswith(".json")
     ]
-    changed = write(os.path.join(ROOT, "catalog", "kits.json"), kits)
-    print(f"kits.json: {len(kits)} entries{' (updated)' if changed else ' (unchanged)'}")
+    changed = write(os.path.join(ROOT, "catalog", filename), kits)
+    print(f"{filename}: {len(kits)} entries{' (updated)' if changed else ' (unchanged)'}")
     return changed
 
 
 if __name__ == "__main__":
-    maps_changed = build_maps(TAG, "maps.json")
-    carpet_changed = build_maps(CARPET_TAG, "carpet-maps.json")
-    kits_changed = build_kits()
-    print(f"changed={'true' if (maps_changed or carpet_changed or kits_changed) else 'false'}")
+    changed = False
+    for tag, maps_file, kits_folder, kits_file in EDITIONS:
+        changed |= build_maps(tag, maps_file)
+        changed |= build_kits(kits_folder, kits_file)
+    print(f"changed={'true' if changed else 'false'}")

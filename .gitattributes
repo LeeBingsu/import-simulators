@@ -2,6 +2,8 @@
 # Mirrored kit files must stay byte-identical to the originals: the mod compares
 # their size against the one Drive reports, and EOL conversion would change it.
 kits/** -text
+carpet-kits/** -text
+carpet-kits-1.21/** -text
 *.bat text eol=crlf
 gradlew text eol=lf
 *.jar binary

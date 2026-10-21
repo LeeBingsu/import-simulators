@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * What there is to download, read from catalog/maps.json and catalog/kits.json in the repo.
+ * What there is to download, read from the edition's maps and kits files in the repo's catalog/.
  *
  * These used to be Drive folder listings. Serving them as static files keeps the mod off Google
  * Drive entirely, which matters because Drive caps how often a popular public file may be fetched.
@@ -59,7 +59,7 @@ public class Catalog {
 
     public List<KitEntry> kits() throws IOException, InterruptedException {
         List<KitEntry> out = new ArrayList<>();
-        for (JsonElement el : fetch("kits.json")) {
+        for (JsonElement el : fetch(Edition.KITS_FILE)) {
             JsonObject o = el.getAsJsonObject();
             out.add(new KitEntry(o.get("name").getAsString(),
                     o.has("size") ? o.get("size").getAsLong() : 0));

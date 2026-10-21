@@ -41,11 +41,18 @@ jobs:
           path: build/libs/*.jar
           if-no-files-found: error
 
-      - name: Upload carpet mod jar
+      - name: Upload carpet mod jar (1.21.11)
         uses: actions/upload-artifact@v4
         with:
-          name: import-carpet-maps
+          name: import-carpet-maps-1.21.11
           path: carpet/build/libs/*.jar
+          if-no-files-found: error
+
+      - name: Upload carpet mod jar (1.21)
+        uses: actions/upload-artifact@v4
+        with:
+          name: import-carpet-maps-1.21
+          path: carpet-1.21/build/libs/*.jar
           if-no-files-found: error
 
       - name: Attach jars to release
@@ -55,3 +62,4 @@ jobs:
           files: |
             build/libs/*.jar
             carpet/build/libs/*.jar
+            carpet-1.21/build/libs/*.jar

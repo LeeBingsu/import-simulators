@@ -21,13 +21,10 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 /**
- * Downloads maps into the saves directory, and kit files into vexbot_kits, on a background thread.
+ * Downloads maps into the saves directory, and kit files into the kits folder, on a background thread.
  * Progress is exposed via {@link #progress()} for {@link MapSelectScreen} to render.
  */
 public final class ImportTask {
-
-    /** Kit files live here, next to saves/ in the game directory. */
-    public static final String KITS_DIR = "vexbot_kits";
 
     private static final Logger LOG = LoggerFactory.getLogger(Edition.ID);
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
@@ -191,7 +188,7 @@ public final class ImportTask {
     // ------------------------------------------------------------------ kits
 
     /**
-     * Syncs kit files into the vexbot_kits folder in the game directory, creating it when missing
+     * Syncs kit files into the kits folder in the game directory, creating it when missing
      * and downloading only the files the player does not already have.
      */
     public static void launchKits(MinecraftClient client, Screen returnScreen, Config cfg) {
@@ -205,7 +202,7 @@ public final class ImportTask {
     }
 
     private static void runKits(MinecraftClient client, Screen returnScreen, Config cfg) {
-        Path kits = FabricLoader.getInstance().getGameDir().resolve(KITS_DIR);
+        Path kits = FabricLoader.getInstance().getGameDir().resolve(cfg.kitsDir);
         int added = 0;
         int failed = 0;
         try {

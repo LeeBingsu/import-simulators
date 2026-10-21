@@ -11,17 +11,27 @@ folder with a checkbox each; **Download (N)** imports only the ticked maps into
 
 ---
 
-## Import Carpet Maps
+## Editions
 
-`carpet/` builds a second, separate mod, **Import Carpet Maps**
-(`import-carpet-maps`). It works the same way but lists the maps in the
-`carpet-map` release (`catalog/carpet-maps.json`), has no kit import, and puts
-its button just below Import Simulators', so both mods can be installed
-together.
+The repo builds three separate mods. Each has its own map list and its own kits:
 
-It has no sources of its own besides `carpet/src/.../Edition.java`: the build
-copies the root mod's sources into the `com.example.importsim.carpet` package.
-Anything that differs between the two mods belongs in `Edition`.
+| Mod | Minecraft | Maps (release tag) | Kits (repo folder → game folder) | Project |
+|---|---|---|---|---|
+| Import Simulators (vexbot) | 1.21.11 | `maps-v1` | `kits/` → `vexbot_kits` | root |
+| Import Carpet Maps | 1.21.11 | `carpet-map` | `carpet-kits/` → `carpet_kits` | `carpet/` |
+| Import Carpet Maps | 1.21 | `carpet-map-1.21` | `carpet-kits-1.21/` → `carpet_kits_1.21` | `carpet-1.21/` |
+
+To add a map, upload its zip to that edition's release; to add a kit, upload the
+`.json` into that edition's kits folder. The catalog workflow then updates
+`catalog/` (`build_catalog.py` lists the editions). The game folder for kits can
+be changed with `kitsDir` in the mod's config.
+
+The carpet editions have no sources of their own besides `Edition.java` (and, on
+1.21, `VersionScreen.java`, since mouse clicks arrive differently before 1.21.9):
+`gradle/edition.gradle` copies the root mod's sources into the
+`com.example.importsim.carpet` package. Anything that differs between the mods
+belongs in `Edition`. Import Carpet Maps puts its button just below Import
+Simulators', so both can be installed together.
 
 ## Build
 
@@ -38,9 +48,10 @@ The Gradle **wrapper JAR is not included** (binary). Do one of:
   the [Fabric example mod](https://github.com/FabricMC/fabric-example-mod),
   then `./gradlew build`.
 
-Output jars: `build/libs/import-simulators-*.jar` and
-`carpet/build/libs/import-carpet-maps-*.jar` → drop into `.minecraft/mods/`
-(alongside the Fabric API jar).
+Output jars: `build/libs/import-simulators-*.jar`,
+`carpet/build/libs/import-carpet-maps-*+mc1.21.11.jar` and
+`carpet-1.21/build/libs/import-carpet-maps-*+mc1.21.jar` → drop into
+`.minecraft/mods/` (alongside the Fabric API jar for that Minecraft version).
 
 Needs **JDK 21**.
 

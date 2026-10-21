@@ -1,6 +1,5 @@
 package com.example.importsim;
 
-import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -23,7 +22,7 @@ import java.util.Set;
  * "Download (N)" imports only the ticked ones. The list can be searched by name and sorted by
  * name or by when the map was added.
  */
-public class MapSelectScreen extends Screen {
+public class MapSelectScreen extends VersionScreen {
 
     private static final Logger LOG = LoggerFactory.getLogger(Edition.ID);
 
@@ -249,10 +248,8 @@ public class MapSelectScreen extends Screen {
     }
 
     @Override
-    public boolean mouseClicked(Click click, boolean doubled) {
-        double mouseX = click.x();
-        double mouseY = click.y();
-        if (click.button() == 0 && maps != null && !ImportTask.isRunning()
+    protected boolean listClicked(double mouseX, double mouseY, int button) {
+        if (button == 0 && maps != null && !ImportTask.isRunning()
                 && mouseX >= listX() && mouseX <= listX() + listW()
                 && mouseY >= listTop && mouseY < listBottom) {
             List<Catalog.MapEntry> rows = shown;
@@ -266,7 +263,7 @@ public class MapSelectScreen extends Screen {
                 return true;
             }
         }
-        return super.mouseClicked(click, doubled);
+        return false;
     }
 
     @Override
