@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Regenerates catalog/maps.json and catalog/kits.json.
+"""Regenerates catalog/maps.json, catalog/carpet-maps.json and catalog/kits.json.
 
-Maps come from the release's assets, kits from the kits/ folder, so adding either
-only means uploading the file — this then keeps the catalog in step.
+Maps come from a release's assets (maps-v1 for Import Simulators, carpet-map for
+Import Carpet Maps), kits from the kits/ folder, so adding either only means
+uploading the file — this then keeps the catalog in step.
 
 Run with no arguments from the repo root. Reads GITHUB_REPOSITORY / MAPS_TAG /
-GITHUB_TOKEN from the environment when present.
+CARPET_TAG / GITHUB_TOKEN from the environment when present.
 """
 
 import json
@@ -19,6 +20,7 @@ ARCHIVE_SUFFIXES = (".zip", ".rar")
 
 REPO = os.environ.get("GITHUB_REPOSITORY", "LeeBingsu/import-simulators")
 TAG = os.environ.get("MAPS_TAG", "maps-v1")
+CARPET_TAG = os.environ.get("CARPET_TAG", "carpet-map")
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
@@ -38,8 +40,9 @@ def display_name(asset_name: str) -> str:
     return re.sub(r"(?<!\d)\.|\.(?!\d)", " ", stem)
 
 
-def fetch_assets() -> list:
-    url = f"https://api.github.com/repos/{REPO}/releases/tags/{TAG}"
+def fetch_assets(tag: str):
+    """The release's assets, or None when there is no release with that tag."""
+    url = f"https://api.github.com/repos/{REPO}/releases/tags/{tag}"
     req = urllib.request.Request(url, headers={
         "User-Agent": "import-simulators-catalog",
         "Accept": "application/vnd.github+json",
@@ -52,8 +55,7 @@ def fetch_assets() -> list:
             return json.load(r).get("assets", [])
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            print(f"no release tagged {TAG}; leaving maps.json alone", file=sys.stderr)
-            return []
+            return None
         raise
 
 
@@ -78,12 +80,13 @@ def write(path: str, data) -> bool:
     return True
 
 
-def build_maps() -> bool:
-    assets = fetch_assets()
-    if not assets:
+def build_maps(tag: str, filename: str) -> bool:
+    assets = fetch_assets(tag)
+    if assets is None:
+        print(f"no release tagged {tag}; leaving {filename} alone", file=sys.stderr)
         return False
 
-    path = os.path.join(ROOT, "catalog", "maps.json")
+    path = os.path.join(ROOT, "catalog", filename)
     # Names already in the catalog win: some were set by hand and cannot be
     # recovered from the filename, e.g. "ManePear's training simulator", whose
     # apostrophe GitHub replaced with a dot.
@@ -103,7 +106,7 @@ def build_maps() -> bool:
         })
     maps.sort(key=lambda m: m["name"].lower())
     changed = write(path, maps)
-    print(f"maps.json: {len(maps)} entries{' (updated)' if changed else ' (unchanged)'}")
+    print(f"{filename}: {len(maps)} entries{' (updated)' if changed else ' (unchanged)'}")
     return changed
 
 
@@ -120,6 +123,7 @@ def build_kits() -> bool:
 
 
 if __name__ == "__main__":
-    maps_changed = build_maps()
+    maps_changed = build_maps(TAG, "maps.json")
+    carpet_changed = build_maps(CARPET_TAG, "carpet-maps.json")
     kits_changed = build_kits()
-    print(f"changed={'true' if (maps_changed or kits_changed) else 'false'}")
+    print(f"changed={'true' if (maps_changed or carpet_changed or kits_changed) else 'false'}")

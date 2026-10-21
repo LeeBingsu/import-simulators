@@ -51,7 +51,7 @@ public class KitMirror {
         }
         String url = baseUrl + "/" + URLEncoder.encode(name, StandardCharsets.UTF_8).replace("+", "%20");
         HttpRequest req = HttpRequest.newBuilder(URI.create(url))
-                .header("User-Agent", "import-simulators")
+                .header("User-Agent", Edition.ID)
                 .header("Accept", "*/*")
                 .timeout(Duration.ofMinutes(5))
                 .GET()

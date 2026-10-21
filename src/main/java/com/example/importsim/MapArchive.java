@@ -38,7 +38,7 @@ public class MapArchive {
     public void downloadInto(String url, Path dir, LongConsumer onBytes)
             throws IOException, InterruptedException {
         HttpRequest req = HttpRequest.newBuilder(URI.create(url))
-                .header("User-Agent", "import-simulators")
+                .header("User-Agent", Edition.ID)
                 .header("Accept", "*/*")
                 .timeout(Duration.ofMinutes(30))
                 .GET()
@@ -56,7 +56,7 @@ public class MapArchive {
         // reader seeks. Zip needs it because ZipInputStream, reading forwards only, rejects a
         // stored entry carrying a data descriptor ("only DEFLATED entries can have EXT
         // descriptor") — which is how some tools write the empty region files in a world.
-        Path temp = Files.createTempFile("import-simulators-", ".archive");
+        Path temp = Files.createTempFile(Edition.ID + "-", ".archive");
         try {
             try (InputStream in = new CountingStream(resp.body(), onBytes)) {
                 Files.copy(in, temp, StandardCopyOption.REPLACE_EXISTING);

@@ -1,0 +1,54 @@
+// Import Carpet Maps: the root mod's sources, recompiled into their own package with this
+// project's Edition class, so the two jars can be installed side by side.
+plugins {
+    id 'fabric-loom'
+}
+
+version = rootProject.version
+group = project.maven_group
+
+base {
+    archivesName = 'import-carpet-maps'
+}
+
+def shared = layout.buildDirectory.dir('generated/shared/java')
+
+def copyShared = tasks.register('copySharedSources', Copy) {
+    from(rootProject.file('src/main/java/com/example/importsim')) {
+        exclude 'Edition.java'
+    }
+    into(shared.map { it.dir('com/example/importsim/carpet') })
+    filter { String line -> line.replace('com.example.importsim', 'com.example.importsim.carpet') }
+}
+
+sourceSets.main.java.srcDir(copyShared)
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    implementation include("com.github.junrar:junrar:${project.junrar_version}")
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand version: project.version
+    }
+    from(rootProject.file('src/main/resources/assets/import-simulators/icon.png')) {
+        into 'assets/import-carpet-maps'
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    withSourcesJar()
+}

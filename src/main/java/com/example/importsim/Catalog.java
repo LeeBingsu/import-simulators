@@ -47,7 +47,7 @@ public class Catalog {
 
     public List<MapEntry> maps() throws IOException, InterruptedException {
         List<MapEntry> out = new ArrayList<>();
-        for (JsonElement el : fetch("maps.json")) {
+        for (JsonElement el : fetch(Edition.MAPS_FILE)) {
             JsonObject o = el.getAsJsonObject();
             out.add(new MapEntry(o.get("name").getAsString(),
                     o.get("url").getAsString(),
@@ -70,7 +70,7 @@ public class Catalog {
     private JsonArray fetch(String file) throws IOException, InterruptedException {
         String url = baseUrl + "/" + file;
         HttpRequest req = HttpRequest.newBuilder(URI.create(url))
-                .header("User-Agent", "import-simulators")
+                .header("User-Agent", Edition.ID)
                 .header("Accept", "application/json")
                 .timeout(Duration.ofMinutes(2))
                 .GET()

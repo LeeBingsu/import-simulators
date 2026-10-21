@@ -11,6 +11,18 @@ folder with a checkbox each; **Download (N)** imports only the ticked maps into
 
 ---
 
+## Import Carpet Maps
+
+`carpet/` builds a second, separate mod, **Import Carpet Maps**
+(`import-carpet-maps`). It works the same way but lists the maps in the
+`carpet-map` release (`catalog/carpet-maps.json`), has no kit import, and puts
+its button just below Import Simulators', so both mods can be installed
+together.
+
+It has no sources of its own besides `carpet/src/.../Edition.java`: the build
+copies the root mod's sources into the `com.example.importsim.carpet` package.
+Anything that differs between the two mods belongs in `Edition`.
+
 ## Build
 
 The Gradle **wrapper JAR is not included** (binary). Do one of:
@@ -26,7 +38,8 @@ The Gradle **wrapper JAR is not included** (binary). Do one of:
   the [Fabric example mod](https://github.com/FabricMC/fabric-example-mod),
   then `./gradlew build`.
 
-Output jar: `build/libs/import-simulators-1.0.0.jar` → drop into `.minecraft/mods/`
+Output jars: `build/libs/import-simulators-*.jar` and
+`carpet/build/libs/import-carpet-maps-*.jar` → drop into `.minecraft/mods/`
 (alongside the Fabric API jar).
 
 Needs **JDK 21**.

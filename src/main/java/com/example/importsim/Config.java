@@ -26,7 +26,7 @@ public class Config {
     public boolean overwriteExisting = false;
 
     public static Config load() {
-        Path path = FabricLoader.getInstance().getConfigDir().resolve("import-simulators.json");
+        Path path = FabricLoader.getInstance().getConfigDir().resolve(Edition.ID + ".json");
         try {
             if (Files.exists(path)) {
                 Config c = GSON.fromJson(Files.readString(path), Config.class);
