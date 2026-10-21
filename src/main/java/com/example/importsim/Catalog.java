@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * What there is to download, read from catalog/maps.json and catalog/kits.json in the repo.
+ * What there is to download, read from the edition's maps and kits files in the repo's catalog/.
  *
  * These used to be Drive folder listings. Serving them as static files keeps the mod off Google
  * Drive entirely, which matters because Drive caps how often a popular public file may be fetched.
@@ -47,7 +47,7 @@ public class Catalog {
 
     public List<MapEntry> maps() throws IOException, InterruptedException {
         List<MapEntry> out = new ArrayList<>();
-        for (JsonElement el : fetch("maps.json")) {
+        for (JsonElement el : fetch(Edition.MAPS_FILE)) {
             JsonObject o = el.getAsJsonObject();
             out.add(new MapEntry(o.get("name").getAsString(),
                     o.get("url").getAsString(),
@@ -59,7 +59,7 @@ public class Catalog {
 
     public List<KitEntry> kits() throws IOException, InterruptedException {
         List<KitEntry> out = new ArrayList<>();
-        for (JsonElement el : fetch("kits.json")) {
+        for (JsonElement el : fetch(Edition.KITS_FILE)) {
             JsonObject o = el.getAsJsonObject();
             out.add(new KitEntry(o.get("name").getAsString(),
                     o.has("size") ? o.get("size").getAsLong() : 0));
@@ -70,7 +70,7 @@ public class Catalog {
     private JsonArray fetch(String file) throws IOException, InterruptedException {
         String url = baseUrl + "/" + file;
         HttpRequest req = HttpRequest.newBuilder(URI.create(url))
-                .header("User-Agent", "import-simulators")
+                .header("User-Agent", Edition.ID)
                 .header("Accept", "application/json")
                 .timeout(Duration.ofMinutes(2))
                 .GET()

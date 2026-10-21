@@ -6,3 +6,5 @@ pluginManagement {
 }
 
 rootProject.name = 'import-simulators'
+include 'carpet'
+include 'carpet-1.21'

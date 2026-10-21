@@ -1,0 +1,7 @@
+// Import Carpet Maps for 1.21.11. See gradle/edition.gradle.
+plugins {
+    id 'fabric-loom'
+}
+
+ext.ownSources = ['Edition.java']
+apply from: rootProject.file('gradle/edition.gradle')

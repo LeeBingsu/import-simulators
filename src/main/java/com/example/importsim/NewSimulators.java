@@ -25,12 +25,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public final class NewSimulators {
 
-    private static final Logger LOG = LoggerFactory.getLogger("import-simulators");
+    private static final Logger LOG = LoggerFactory.getLogger(Edition.ID);
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final AtomicBoolean CHECKED = new AtomicBoolean(false);
 
-    private static final Tracker MAPS = new Tracker("import-simulators-seen.json");
-    private static final Tracker KITS = new Tracker("import-simulators-seen-kits.json");
+    private static final Tracker MAPS = new Tracker(Edition.ID + "-seen.json");
+    private static final Tracker KITS = new Tracker(Edition.ID + "-seen-kits.json");
 
     private NewSimulators() {
     }
@@ -65,7 +65,10 @@ public final class NewSimulators {
                 }
                 MAPS.update(names);
             } catch (Exception e) {
-                LOG.warn("[import-simulators] Could not check for new simulators", e);
+                LOG.warn(Edition.LOG + "Could not check for new simulators", e);
+            }
+            if (!Edition.KITS) {
+                return;
             }
             try {
                 Set<String> names = new LinkedHashSet<>();
@@ -74,9 +77,9 @@ public final class NewSimulators {
                 }
                 KITS.update(names);
             } catch (Exception e) {
-                LOG.warn("[import-simulators] Could not check for new kits", e);
+                LOG.warn(Edition.LOG + "Could not check for new kits", e);
             }
-        }, "import-simulators-new-check");
+        }, Edition.ID + "-new-check");
         t.setDaemon(true);
         t.start();
     }
@@ -138,7 +141,7 @@ public final class NewSimulators {
                         new TypeToken<List<String>>() { }.getType());
                 return names == null ? Set.of() : new LinkedHashSet<>(names);
             } catch (Exception e) {
-                LOG.warn("[import-simulators] Could not read {}; treating it as empty", path, e);
+                LOG.warn(Edition.LOG + "Could not read {}; treating it as empty", path, e);
                 return Set.of();
             }
         }
@@ -147,7 +150,7 @@ public final class NewSimulators {
             try {
                 Files.writeString(seenFile(), GSON.toJson(names));
             } catch (Exception e) {
-                LOG.warn("[import-simulators] Could not record what has been seen in {}", fileName, e);
+                LOG.warn(Edition.LOG + "Could not record what has been seen in {}", fileName, e);
             }
         }
     }

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Regenerates catalog/maps.json and catalog/kits.json.
+"""Regenerates the map and kit lists in catalog/, one pair per mod edition.
 
-Maps come from the release's assets, kits from the kits/ folder, so adding either
-only means uploading the file — this then keeps the catalog in step.
+Each edition's maps come from its own release's assets and its kits from its own
+folder in the repo (see EDITIONS), so adding either only means uploading the
+file — this then keeps the catalog in step.
 
-Run with no arguments from the repo root. Reads GITHUB_REPOSITORY / MAPS_TAG /
-GITHUB_TOKEN from the environment when present.
+Run with no arguments from the repo root. Reads GITHUB_REPOSITORY / GITHUB_TOKEN
+from the environment when present.
 """
 
 import json
@@ -18,7 +19,15 @@ import urllib.request
 ARCHIVE_SUFFIXES = (".zip", ".rar")
 
 REPO = os.environ.get("GITHUB_REPOSITORY", "LeeBingsu/import-simulators")
-TAG = os.environ.get("MAPS_TAG", "maps-v1")
+# (release tag, maps file, kits folder, kits file) for each edition of the mod.
+EDITIONS = [
+    # Import Simulators (vexbot), Minecraft 1.21.11
+    ("maps-v1", "maps.json", "kits", "kits.json"),
+    # Import Carpet Maps, Minecraft 1.21.11
+    ("carpet-map", "carpet-maps.json", "carpet-kits", "carpet-kits.json"),
+    # Import Carpet Maps, Minecraft 1.21
+    ("carpet-map-1.21", "carpet-maps-1.21.json", "carpet-kits-1.21", "carpet-kits-1.21.json"),
+]
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
@@ -38,8 +47,9 @@ def display_name(asset_name: str) -> str:
     return re.sub(r"(?<!\d)\.|\.(?!\d)", " ", stem)
 
 
-def fetch_assets() -> list:
-    url = f"https://api.github.com/repos/{REPO}/releases/tags/{TAG}"
+def fetch_assets(tag: str):
+    """The release's assets, or None when there is no release with that tag."""
+    url = f"https://api.github.com/repos/{REPO}/releases/tags/{tag}"
     req = urllib.request.Request(url, headers={
         "User-Agent": "import-simulators-catalog",
         "Accept": "application/vnd.github+json",
@@ -52,8 +62,7 @@ def fetch_assets() -> list:
             return json.load(r).get("assets", [])
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            print(f"no release tagged {TAG}; leaving maps.json alone", file=sys.stderr)
-            return []
+            return None
         raise
 
 
@@ -78,12 +87,13 @@ def write(path: str, data) -> bool:
     return True
 
 
-def build_maps() -> bool:
-    assets = fetch_assets()
-    if not assets:
+def build_maps(tag: str, filename: str) -> bool:
+    assets = fetch_assets(tag)
+    if assets is None:
+        print(f"no release tagged {tag}; leaving {filename} alone", file=sys.stderr)
         return False
 
-    path = os.path.join(ROOT, "catalog", "maps.json")
+    path = os.path.join(ROOT, "catalog", filename)
     # Names already in the catalog win: some were set by hand and cannot be
     # recovered from the filename, e.g. "ManePear's training simulator", whose
     # apostrophe GitHub replaced with a dot.
@@ -103,23 +113,26 @@ def build_maps() -> bool:
         })
     maps.sort(key=lambda m: m["name"].lower())
     changed = write(path, maps)
-    print(f"maps.json: {len(maps)} entries{' (updated)' if changed else ' (unchanged)'}")
+    print(f"{filename}: {len(maps)} entries{' (updated)' if changed else ' (unchanged)'}")
     return changed
 
 
-def build_kits() -> bool:
-    kits_dir = os.path.join(ROOT, "kits")
+def build_kits(folder: str, filename: str) -> bool:
+    kits_dir = os.path.join(ROOT, folder)
+    names = sorted(os.listdir(kits_dir)) if os.path.isdir(kits_dir) else []
     kits = [
         {"name": name, "size": os.path.getsize(os.path.join(kits_dir, name))}
-        for name in sorted(os.listdir(kits_dir))
+        for name in names
         if name.endswith(".json")
     ]
-    changed = write(os.path.join(ROOT, "catalog", "kits.json"), kits)
-    print(f"kits.json: {len(kits)} entries{' (updated)' if changed else ' (unchanged)'}")
+    changed = write(os.path.join(ROOT, "catalog", filename), kits)
+    print(f"{filename}: {len(kits)} entries{' (updated)' if changed else ' (unchanged)'}")
     return changed
 
 
 if __name__ == "__main__":
-    maps_changed = build_maps()
-    kits_changed = build_kits()
-    print(f"changed={'true' if (maps_changed or kits_changed) else 'false'}")
+    changed = False
+    for tag, maps_file, kits_folder, kits_file in EDITIONS:
+        changed |= build_maps(tag, maps_file)
+        changed |= build_kits(kits_folder, kits_file)
+    print(f"changed={'true' if changed else 'false'}")

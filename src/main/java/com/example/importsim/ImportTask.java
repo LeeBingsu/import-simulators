@@ -21,15 +21,12 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 /**
- * Downloads maps into the saves directory, and kit files into vexbot_kits, on a background thread.
+ * Downloads maps into the saves directory, and kit files into the kits folder, on a background thread.
  * Progress is exposed via {@link #progress()} for {@link MapSelectScreen} to render.
  */
 public final class ImportTask {
 
-    /** Kit files live here, next to saves/ in the game directory. */
-    public static final String KITS_DIR = "vexbot_kits";
-
-    private static final Logger LOG = LoggerFactory.getLogger("import-simulators");
+    private static final Logger LOG = LoggerFactory.getLogger(Edition.ID);
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
     private static volatile String progress = "";
     private static volatile String failureDetail = "";
@@ -99,7 +96,7 @@ public final class ImportTask {
             return;
         }
         begin();
-        Thread t = new Thread(() -> run(client, returnScreen, maps, cfg), "import-simulators");
+        Thread t = new Thread(() -> run(client, returnScreen, maps, cfg), Edition.ID);
         t.setDaemon(true);
         t.start();
     }
@@ -112,7 +109,7 @@ public final class ImportTask {
         try {
             MapArchive archive = new MapArchive();
             Files.createDirectories(saves);
-            Path tmpRoot = saves.resolve(".import-simulators-tmp");
+            Path tmpRoot = saves.resolve("." + Edition.ID + "-tmp");
             Files.createDirectories(tmpRoot);
 
             long size = 0;
@@ -143,11 +140,11 @@ public final class ImportTask {
                     Files.move(world, target);
                     deleteRecursive(stage);
                     imported++;
-                    LOG.info("[import-simulators] Imported '{}' -> saves/{}", safe, target.getFileName());
+                    LOG.info(Edition.LOG + "Imported '{}' -> saves/{}", safe, target.getFileName());
                 } catch (Exception e) {
                     failed.add(safe);
                     failureDetail = describe(safe, e);
-                    LOG.error("[import-simulators] Failed importing '{}'", safe, e);
+                    LOG.error(Edition.LOG + "Failed importing '{}'", safe, e);
                     deleteRecursive(stage);
                 }
             }
@@ -155,7 +152,7 @@ public final class ImportTask {
                 deleteRecursive(tmpRoot);
             }
         } catch (Exception e) {
-            LOG.error("[import-simulators] Import aborted", e);
+            LOG.error(Edition.LOG + "Import aborted", e);
             failureDetail = describe("Import aborted", e);
             if (failed.isEmpty()) {
                 failed.add("(all)");
@@ -166,10 +163,10 @@ public final class ImportTask {
                 ? imported + " map(s) imported"
                 : imported + " imported, " + failed.size() + " failed";
         if (!failed.isEmpty()) {
-            LOG.warn("[import-simulators] Did not import: {}", String.join(", ", failed));
-            LOG.warn("[import-simulators]   saves folder: {}", saves.toAbsolutePath());
+            LOG.warn(Edition.LOG + "Did not import: {}", String.join(", ", failed));
+            LOG.warn(Edition.LOG + "  saves folder: {}", saves.toAbsolutePath());
         }
-        LOG.info("[import-simulators] Done. imported={} failed={}", imported, failed.size());
+        LOG.info(Edition.LOG + "Done. imported={} failed={}", imported, failed.size());
 
         finish(client, returnScreen);
     }
@@ -191,7 +188,7 @@ public final class ImportTask {
     // ------------------------------------------------------------------ kits
 
     /**
-     * Syncs kit files into the vexbot_kits folder in the game directory, creating it when missing
+     * Syncs kit files into the kits folder in the game directory, creating it when missing
      * and downloading only the files the player does not already have.
      */
     public static void launchKits(MinecraftClient client, Screen returnScreen, Config cfg) {
@@ -199,13 +196,13 @@ public final class ImportTask {
             return;
         }
         begin();
-        Thread t = new Thread(() -> runKits(client, returnScreen, cfg), "import-simulators-kits");
+        Thread t = new Thread(() -> runKits(client, returnScreen, cfg), Edition.ID + "-kits");
         t.setDaemon(true);
         t.start();
     }
 
     private static void runKits(MinecraftClient client, Screen returnScreen, Config cfg) {
-        Path kits = FabricLoader.getInstance().getGameDir().resolve(KITS_DIR);
+        Path kits = FabricLoader.getInstance().getGameDir().resolve(cfg.kitsDir);
         int added = 0;
         int failed = 0;
         try {
@@ -244,25 +241,25 @@ public final class ImportTask {
                 } catch (Exception e) {
                     failed++;
                     failureDetail = describe(kit.name(), e);
-                    LOG.error("[import-simulators] Failed downloading kit '{}'", kit.name(), e);
+                    LOG.error(Edition.LOG + "Failed downloading kit '{}'", kit.name(), e);
                     deleteQuietly(dest);
                 }
             }
             // Kits that failed stay new, so the badge keeps pointing at them.
             NewSimulators.markKitsSeen(have);
         } catch (Exception e) {
-            LOG.error("[import-simulators] Kit import aborted", e);
+            LOG.error(Edition.LOG + "Kit import aborted", e);
             failed++;
             failureDetail = describe("Could not read the kit list", e);
         }
 
         if (failed > 0) {
             progress = added + " kit(s) added, " + failed + " failed";
-            LOG.warn("[import-simulators] Kits folder: {}", kits.toAbsolutePath());
+            LOG.warn(Edition.LOG + "Kits folder: {}", kits.toAbsolutePath());
         } else {
             progress = added == 0 ? "Kits already up to date" : added + " kit(s) added";
         }
-        LOG.info("[import-simulators] Kits done. added={} failed={}", added, failed);
+        LOG.info(Edition.LOG + "Kits done. added={} failed={}", added, failed);
 
         finish(client, returnScreen);
     }
@@ -285,7 +282,7 @@ public final class ImportTask {
         client.execute(() -> {
             RUNNING.set(false);
             SystemToast.add(client.getToastManager(), SystemToast.Type.PERIODIC_NOTIFICATION,
-                    Text.literal("Import Simulators"), Text.literal(progress));
+                    Text.literal(Edition.NAME), Text.literal(progress));
             // Only move on from the progress screen. A player who left it may be in a world by
             // now, and opening the world list over a running game would let them start another.
             if (returnScreen == null || !(client.currentScreen instanceof MapSelectScreen)) {

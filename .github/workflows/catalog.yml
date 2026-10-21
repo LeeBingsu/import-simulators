@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - "kits/**"
+      - "carpet-kits/**"
+      - "carpet-kits-1.21/**"
       - ".github/scripts/build_catalog.py"
       - ".github/workflows/catalog.yml"
   # Publishing or editing a release.

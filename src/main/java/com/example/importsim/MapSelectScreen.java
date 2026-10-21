@@ -1,6 +1,5 @@
 package com.example.importsim;
 
-import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -23,9 +22,9 @@ import java.util.Set;
  * "Download (N)" imports only the ticked ones. The list can be searched by name and sorted by
  * name or by when the map was added.
  */
-public class MapSelectScreen extends Screen {
+public class MapSelectScreen extends VersionScreen {
 
-    private static final Logger LOG = LoggerFactory.getLogger("import-simulators");
+    private static final Logger LOG = LoggerFactory.getLogger(Edition.ID);
 
     private final Screen parent;
     private Config cfg;
@@ -61,7 +60,7 @@ public class MapSelectScreen extends Screen {
     private String lastFailureDetail;   // why it failed, when it did
 
     public MapSelectScreen(Screen parent) {
-        super(Text.literal("Import Simulators"));
+        super(Text.literal(Edition.NAME));
         this.parent = parent;
     }
 
@@ -81,7 +80,7 @@ public class MapSelectScreen extends Screen {
         int sortW = 100;
         int sx = this.width / 2 - (searchW + 5 + sortW) / 2;
         searchField = new TextFieldWidget(this.textRenderer, sx, 22, searchW, 18, Text.literal("Search"));
-        searchField.setPlaceholder(Text.literal("Search simulators…"));
+        searchField.setPlaceholder(Text.literal("Search " + Edition.NOUN + "…"));
         searchField.setText(query);
         searchField.setChangedListener(text -> {
             query = text;
@@ -101,7 +100,8 @@ public class MapSelectScreen extends Screen {
 
         int bw = 74;
         int gap = 5;
-        int totalW = bw * 5 + gap * 4;
+        int count = Edition.KITS ? 5 : 4;
+        int totalW = bw * count + gap * (count - 1);
         int x = this.width / 2 - totalW / 2;
         int y = this.height - 30;
 
@@ -122,12 +122,14 @@ public class MapSelectScreen extends Screen {
                 .dimensions(x + 2 * (bw + gap), y, bw, 20).build();
         addDrawableChild(downloadButton);
 
-        kitsButton = ButtonWidget.builder(Text.literal("Import Kits"), b -> startKitsImport())
-                .dimensions(x + 3 * (bw + gap), y, bw, 20).build();
-        addDrawableChild(kitsButton);
+        if (Edition.KITS) {
+            kitsButton = ButtonWidget.builder(Text.literal("Import Kits"), b -> startKitsImport())
+                    .dimensions(x + 3 * (bw + gap), y, bw, 20).build();
+            addDrawableChild(kitsButton);
+        }
 
         addDrawableChild(ButtonWidget.builder(Text.literal("Cancel"), b -> this.client.setScreen(parent))
-                .dimensions(x + 4 * (bw + gap), y, bw, 20).build());
+                .dimensions(x + (count - 1) * (bw + gap), y, bw, 20).build());
 
         refreshButtons();
     }
@@ -144,10 +146,10 @@ public class MapSelectScreen extends Screen {
                 // The player is looking at the list now, so the badge has done its job.
                 NewSimulators.markSeen(all.stream().map(Catalog.MapEntry::name).toList());
             } catch (Exception e) {
-                LOG.error("[import-simulators] Failed to load map list", e);
+                LOG.error(Edition.LOG + "Failed to load map list", e);
                 this.loadError = e.getMessage() == null ? e.toString() : e.getMessage();
             }
-        }, "import-simulators-list");
+        }, Edition.ID + "-list");
         t.setDaemon(true);
         t.start();
     }
@@ -246,10 +248,8 @@ public class MapSelectScreen extends Screen {
     }
 
     @Override
-    public boolean mouseClicked(Click click, boolean doubled) {
-        double mouseX = click.x();
-        double mouseY = click.y();
-        if (click.button() == 0 && maps != null && !ImportTask.isRunning()
+    protected boolean listClicked(double mouseX, double mouseY, int button) {
+        if (button == 0 && maps != null && !ImportTask.isRunning()
                 && mouseX >= listX() && mouseX <= listX() + listW()
                 && mouseY >= listTop && mouseY < listBottom) {
             List<Catalog.MapEntry> rows = shown;
@@ -263,7 +263,7 @@ public class MapSelectScreen extends Screen {
                 return true;
             }
         }
-        return super.mouseClicked(click, doubled);
+        return false;
     }
 
     @Override
@@ -328,7 +328,7 @@ public class MapSelectScreen extends Screen {
 
         List<Catalog.MapEntry> rows = shown;
         if (rows.isEmpty()) {
-            ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal("No simulators match \"" + query + "\""),
+            ctx.drawCenteredTextWithShadow(this.textRenderer, Text.literal("No " + Edition.NOUN + " match \"" + query + "\""),
                     this.width / 2, listTop + 10, 0xFFAAAAAA);
         }
         int x = listX();

@@ -17,7 +17,7 @@ import net.minecraft.text.Text;
  */
 public class ImportSimulatorsClient implements ClientModInitializer {
 
-    public static final String MOD_ID = "import-simulators";
+    public static final String MOD_ID = Edition.ID;
 
     @Override
     public void onInitializeClient() {
@@ -26,9 +26,9 @@ public class ImportSimulatorsClient implements ClientModInitializer {
                 return;
             }
             ButtonWidget button = ButtonWidget.builder(
-                    Text.literal("Import Simulators"),
+                    Text.literal(Edition.NAME),
                     btn -> client.setScreen(new MapSelectScreen(screen))
-            ).dimensions(8, 8, 130, 20).build();
+            ).dimensions(8, Edition.BUTTON_Y, 130, 20).build();
 
             Screens.getButtons(screen).add(button);
             NewSimulators.refresh();

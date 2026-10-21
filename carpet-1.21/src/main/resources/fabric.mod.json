@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "import-carpet-maps",
+  "version": "${version}",
+  "name": "Import Carpet Maps",
+  "description": "Adds an 'Import Carpet Maps' button to the singleplayer world-select screen that downloads carpet maps for Minecraft 1.21 from GitHub releases into your saves directory.",
+  "authors": ["Hi_Its_I"],
+  "contact": {},
+  "license": "LGPL-3.0-or-later",
+  "icon": "assets/import-carpet-maps/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.importsim.carpet.ImportSimulatorsClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=1.21 <1.21.2",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "carpet": "*"
+  }
+}
