@@ -156,6 +156,12 @@
   "added": "2026-10-17T11:20:51Z"
  },
  {
+  "name": "Mcpvp sim by gojira",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Mcpvp.sim.by.gojira.zip",
+  "size": 26090635,
+  "added": "2026-10-28T04:27:11Z"
+ },
+ {
   "name": "Miniute Vs Null",
   "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Miniute.Vs.Null.zip",
   "size": 4124367,
@@ -240,10 +246,10 @@
   "added": "2026-09-09T05:26:44Z"
  },
  {
-  "name": "Singleplayer PvP V2.1 Fix",
-  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Singleplayer.PvP.V2.1.Fix.zip",
-  "size": 11064214,
-  "added": "2026-10-10T00:43:57Z"
+  "name": "Singleplayer PvP 2.2 Fix",
+  "url": "https://github.com/LeeBingsu/import-simulators/releases/download/maps-v1/Singleplayer.PvP.2.2.Fix.zip",
+  "size": 11092294,
+  "added": "2026-10-28T04:37:50Z"
  },
  {
   "name": "Slushly VS Nufuli",
